@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AnchorController.cs" />
+     <Compile Include="Assets\Scripts\ArrowController.cs" />
      <Compile Include="Assets\Scripts\Grappler.cs" />
      <Compile Include="Assets\Scripts\Orchestrator.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />

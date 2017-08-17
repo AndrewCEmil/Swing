@@ -6,11 +6,14 @@ public class Grappler : MonoBehaviour {
 
 	private GameObject arrow;
 	private GameObject player;
+	private Vector3 connectedAnchorPosition;
+
 	// Use this for initialization
 	void Start () {
 		arrow = GameObject.Find ("Arrow");
 		arrow.SetActive (false);
 		player = GameObject.Find ("Player");
+		connectedAnchorPosition = new Vector3 (0, -0.5f, 0);
 	}
 	
 	// Update is called once per frame
@@ -22,6 +25,15 @@ public class Grappler : MonoBehaviour {
 	public void Shoot(GameObject anchor) {
 		ShootArrow(anchor);
 		//2) Set mode to shooting
+	}
+
+	public void AttachArrow (GameObject anchor) {
+		arrow.AddComponent<HingeJoint> ();
+		HingeJoint hinge = arrow.GetComponent<HingeJoint> ();
+		hinge.autoConfigureConnectedAnchor = false;
+		hinge.connectedAnchor = connectedAnchorPosition;
+		hinge.connectedBody = anchor.GetComponent<Rigidbody> ();
+		hinge.enableCollision = true;
 	}
 
 	void ShootArrow(GameObject anchor) {
