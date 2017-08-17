@@ -10,10 +10,10 @@ public class Rope : MonoBehaviour {
 	private Vector3 connectedAnchorPosition;
 	// Use this for initialization
 	void Start () {
-		elementSize = 2f;
+		elementSize = 1.25f;
 		links = new List<GameObject> ();
-		anchorOffset = new Vector3 (0, -2, 0);
-		connectedAnchorPosition = new Vector3 (0, -1, 0);
+		anchorOffset = new Vector3 (-.5f, 0, 0);
+		connectedAnchorPosition = new Vector3 (0, -0.5f, 0);
 	}
 
 	// Update is called once per frame
@@ -26,9 +26,9 @@ public class Rope : MonoBehaviour {
 		Vector3 directionStep = DirectionStep (anchor, payload);
 		GameObject previous = payload;
 		payload.AddComponent<HingeJoint> ();
-		for (int i = 0; i < numEles; i++) {
+		for (float i = 0; i < numEles; i++) {
 			GameObject link = Instantiate (baseLink);
-			link.transform.position = directionStep * (i + 1) + payload.transform.position;
+			link.transform.position = directionStep * (i + .5f) + payload.transform.position;
 			link.AddComponent<HingeJoint> ();
 			link.SetActive (true);
 
@@ -36,6 +36,7 @@ public class Rope : MonoBehaviour {
 			hinge.autoConfigureConnectedAnchor = false;
 			hinge.connectedAnchor = connectedAnchorPosition;
 			hinge.connectedBody = link.GetComponent<Rigidbody> ();
+			hinge.enableCollision = true;
 
 			links.Add (link);
 			previous = link;
@@ -53,7 +54,7 @@ public class Rope : MonoBehaviour {
 	}
 
 	private float NumberOfElements(GameObject anchor, GameObject payload) {
-		return Mathf.Floor(Vector3.Distance (anchor.transform.position + anchorOffset, payload.transform.position) / elementSize);
+		return Mathf.Ceil(Vector3.Distance (anchor.transform.position + anchorOffset, payload.transform.position) / elementSize);
 	}
 
 	private Vector3 DirectionStep(GameObject anchor, GameObject payload) {
