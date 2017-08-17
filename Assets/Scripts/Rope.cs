@@ -6,10 +6,14 @@ public class Rope : MonoBehaviour {
 
 	private float elementSize;
 	private List<GameObject> links;
+	private Vector3 anchorOffset;
+	private Vector3 connectedAnchorPosition;
 	// Use this for initialization
 	void Start () {
 		elementSize = 2f;
 		links = new List<GameObject> ();
+		anchorOffset = new Vector3 (0, -2, 0);
+		connectedAnchorPosition = new Vector3 (0, -1, 0);
 	}
 
 	// Update is called once per frame
@@ -21,21 +25,24 @@ public class Rope : MonoBehaviour {
 		float numEles = NumberOfElements(anchor, payload);
 		Vector3 directionStep = DirectionStep (anchor, payload);
 		GameObject previous = payload;
+		payload.AddComponent<HingeJoint> ();
 		for (int i = 0; i < numEles; i++) {
 			GameObject link = Instantiate (baseLink);
 			link.transform.position = directionStep * (i + 1) + payload.transform.position;
+			link.AddComponent<HingeJoint> ();
 			link.SetActive (true);
 
 			HingeJoint hinge = previous.GetComponent<HingeJoint> ();
+			hinge.autoConfigureConnectedAnchor = false;
+			hinge.connectedAnchor = connectedAnchorPosition;
 			hinge.connectedBody = link.GetComponent<Rigidbody> ();
-			previous.transform.LookAt (link.transform.position);
 
 			links.Add (link);
 			previous = link;
 		}
 		HingeJoint finalHinge = previous.GetComponent<HingeJoint> ();
 		finalHinge.connectedBody = anchor.GetComponent<Rigidbody> ();
-		previous.transform.LookAt (anchor.transform.position);
+		previous.transform.LookAt (anchor.transform.position + anchorOffset);
 	}
 
 	public void Destruct() {
@@ -46,12 +53,12 @@ public class Rope : MonoBehaviour {
 	}
 
 	private float NumberOfElements(GameObject anchor, GameObject payload) {
-		return Mathf.Floor(Vector3.Distance (anchor.transform.position, payload.transform.position) / elementSize);
+		return Mathf.Floor(Vector3.Distance (anchor.transform.position + anchorOffset, payload.transform.position) / elementSize);
 	}
 
 	private Vector3 DirectionStep(GameObject anchor, GameObject payload) {
 		float numEles = NumberOfElements (anchor, payload);
-		Vector3 direction = anchor.transform.position - payload.transform.position;
+		Vector3 direction = anchor.transform.position + anchorOffset - payload.transform.position;
 		direction.x = direction.x / numEles;
 		direction.y = direction.y / numEles;
 		direction.z = direction.z / numEles;
