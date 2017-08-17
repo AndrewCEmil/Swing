@@ -8,6 +8,7 @@ public class Rope : MonoBehaviour {
 	private List<GameObject> links;
 	private Vector3 anchorOffset;
 	private Vector3 connectedAnchorPosition;
+	private bool constructed;
 	// Use this for initialization
 	void Start () {
 		elementSize = 1.25f;
@@ -18,6 +19,9 @@ public class Rope : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			Destruct ();
+		}
 	}
 
 	public void Construct(GameObject anchor, GameObject payload, GameObject baseLink) {
@@ -27,30 +31,51 @@ public class Rope : MonoBehaviour {
 		GameObject previous = payload;
 		payload.AddComponent<HingeJoint> ();
 		for (float i = 0; i < numEles; i++) {
-			GameObject link = Instantiate (baseLink);
-			link.transform.position = directionStep * (i + .5f) + payload.transform.position;
-			link.AddComponent<HingeJoint> ();
-			link.SetActive (true);
+			GameObject link = CreateLink (baseLink, directionStep, payload.transform.position, i);
 
 			HingeJoint hinge = previous.GetComponent<HingeJoint> ();
-			hinge.autoConfigureConnectedAnchor = false;
-			hinge.connectedAnchor = connectedAnchorPosition;
-			hinge.connectedBody = link.GetComponent<Rigidbody> ();
-			hinge.enableCollision = true;
+			ConfigureHinge (hinge, link);
+			previous.transform.LookAt (link.transform.position);
 
 			links.Add (link);
 			previous = link;
 		}
 		HingeJoint finalHinge = previous.GetComponent<HingeJoint> ();
-		finalHinge.connectedBody = anchor.GetComponent<Rigidbody> ();
+		ConfigureFinalHinge (finalHinge, anchor);
 		previous.transform.LookAt (anchor.transform.position + anchorOffset);
+
+		constructed = true;
+	}
+
+	private GameObject CreateLink(GameObject baseLink, Vector3 directionStep, Vector3 startPosition, float hingeNum) {
+		GameObject link = Instantiate (baseLink);
+		link.transform.position = directionStep * (hingeNum + .5f) + startPosition;
+		link.AddComponent<HingeJoint> ();
+		return link;
+	}
+
+	private void ConfigureHinge(HingeJoint hinge, GameObject link) {
+		hinge.autoConfigureConnectedAnchor = false;
+		hinge.connectedAnchor = connectedAnchorPosition;
+		hinge.connectedBody = link.GetComponent<Rigidbody> ();
+		hinge.enableCollision = true;
+	}
+
+	private void ConfigureFinalHinge(HingeJoint hinge, GameObject anchor) {
+		hinge.autoConfigureConnectedAnchor = false;
+		hinge.connectedAnchor = connectedAnchorPosition;
+		hinge.connectedBody = anchor.GetComponent<Rigidbody> ();
+		hinge.enableCollision = true;
 	}
 
 	public void Destruct() {
-		foreach(GameObject link in links) {
-			Destroy (link);
+		if (constructed) {
+			foreach (GameObject link in links) {
+				Destroy (link);
+			}
+			links.Clear ();
 		}
-		links.Clear();
+		constructed = false;
 	}
 
 	private float NumberOfElements(GameObject anchor, GameObject payload) {
