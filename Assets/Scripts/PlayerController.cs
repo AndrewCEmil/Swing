@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnchorController : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
 	private Orchestrator orchestrator;
-	private bool mouseOn;
-	void Start() {
+	// Use this for initialization
+	void Start () {
 		orchestrator = GameObject.Find ("Orchestrator").GetComponent<Orchestrator> ();
-		mouseOn = false;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
 	}
 
 	void OnMouseDown(){
-		orchestrator.HandleShoot (gameObject);
+		//orchestrator.HandleShoot();
 	}
 }
