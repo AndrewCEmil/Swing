@@ -65,7 +65,7 @@ public class Grappler : MonoBehaviour {
 
 	private void DoShooting() {
 		if(Vector3.Distance(player.transform.position, lastLink.transform.position) > linkDistance) {
-			//AddLink();
+			AddLink();
 		}
 	}
 
@@ -73,18 +73,15 @@ public class Grappler : MonoBehaviour {
 		GameObject link = Instantiate (baseLink);
 		//TODO this doesnt seem right
 		Vector3 direction = (lastLink.transform.position - player.transform.position).normalized;
-		Vector3 newLinkPos = lastLink.transform.position + direction * 2f;
+		Vector3 newLinkPos = lastLink.transform.position - direction;
 		link.transform.position = newLinkPos;
-		link.GetComponent<Rigidbody> ().velocity = lastLink.GetComponent<Rigidbody> ().velocity;
 		link.AddComponent<HingeJoint> ();
 
-		/*
 		HingeJoint hinge = link.GetComponent<HingeJoint> ();
 		hinge.autoConfigureConnectedAnchor = false;
 		hinge.connectedAnchor = connectedAnchorPosition;
 		hinge.connectedBody = lastLink.GetComponent<Rigidbody> ();
 		//hinge.enableCollision = true;
-*/
 
 		lastLink = link;
 	}
