@@ -26,6 +26,7 @@ public class ArrowController : MonoBehaviour {
 		if (!attached && anchor.tag == "Anchor") {
 			AttachToAnchor (anchor);
 			attached = true;
+			Debug.Log ("collided with anchor");
 		}
 	}
 
