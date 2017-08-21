@@ -27,7 +27,7 @@ public class Grappler : MonoBehaviour {
 		player = GameObject.Find ("Player");
 		baseLink = GameObject.Find ("BaseLink");
 		plane = GameObject.Find ("Plane");
-		connectedAnchorPosition = new Vector3 (0, -0.5f, 0);
+		connectedAnchorPosition = new Vector3 (0, 0, -1f);
 		mode = GrapplerMode.Off;
 		linkDistance = 1.2f;
 	}
@@ -53,28 +53,30 @@ public class Grappler : MonoBehaviour {
 	}
 
 	public void AttachArrow (GameObject anchor) {
+		arrow.transform.LookAt (anchor.transform.position);
+		arrow.GetComponent<Rigidbody>().velocity = new Vector3 (0, 0, 0);
 		arrow.AddComponent<HingeJoint> ();
 		HingeJoint hinge = arrow.GetComponent<HingeJoint> ();
 		hinge.autoConfigureConnectedAnchor = false;
 		hinge.connectedAnchor = connectedAnchorPosition;
 		hinge.connectedBody = anchor.GetComponent<Rigidbody> ();
-		//hinge.enableCollision = true;
+		//hinge.enableCollision = false;
 
 		mode = GrapplerMode.Attached;
 	}
 
 	private void DoShooting() {
 		if(Vector3.Distance(player.transform.position, lastLink.transform.position) > linkDistance) {
-			AddLink();
+			//AddLink();
 		}
 	}
 
 	void AddLink() {
 		GameObject link = Instantiate (baseLink);
-		//TODO this doesnt seem right
 		Vector3 direction = (lastLink.transform.position - player.transform.position).normalized;
-		Vector3 newLinkPos = lastLink.transform.position - direction;
+		Vector3 newLinkPos = lastLink.transform.position - direction * 1.5f;
 		link.transform.position = newLinkPos;
+		link.transform.LookAt (lastLink.transform.position);
 		link.AddComponent<HingeJoint> ();
 
 		HingeJoint hinge = link.GetComponent<HingeJoint> ();
@@ -90,6 +92,7 @@ public class Grappler : MonoBehaviour {
 		arrow.SetActive (true);
 		arrow.transform.LookAt (anchor.transform.position);
 		arrow.transform.position = player.transform.position;
+		arrow.transform.LookAt (anchor.transform.position);
 		Vector3 direction = (anchor.transform.position - player.transform.position).normalized;
 
 		Rigidbody arrowRb = arrow.GetComponent<Rigidbody> ();

@@ -31,7 +31,6 @@ public class ArrowController : MonoBehaviour {
 	}
 
 	void AttachToAnchor(GameObject anchor) {
-		rb.velocity = new Vector3 (0, 0, 0);
 		grappler.AttachArrow (anchor);
 	}
 }
