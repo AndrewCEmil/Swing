@@ -16,6 +16,9 @@ public class Grappler : MonoBehaviour {
 	private GameObject baseLink;
 	private GameObject plane;
 	private Vector3 connectedAnchorPosition;
+	private Vector3 anchorPosition;
+	private Vector3 axis;
+	private Vector3 secondaryAxis;
 	private GrapplerMode mode;
 	private GameObject lastLink;
 	private float linkDistance;
@@ -27,7 +30,10 @@ public class Grappler : MonoBehaviour {
 		player = GameObject.Find ("Player");
 		baseLink = GameObject.Find ("BaseLink");
 		plane = GameObject.Find ("Plane");
-		connectedAnchorPosition = new Vector3 (0, 0, -1f);
+		connectedAnchorPosition = new Vector3 (0, 0, -.75f);
+		anchorPosition = new Vector3 (0, 0, .75f);
+		axis = new Vector3 (1f, 0, 0);
+		secondaryAxis = new Vector3 (0, 1f, 0);
 		mode = GrapplerMode.Off;
 		linkDistance = 1.2f;
 	}
@@ -55,19 +61,27 @@ public class Grappler : MonoBehaviour {
 	public void AttachArrow (GameObject anchor) {
 		arrow.transform.LookAt (anchor.transform.position);
 		arrow.GetComponent<Rigidbody>().velocity = new Vector3 (0, 0, 0);
-		arrow.AddComponent<HingeJoint> ();
-		HingeJoint hinge = arrow.GetComponent<HingeJoint> ();
-		hinge.autoConfigureConnectedAnchor = false;
-		hinge.connectedAnchor = connectedAnchorPosition;
-		hinge.connectedBody = anchor.GetComponent<Rigidbody> ();
-		//hinge.enableCollision = false;
+		arrow.AddComponent<ConfigurableJoint> ();
+		ConfigurableJoint joint = arrow.GetComponent<ConfigurableJoint> ();
+		joint.autoConfigureConnectedAnchor = false;
+		joint.axis = axis;
+		joint.secondaryAxis = secondaryAxis;
+		joint.anchor = anchorPosition;
+		joint.connectedAnchor = connectedAnchorPosition;
+		joint.xMotion = ConfigurableJointMotion.Limited;
+		joint.yMotion = ConfigurableJointMotion.Limited;
+		joint.zMotion = ConfigurableJointMotion.Locked;
+		joint.angularXMotion = ConfigurableJointMotion.Free;
+		joint.angularYMotion = ConfigurableJointMotion.Free;
+		joint.angularZMotion = ConfigurableJointMotion.Free;
+		joint.connectedBody = anchor.GetComponent<Rigidbody> ();
 
 		mode = GrapplerMode.Attached;
 	}
 
 	private void DoShooting() {
 		if(Vector3.Distance(player.transform.position, lastLink.transform.position) > linkDistance) {
-			//AddLink();
+			AddLink();
 		}
 	}
 
@@ -77,13 +91,21 @@ public class Grappler : MonoBehaviour {
 		Vector3 newLinkPos = lastLink.transform.position - direction * 1.5f;
 		link.transform.position = newLinkPos;
 		link.transform.LookAt (lastLink.transform.position);
-		link.AddComponent<HingeJoint> ();
 
-		HingeJoint hinge = link.GetComponent<HingeJoint> ();
-		hinge.autoConfigureConnectedAnchor = false;
-		hinge.connectedAnchor = connectedAnchorPosition;
-		hinge.connectedBody = lastLink.GetComponent<Rigidbody> ();
-		//hinge.enableCollision = true;
+		link.AddComponent<ConfigurableJoint> ();
+		ConfigurableJoint joint = link.GetComponent<ConfigurableJoint> ();
+		joint.autoConfigureConnectedAnchor = false;
+		joint.axis = axis;
+		joint.secondaryAxis = secondaryAxis;
+		joint.anchor = anchorPosition;
+		joint.connectedAnchor = connectedAnchorPosition;
+		joint.xMotion = ConfigurableJointMotion.Limited;
+		joint.yMotion = ConfigurableJointMotion.Limited;
+		joint.zMotion = ConfigurableJointMotion.Locked;
+		joint.angularXMotion = ConfigurableJointMotion.Free;
+		joint.angularYMotion = ConfigurableJointMotion.Free;
+		joint.angularZMotion = ConfigurableJointMotion.Free;
+		joint.connectedBody = lastLink.GetComponent<Rigidbody> ();
 
 		lastLink = link;
 	}
