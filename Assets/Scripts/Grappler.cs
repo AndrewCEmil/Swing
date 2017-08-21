@@ -61,24 +61,11 @@ public class Grappler : MonoBehaviour {
 	public void AttachArrow (GameObject anchor) {
 		arrow.transform.LookAt (anchor.transform.position);
 		arrow.GetComponent<Rigidbody>().velocity = new Vector3 (0, 0, 0);
-		arrow.AddComponent<ConfigurableJoint> ();
-		ConfigurableJoint joint = arrow.GetComponent<ConfigurableJoint> ();
-		joint.autoConfigureConnectedAnchor = false;
-		joint.axis = axis;
-		joint.secondaryAxis = secondaryAxis;
-		joint.anchor = anchorPosition;
-		joint.connectedAnchor = connectedAnchorPosition;
-		joint.xMotion = ConfigurableJointMotion.Limited;
-		joint.yMotion = ConfigurableJointMotion.Limited;
-		joint.zMotion = ConfigurableJointMotion.Locked;
-		joint.angularXMotion = ConfigurableJointMotion.Free;
-		joint.angularYMotion = ConfigurableJointMotion.Free;
-		joint.angularZMotion = ConfigurableJointMotion.Free;
-		joint.connectedBody = anchor.GetComponent<Rigidbody> ();
 
-		mode = GrapplerMode.Attached;
+		BuildJoint (arrow, anchor);
 
 		FinishLinks ();
+		mode = GrapplerMode.Attached;
 	}
 
 	private void DoShooting() {
@@ -88,7 +75,6 @@ public class Grappler : MonoBehaviour {
 	void FinishLinks() {
 		AddLinks ();
 		LinkPlayer ();
-		mode = GrapplerMode.Attached;
 	}
 
 	void AddLinks() {
@@ -104,6 +90,20 @@ public class Grappler : MonoBehaviour {
 		link.transform.position = newLinkPos;
 		link.transform.LookAt (lastLink.transform.position);
 
+		BuildJoint (link, lastLink);
+
+		lastLink = link;
+	}
+
+	void LinkPlayer() {
+		player.transform.LookAt (lastLink.transform.position);
+
+		BuildJoint (player, lastLink);
+
+		lastLink = player;
+	}
+
+	void BuildJoint(GameObject link, GameObject anchor) {
 		link.AddComponent<ConfigurableJoint> ();
 		ConfigurableJoint joint = link.GetComponent<ConfigurableJoint> ();
 		joint.autoConfigureConnectedAnchor = false;
@@ -117,30 +117,7 @@ public class Grappler : MonoBehaviour {
 		joint.angularXMotion = ConfigurableJointMotion.Free;
 		joint.angularYMotion = ConfigurableJointMotion.Free;
 		joint.angularZMotion = ConfigurableJointMotion.Free;
-		joint.connectedBody = lastLink.GetComponent<Rigidbody> ();
-
-		lastLink = link;
-	}
-
-	void LinkPlayer() {
-		player.transform.LookAt (lastLink.transform.position);
-
-		player.AddComponent<ConfigurableJoint> ();
-		ConfigurableJoint joint = player.GetComponent<ConfigurableJoint> ();
-		joint.autoConfigureConnectedAnchor = false;
-		joint.axis = axis;
-		joint.secondaryAxis = secondaryAxis;
-		joint.anchor = anchorPosition;
-		joint.connectedAnchor = connectedAnchorPosition;
-		joint.xMotion = ConfigurableJointMotion.Limited;
-		joint.yMotion = ConfigurableJointMotion.Limited;
-		joint.zMotion = ConfigurableJointMotion.Locked;
-		joint.angularXMotion = ConfigurableJointMotion.Free;
-		joint.angularYMotion = ConfigurableJointMotion.Free;
-		joint.angularZMotion = ConfigurableJointMotion.Free;
-		joint.connectedBody = lastLink.GetComponent<Rigidbody> ();
-
-		lastLink = player;
+		joint.connectedBody = anchor.GetComponent<Rigidbody> ();
 	}
 
 	void ShootArrow(GameObject anchor) {
