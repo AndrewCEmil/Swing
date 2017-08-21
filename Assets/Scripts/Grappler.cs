@@ -69,6 +69,7 @@ public class Grappler : MonoBehaviour {
 	}
 
 	private void DoShooting() {
+		AddLinks ();
 	}
 
 
@@ -78,8 +79,10 @@ public class Grappler : MonoBehaviour {
 	}
 
 	void AddLinks() {
-		while(Vector3.Distance(player.transform.position, lastLink.transform.position) > linkDistance) {
+		float distance = Vector3.Distance(player.transform.position, lastLink.transform.position);
+		while(distance > linkDistance) {
 			AddLink();
+			distance = Vector3.Distance(player.transform.position, lastLink.transform.position);
 		}
 	}
 
