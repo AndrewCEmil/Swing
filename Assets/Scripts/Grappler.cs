@@ -15,7 +15,6 @@ public class Grappler : MonoBehaviour {
 	private GameObject player;
 	private GameObject baseLink;
 	private GameObject plane;
-	private Vector3 connectedAnchorPosition;
 	private Vector3 anchorPosition;
 	private Vector3 axis;
 	private Vector3 secondaryAxis;
@@ -30,7 +29,6 @@ public class Grappler : MonoBehaviour {
 		player = GameObject.Find ("Player");
 		baseLink = GameObject.Find ("BaseLink");
 		plane = GameObject.Find ("Plane");
-		connectedAnchorPosition = new Vector3 (0, 0, -.75f);
 		anchorPosition = new Vector3 (0, 0, .75f);
 		axis = new Vector3 (1f, 0, 0);
 		secondaryAxis = new Vector3 (0, 1f, 0);
@@ -109,18 +107,27 @@ public class Grappler : MonoBehaviour {
 	void BuildJoint(GameObject link, GameObject anchor) {
 		link.AddComponent<ConfigurableJoint> ();
 		ConfigurableJoint joint = link.GetComponent<ConfigurableJoint> ();
-		joint.autoConfigureConnectedAnchor = false;
+		joint.autoConfigureConnectedAnchor = true;
 		joint.axis = axis;
 		joint.secondaryAxis = secondaryAxis;
 		joint.anchor = anchorPosition;
-		joint.connectedAnchor = connectedAnchorPosition;
 		joint.xMotion = ConfigurableJointMotion.Limited;
 		joint.yMotion = ConfigurableJointMotion.Limited;
 		joint.zMotion = ConfigurableJointMotion.Locked;
 		joint.angularXMotion = ConfigurableJointMotion.Free;
 		joint.angularYMotion = ConfigurableJointMotion.Free;
 		joint.angularZMotion = ConfigurableJointMotion.Free;
+		SoftJointLimitSpring spring = new SoftJointLimitSpring ();
+		spring.spring = 0;
+		spring.damper = 0;
+		joint.linearLimitSpring = spring;
+		SoftJointLimit limit = new SoftJointLimit ();
+		limit.limit = .1f;
+		limit.bounciness = 0f;
+		limit.contactDistance = .1f;
+		joint.linearLimit = limit;
 		joint.connectedBody = anchor.GetComponent<Rigidbody> ();
+		joint.projectionMode = JointProjectionMode.PositionAndRotation;
 	}
 
 	void ShootArrow(GameObject anchor) {
