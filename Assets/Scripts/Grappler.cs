@@ -6,6 +6,7 @@ public enum GrapplerMode
 {
 	Off,
 	Shooting,
+	Retracting,
 	Attached
 }
 
@@ -21,6 +22,9 @@ public class Grappler : MonoBehaviour {
 	private GrapplerMode mode;
 	private GameObject lastLink;
 	private float linkDistance;
+	private List<GameObject> links;
+	private float timePerRetraction;
+	private float timeSinceLastRetraction;
 
 	// Use this for initialization
 	void Start () {
@@ -34,6 +38,9 @@ public class Grappler : MonoBehaviour {
 		secondaryAxis = new Vector3 (0, 1f, 0);
 		mode = GrapplerMode.Off;
 		linkDistance = 2f;
+		links = new List<GameObject> ();
+		timePerRetraction = .1f;
+		timeSinceLastRetraction = 0;
 	}
 	
 	// Update is called once per frame
@@ -44,6 +51,9 @@ public class Grappler : MonoBehaviour {
 		case GrapplerMode.Shooting:
 			DoShooting ();
 			break;
+		case GrapplerMode.Retracting:
+			Retract ();
+			break;
 		case GrapplerMode.Attached:
 			break; //noop
 		}
@@ -51,9 +61,22 @@ public class Grappler : MonoBehaviour {
 
 	//TODO shoot should be where the player is LOOKING, but for now its the target they click
 	public void Shoot(GameObject anchor) {
-		ShootArrow(anchor);
-		lastLink = arrow;
-		mode = GrapplerMode.Shooting;
+		//TODO this section gets removed once we switch to vr
+		if (mode == GrapplerMode.Attached) {
+			StartRetraction ();
+		} else {
+			ShootArrow (anchor);
+			lastLink = arrow;
+			mode = GrapplerMode.Shooting;
+		}
+	}
+
+	 
+	public void StartRetraction() {
+		Destroy (arrow.GetComponent<ConfigurableJoint> ());
+		arrow.SetActive (false);
+		timeSinceLastRetraction = 0f;
+		mode = GrapplerMode.Retracting;
 	}
 
 	public void AttachArrow (GameObject anchor) {
@@ -70,6 +93,23 @@ public class Grappler : MonoBehaviour {
 		AddLinks ();
 	}
 
+	private void Retract() {
+		timeSinceLastRetraction += Time.deltaTime;
+		int numToRemove = (int) Mathf.Floor (Mathf.Min (links.Count, timeSinceLastRetraction / timePerRetraction));
+		for (int i = 0; i < numToRemove; i++) {
+			Destroy (links [i]);
+			links.RemoveAt (i);
+		}
+		timeSinceLastRetraction = timeSinceLastRetraction % timePerRetraction;
+		if (links.Count == 0) {
+			TriggerRetracted ();
+			mode = GrapplerMode.Off;
+		}
+	}
+
+	private void TriggerRetracted() {
+		//TODO
+	}
 
 	void FinishLinks() {
 		AddLinks ();
@@ -92,6 +132,7 @@ public class Grappler : MonoBehaviour {
 		link.transform.LookAt (lastLink.transform.position);
 
 		BuildJoint (link, lastLink);
+		links.Add (link);
 
 		lastLink = link;
 	}
