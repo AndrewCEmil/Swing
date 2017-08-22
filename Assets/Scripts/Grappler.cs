@@ -41,7 +41,7 @@ public class Grappler : MonoBehaviour {
 		mode = GrapplerMode.Off;
 		linkDistance = 2f;
 		links = new List<GameObject> ();
-		timePerRetraction = .1f;
+		timePerRetraction = .02f;
 		timeSinceLastRetraction = 0;
 	}
 	
@@ -184,8 +184,7 @@ public class Grappler : MonoBehaviour {
 		Vector3 direction = (anchor.transform.position - player.transform.position).normalized;
 
 		Rigidbody arrowRb = arrow.GetComponent<Rigidbody> ();
-		arrowRb.AddForce(direction * 10000);
+		arrowRb.AddForce(direction * 20000);
 		Physics.IgnoreCollision(arrow.GetComponent<Collider>(), player.GetComponent<Collider>());
-		Physics.IgnoreCollision(arrow.GetComponent<Collider>(), plane.GetComponent<Collider>());
 	}
 }
