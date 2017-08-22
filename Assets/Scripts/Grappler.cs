@@ -184,7 +184,7 @@ public class Grappler : MonoBehaviour {
 		Vector3 direction = (anchor.transform.position - player.transform.position).normalized;
 
 		Rigidbody arrowRb = arrow.GetComponent<Rigidbody> ();
-		arrowRb.AddForce(direction * 20000);
+		arrowRb.AddForce(direction * 40000);
 		Physics.IgnoreCollision(arrow.GetComponent<Collider>(), player.GetComponent<Collider>());
 	}
 }
