@@ -13,6 +13,7 @@ public enum GrapplerMode
 public class Grappler : MonoBehaviour {
 
 	private GameObject arrow;
+	private ArrowController arrowController;
 	private GameObject player;
 	private GameObject baseLink;
 	private GameObject plane;
@@ -29,6 +30,7 @@ public class Grappler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		arrow = GameObject.Find ("Arrow");
+		arrowController = arrow.GetComponent<ArrowController> ();
 		arrow.SetActive (false);
 		player = GameObject.Find ("Player");
 		baseLink = GameObject.Find ("BaseLink");
@@ -74,6 +76,7 @@ public class Grappler : MonoBehaviour {
 	 
 	public void StartRetraction() {
 		Destroy (arrow.GetComponent<ConfigurableJoint> ());
+		arrowController.attached = false;
 		arrow.SetActive (false);
 		timeSinceLastRetraction = 0f;
 		mode = GrapplerMode.Retracting;
@@ -103,12 +106,12 @@ public class Grappler : MonoBehaviour {
 		timeSinceLastRetraction = timeSinceLastRetraction % timePerRetraction;
 		if (links.Count == 0) {
 			TriggerRetracted ();
-			mode = GrapplerMode.Off;
 		}
 	}
 
 	private void TriggerRetracted() {
-		//TODO
+		//TODO anything else?
+		mode = GrapplerMode.Off;
 	}
 
 	void FinishLinks() {

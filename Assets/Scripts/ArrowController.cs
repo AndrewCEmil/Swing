@@ -6,7 +6,7 @@ public class ArrowController : MonoBehaviour {
 
 	private Rigidbody rb;
 	private Grappler grappler;
-	bool attached;
+	public bool attached;
 	// Use this for initialization
 	void Start () {
 		rb = gameObject.GetComponent<Rigidbody> ();
