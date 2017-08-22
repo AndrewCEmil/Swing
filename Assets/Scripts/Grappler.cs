@@ -66,10 +66,12 @@ public class Grappler : MonoBehaviour {
 		//TODO this section gets removed once we switch to vr
 		if (mode == GrapplerMode.Attached) {
 			StartRetraction ();
-		} else {
+		} else if (mode == GrapplerMode.Off) {
 			ShootArrow (anchor);
 			lastLink = arrow;
 			mode = GrapplerMode.Shooting;
+		} else {
+			//Aready shooting or retracting, do nothing
 		}
 	}
 
