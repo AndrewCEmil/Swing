@@ -55,6 +55,10 @@
      <Compile Include="Assets\Scripts\ArrowController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Grappler.cs" />
+     <Compile Include="Assets\Scripts\Level.cs" />
+     <Compile Include="Assets\Scripts\LevelLocks.cs" />
+     <Compile Include="Assets\Scripts\LevelLocksManager.cs" />
+     <Compile Include="Assets\Scripts\LevelProvider.cs" />
      <Compile Include="Assets\Scripts\Orchestrator.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\StartController.cs" />
