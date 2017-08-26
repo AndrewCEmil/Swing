@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ArrowController : MonoBehaviour {
 
+	private GameObject player;
 	private Grappler grappler;
 	public bool attached;
 	// Use this for initialization
 	void Start () {
-		grappler = GameObject.Find ("Player").GetComponent<Grappler> ();
+		player = GameObject.Find ("Player");
+		grappler = player.GetComponent<Grappler> ();
 		attached = false;
 	}
 	
