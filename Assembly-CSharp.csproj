@@ -56,6 +56,8 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Grappler.cs" />
      <Compile Include="Assets\Scripts\Level.cs" />
+     <Compile Include="Assets\Scripts\LevelController.cs" />
+     <Compile Include="Assets\Scripts\LevelCreator.cs" />
      <Compile Include="Assets\Scripts\LevelLocks.cs" />
      <Compile Include="Assets\Scripts\LevelLocksManager.cs" />
      <Compile Include="Assets\Scripts\LevelProvider.cs" />

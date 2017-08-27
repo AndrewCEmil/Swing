@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class LevelLocksManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	public static List<int> GetLevelLocks() {
 		string levelLocksJson = PlayerPrefs.GetString ("LevelLocks");
 		if (levelLocksJson.Equals ("") || levelLocksJson.Equals("{}")) {

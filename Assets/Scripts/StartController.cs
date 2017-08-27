@@ -11,6 +11,6 @@ public class StartController : MonoBehaviour {
 	}
 
 	void OnMouseDown(){
-		orchestrator.StartPlayer ();
+		orchestrator.StartLevel ();
 	}
 }

@@ -22,7 +22,7 @@ public class LevelProvider : MonoBehaviour {
 		return Default();
 	}
 
-	static int NumLevels() {
+	public static int NumLevels() {
 		return 1;
 	}
 

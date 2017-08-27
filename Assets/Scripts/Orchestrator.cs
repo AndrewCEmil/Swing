@@ -9,6 +9,7 @@ public class Orchestrator : MonoBehaviour {
 	private GameObject baseLink;
 	private Grappler grappler;
 	private Vector3 startForce;
+	private LevelController levelController;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
@@ -16,6 +17,7 @@ public class Orchestrator : MonoBehaviour {
 		baseLink = GameObject.Find ("BaseLink");
 		grappler = player.GetComponent<Grappler> ();
 		startForce = new Vector3 (1000, 0, 0);
+		levelController = GameObject.Find ("LevelObj").GetComponent<LevelController> ();
 	}
 	
 	// Update is called once per frame
@@ -26,8 +28,13 @@ public class Orchestrator : MonoBehaviour {
 		grappler.Shoot (anchor);
 	}
 
-	public void StartPlayer() {
+	public void StartLevel() {
+		LoadLevel ();
 		//Just kick the player
 		playerRb.AddForce(startForce);
+	}
+
+	public void LoadLevel() {
+		levelController.LoadLevel ();
 	}
 }
