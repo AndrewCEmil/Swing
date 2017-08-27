@@ -26,8 +26,6 @@ public class LevelProvider : MonoBehaviour {
 		return 1;
 	}
 
-
-
 	public static Level Default() {
 		Vector3[] positions = new Vector3[4];
 		positions [0] = new Vector3 (10, 10, 10);

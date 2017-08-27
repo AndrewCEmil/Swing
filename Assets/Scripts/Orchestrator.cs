@@ -20,7 +20,6 @@ public class Orchestrator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
 	public void HandleShoot(GameObject anchor) {
