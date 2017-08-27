@@ -37,4 +37,8 @@ public class Orchestrator : MonoBehaviour {
 	public void LoadLevel() {
 		levelController.LoadLevel ();
 	}
+
+	public void TargetHit() {
+		levelController.HandleLevelWin ();
+	}
 }

@@ -32,17 +32,15 @@ public class LevelProvider : MonoBehaviour {
 		positions [1] = new Vector3 (-10, 10, 10);
 		positions [2] = new Vector3 (-10, 10, -10);
 		positions [3] = new Vector3 (10, 10, -10);
-		Vector3[] drifts = new Vector3[5];
-		drifts [0] = new Vector3 (5, 5, 5);
-		drifts [1] = new Vector3 (15, 15, 15);
-		drifts [2] = new Vector3 (-15, 15, 15);
-		drifts [3] = new Vector3 (-15, 15, -15);
-		drifts [4] = new Vector3 (15, 15, -15);
+		Vector3 target = new Vector3 (0, 10, -20);
+		Vector3 targetLookAt = new Vector3 (0, 10, 0);
 		Level level = new Level ();
 		level.anchors = positions;
 		level.name = "Ring";
 		level.level = 1;
 		level.locked = LevelLocksManager.IsLevelLocked (level.level);
+		level.target = target;
+		level.targetLookAt = targetLookAt;
 		return level;
 	}
 }
