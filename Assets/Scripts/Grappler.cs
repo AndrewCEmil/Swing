@@ -21,6 +21,7 @@ public class Grappler : MonoBehaviour {
 	private Vector3 secondaryAxis;
 	private GrapplerMode mode;
 	private Vector3 jointConnectedAnchor;
+	private float maxArrowDistance;
 
 	// Use this for initialization
 	void Start () {
@@ -29,11 +30,11 @@ public class Grappler : MonoBehaviour {
 		arrowController = arrow.GetComponent<ArrowController> ();
 		arrow.SetActive (false);
 		player = GameObject.Find ("Player");
-		plane = GameObject.Find ("Plane");
 		anchorPosition = new Vector3 (0, 0, .75f);
 		axis = new Vector3 (1f, 0, 0);
 		secondaryAxis = new Vector3 (0, 1f, 0);
 		mode = GrapplerMode.Off;
+		maxArrowDistance = 50f;
 	}
 	
 	// Update is called once per frame
@@ -42,6 +43,7 @@ public class Grappler : MonoBehaviour {
 		case GrapplerMode.Off:
 			break; //noop
 		case GrapplerMode.Shooting:
+			DoShooting ();
 			break;
 		case GrapplerMode.Attached:
 			break; //noop
@@ -82,6 +84,13 @@ public class Grappler : MonoBehaviour {
 		mode = GrapplerMode.Attached;
 	}
 
+	private void DoShooting() {
+		if (Vector3.Distance (arrow.transform.position, player.transform.position) > maxArrowDistance) {
+			arrow.SetActive (false);
+			mode = GrapplerMode.Off;
+		}
+	}
+
 	void BuildJoint(GameObject link, GameObject anchor) {
 		link.AddComponent<ConfigurableJoint> ();
 		ConfigurableJoint joint = link.GetComponent<ConfigurableJoint> ();
@@ -113,6 +122,7 @@ public class Grappler : MonoBehaviour {
 		arrow.SetActive (true);
 		arrowRb.useGravity = true;
 		arrowRb.isKinematic = false;
+		arrowRb.velocity = new Vector3 (0, 0, 0);
 		arrow.transform.LookAt (anchor.transform.position);
 		arrow.transform.position = player.transform.position;
 		arrow.transform.LookAt (anchor.transform.position);
