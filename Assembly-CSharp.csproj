@@ -51,22 +51,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AnchorController.cs" />
-     <Compile Include="Assets\Scripts\ArrowController.cs" />
-     <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\AnchorController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\ArrowController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\MenuController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\SoundController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\StartController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\TargetController.cs" />
      <Compile Include="Assets\Scripts\Grappler.cs" />
-     <Compile Include="Assets\Scripts\Level.cs" />
-     <Compile Include="Assets\Scripts\LevelController.cs" />
-     <Compile Include="Assets\Scripts\LevelCreator.cs" />
-     <Compile Include="Assets\Scripts\LevelLocks.cs" />
-     <Compile Include="Assets\Scripts\LevelLocksManager.cs" />
-     <Compile Include="Assets\Scripts\LevelProvider.cs" />
-     <Compile Include="Assets\Scripts\MenuController.cs" />
+     <Compile Include="Assets\Scripts\LevelManagement\Level.cs" />
+     <Compile Include="Assets\Scripts\LevelManagement\LevelController.cs" />
+     <Compile Include="Assets\Scripts\LevelManagement\LevelCreator.cs" />
+     <Compile Include="Assets\Scripts\LevelManagement\LevelLocks.cs" />
+     <Compile Include="Assets\Scripts\LevelManagement\LevelLocksManager.cs" />
+     <Compile Include="Assets\Scripts\LevelManagement\LevelProvider.cs" />
      <Compile Include="Assets\Scripts\Orchestrator.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\SoundController.cs" />
-     <Compile Include="Assets\Scripts\StartController.cs" />
-     <Compile Include="Assets\Scripts\TargetController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -21,6 +21,7 @@ public class Grappler : MonoBehaviour {
 	private Vector3 secondaryAxis;
 	private GrapplerMode mode;
 	private Vector3 jointConnectedAnchor;
+	private LineRenderer lineRenderer;
 	private float maxArrowDistance;
 
 	// Use this for initialization
@@ -35,6 +36,12 @@ public class Grappler : MonoBehaviour {
 		secondaryAxis = new Vector3 (0, 1f, 0);
 		mode = GrapplerMode.Off;
 		maxArrowDistance = 50f;
+		InitializeLine ();
+	}
+
+	private void InitializeLine() {
+		lineRenderer = GameObject.Find("Line").GetComponent<LineRenderer> ();
+		lineRenderer.positionCount = 0;
 	}
 	
 	// Update is called once per frame
@@ -44,8 +51,10 @@ public class Grappler : MonoBehaviour {
 			break; //noop
 		case GrapplerMode.Shooting:
 			DoShooting ();
+			DoLine ();
 			break;
 		case GrapplerMode.Attached:
+			DoLine ();
 			break; //noop
 		}
 	}
@@ -69,6 +78,7 @@ public class Grappler : MonoBehaviour {
 		arrowController.attached = false;
 		arrow.SetActive (false);
 		mode = GrapplerMode.Off;
+		lineRenderer.positionCount = 0;
 	}
 
 	//TODO need to attach where it _hits_
@@ -88,6 +98,14 @@ public class Grappler : MonoBehaviour {
 		if (Vector3.Distance (arrow.transform.position, player.transform.position) > maxArrowDistance) {
 			arrow.SetActive (false);
 			mode = GrapplerMode.Off;
+			lineRenderer.positionCount = 0;
+		}
+	}
+
+	private void DoLine() {
+		if (lineRenderer.positionCount > 0) {
+			lineRenderer.SetPosition (0, player.transform.position);
+			lineRenderer.SetPosition (1, arrow.transform.position);
 		}
 	}
 
@@ -110,7 +128,7 @@ public class Grappler : MonoBehaviour {
 		spring.damper = 0;
 		joint.linearLimitSpring = spring;
 		SoftJointLimit limit = new SoftJointLimit ();
-		limit.limit = Vector3.Distance (player.transform.position, anchor.transform.position);
+		limit.limit = Vector3.Distance (player.transform.position, anchor.transform.position) + .5f;
 		limit.bounciness = 0f;
 		limit.contactDistance = .1f;
 		joint.linearLimit = limit;
@@ -130,5 +148,9 @@ public class Grappler : MonoBehaviour {
 
 		arrowRb.AddForce(direction * 3000);
 		Physics.IgnoreCollision(arrow.GetComponent<Collider>(), player.GetComponent<Collider>());
+
+		lineRenderer.positionCount = 2;
+		lineRenderer.SetPosition (0, player.transform.position);
+		lineRenderer.SetPosition (1, arrow.transform.position);
 	}
 }
