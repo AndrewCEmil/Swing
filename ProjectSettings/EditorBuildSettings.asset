@@ -18,5 +18,5 @@ EditorBuildSettings:
     path: Assets/Scenes/AntechamberScene.unity
     guid: 757e52224bce64797a430567b7f57864
   - enabled: 1
-    path: Assets/Scenes/PlayScene.unity
-    guid: a8276c6518e9d4a73b49aeae9583c3e6
+    path: Assets/Scenes/TestRace.unity
+    guid: 813f8dbb300344530a0f930b1e664d9f

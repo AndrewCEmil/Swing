@@ -9,8 +9,8 @@ public class MenuController : MonoBehaviour {
 	private SoundController soundController;
 	// Use this for initialization
 	void Start () {
-		soundController = GameObject.Find ("MusicPlayer").GetComponent<SoundController> ();
 		MaybeInitializeSettings ();
+		soundController = GameObject.Find ("MusicPlayer").GetComponent<SoundController> ();
 	}
 
 	// Update is called once per frame
@@ -36,6 +36,10 @@ public class MenuController : MonoBehaviour {
 
 	public void LoadAboutScene() {
 		SceneManager.LoadScene ("AboutScene");
+	}
+
+	public void LoadTestRace() {
+		SceneManager.LoadScene ("TestRace");
 	}
 
 	public void Quit() {
