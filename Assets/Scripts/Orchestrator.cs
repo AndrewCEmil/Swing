@@ -28,12 +28,12 @@ public class Orchestrator : MonoBehaviour {
 		grappler.Shoot (anchor);
 	}
 
-	public void StartLevel() {
-		//Just kick the player
-		playerRb.AddForce(startForce);
-	}
-
 	public void TargetHit() {
 		levelController.HandleLevelWin ();
+	}
+
+	public void StartRace() {
+		//Just kick player
+		playerRb.AddForce(startForce);
 	}
 }
