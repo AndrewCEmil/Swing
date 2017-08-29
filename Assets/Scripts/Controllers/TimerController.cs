@@ -39,6 +39,10 @@ public class TimerController : MonoBehaviour {
 		}
 	}
 
+	public bool CanShoot() {
+		return mode == TimerMode.Racing;
+	}
+
 	void DoStarting() {
 		if (Time.time - startTriggeredTime > totalStartDelay) {
 			StartRace ();
@@ -46,8 +50,10 @@ public class TimerController : MonoBehaviour {
 	}
 
 	void StartTriggered() {
-		startTriggeredTime = Time.time;
-		mode = TimerMode.Starting;
+		if (mode == TimerMode.PreRace) {
+			startTriggeredTime = Time.time;
+			mode = TimerMode.Starting;
+		}
 	}
 
 	void StartRace() {
@@ -63,7 +69,7 @@ public class TimerController : MonoBehaviour {
 		return endedTime - startedTime;
 	}
 
-	void OnMouseDown(){
+	void OnMouseDown() {
 		StartTriggered ();
 	}
 }

@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Controllers\AnchorController.cs" />
      <Compile Include="Assets\Scripts\Controllers\ArrowController.cs" />
      <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\FloorController.cs" />
      <Compile Include="Assets\Scripts\Controllers\LeaderboardController.cs" />
      <Compile Include="Assets\Scripts\Controllers\MenuController.cs" />
      <Compile Include="Assets\Scripts\Controllers\PlayerController.cs" />

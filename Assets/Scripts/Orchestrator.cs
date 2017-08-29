@@ -29,7 +29,9 @@ public class Orchestrator : MonoBehaviour {
 	}
 
 	public void HandleShoot(GameObject anchor) {
-		grappler.Shoot (anchor);
+		if (timerController.CanShoot ()) {
+			grappler.Shoot (anchor);
+		}
 	}
 
 	public void TargetHit() {
@@ -39,6 +41,11 @@ public class Orchestrator : MonoBehaviour {
 		leaderboardController.RegisterTime(raceTime, levelController.GetCurrentLevelId());
 		//Handle level stuff
 		levelController.HandleLevelWin ();
+	}
+
+	public void TargetDied() {
+		float raceTime = timerController.FinishRace ();
+		levelController.HandleLevelLoss ();
 	}
 
 	public void StartRace() {
