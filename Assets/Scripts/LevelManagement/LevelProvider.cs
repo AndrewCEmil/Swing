@@ -27,16 +27,13 @@ public class LevelProvider : MonoBehaviour {
 	}
 
 	public static Level Default() {
-		Vector3[] positions = new Vector3[4];
-		positions [0] = new Vector3 (10, 10, 10);
-		positions [1] = new Vector3 (-10, 10, 10);
-		positions [2] = new Vector3 (-10, 10, -10);
-		positions [3] = new Vector3 (10, 10, -10);
-		Vector3 target = new Vector3 (0, 10, -20);
-		Vector3 targetLookAt = new Vector3 (0, 10, 0);
+		Vector3[] positions = new Vector3[1];
+		positions [0] = new Vector3 (20, 15, 0);
+		Vector3 target = new Vector3 (32, 00, 0);
+		Vector3 targetLookAt = new Vector3 (60, 20, 0);
 		Level level = new Level ();
 		level.anchors = positions;
-		level.name = "Ring";
+		level.name = "Straight";
 		level.level = 1;
 		level.locked = LevelLocksManager.IsLevelLocked (level.level);
 		level.target = target;

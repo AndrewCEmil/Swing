@@ -16,7 +16,7 @@ public class Orchestrator : MonoBehaviour {
 		playerRb = player.GetComponent<Rigidbody> ();
 		baseLink = GameObject.Find ("BaseLink");
 		grappler = player.GetComponent<Grappler> ();
-		startForce = new Vector3 (1000, 0, 0);
+		startForce = new Vector3 (2000, 0, 0);
 		levelController = GameObject.Find ("LevelObj").GetComponent<LevelController> ();
 	}
 	

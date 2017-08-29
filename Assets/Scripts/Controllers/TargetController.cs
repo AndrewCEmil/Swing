@@ -9,10 +9,11 @@ public class TargetController : MonoBehaviour {
 		orchestrator = GameObject.Find ("Orchestrator").GetComponent<Orchestrator> ();
 	}
 	
-	void OnCollisionEnter(Collision collision)
-	{
-		if (collision.collider.name == "Player") {
+	void OnTriggerEnter(Collider other) {
+		Debug.Log ("Trigger with Target");
+		if (other.name == "Player") {
 			orchestrator.TargetHit ();
 		}
 	}
+
 }

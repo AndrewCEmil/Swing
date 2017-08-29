@@ -24,6 +24,7 @@ public class LevelCreator : MonoBehaviour {
 		foreach (Vector3 position in level.anchors) {
 			PlaceAnchor (position);
 		}
+		baseAnchor.SetActive (false);
 
 		PlaceTarget (level.target, level.targetLookAt);
 
