@@ -62,7 +62,6 @@
      <Compile Include="Assets\Scripts\Grappler.cs" />
      <Compile Include="Assets\Scripts\LevelManagement\Level.cs" />
      <Compile Include="Assets\Scripts\LevelManagement\LevelController.cs" />
-     <Compile Include="Assets\Scripts\LevelManagement\LevelCreator.cs" />
      <Compile Include="Assets\Scripts\LevelManagement\LevelLocks.cs" />
      <Compile Include="Assets\Scripts\LevelManagement\LevelLocksManager.cs" />
      <Compile Include="Assets\Scripts\LevelManagement\LevelProvider.cs" />

@@ -32,12 +32,9 @@ public class LevelProvider : MonoBehaviour {
 		Vector3 target = new Vector3 (32, 00, 0);
 		Vector3 targetLookAt = new Vector3 (60, 20, 0);
 		Level level = new Level ();
-		level.anchors = positions;
 		level.name = "Straight";
 		level.level = 1;
 		level.locked = LevelLocksManager.IsLevelLocked (level.level);
-		level.target = target;
-		level.targetLookAt = targetLookAt;
 		return level;
 	}
 }

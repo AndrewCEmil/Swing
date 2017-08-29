@@ -29,13 +29,8 @@ public class Orchestrator : MonoBehaviour {
 	}
 
 	public void StartLevel() {
-		LoadLevel ();
 		//Just kick the player
 		playerRb.AddForce(startForce);
-	}
-
-	public void LoadLevel() {
-		levelController.LoadLevel ();
 	}
 
 	public void TargetHit() {

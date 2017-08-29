@@ -5,14 +5,8 @@ using UnityEngine;
 public class LevelController : MonoBehaviour {
 
 	private int currentLevel;
-	private LevelCreator levelCreator;
 	void Start () {
 		currentLevel = GetCurrentLevel ();
-		levelCreator = GameObject.Find ("LevelObj").GetComponent<LevelCreator> ();
-	}
-
-	public void LoadLevel () {
-		LoadCurrentLevel ();
 	}
 
 	public void HandleLevelWin() {
@@ -23,20 +17,14 @@ public class LevelController : MonoBehaviour {
 		}
 
 		SetCurrentLevel (nextLevel);
-		LoadCurrentLevel ();
 	}
 
-
 	public void HandleLevelLoss() {
-		LoadCurrentLevel ();
+		//TODO
 	}
 
 	public void HandleGameWin() {
 		//TODO
-	}
-
-	private void LoadCurrentLevel() {
-		levelCreator.CreateLevel (LevelProvider.GetLevel (currentLevel));
 	}
 
 	private int GetCurrentLevel() {
