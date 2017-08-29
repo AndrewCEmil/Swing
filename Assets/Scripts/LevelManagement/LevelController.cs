@@ -1,49 +1,71 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour {
 
 	private int currentLevel;
 	void Start () {
-		currentLevel = GetCurrentLevel ();
+		currentLevel = GetCurrentLevelId ();
 	}
 
 	public void HandleLevelWin() {
-		int nextLevel = currentLevel + 1;
-		if (nextLevel > LevelProvider.NumLevels ()) {
+		MarkLevelCompleted ();
+		MaybeUnlockLevels ();
+		if (FirstTimeGameWon ()) {
 			HandleGameWin ();
 			return;
 		}
-
-		SetCurrentLevel (nextLevel);
+		ReturnToAntechamber ();
 	}
 
 	public void HandleLevelLoss() {
 		//TODO
+		ReturnToAntechamber();
 	}
 
 	public void HandleGameWin() {
 		//TODO
+		ReturnToAntechamber();
 	}
 
-	private int GetCurrentLevel() {
-		int cur = PlayerPrefs.GetInt ("CurrentLevel", -1);
-		if (cur == -1) {
-			cur = InitCurrentLevel ();
+	public int GetCurrentLevelId() {
+		string sceneName = SceneManager.GetActiveScene ().name;
+		return LevelManager.LevelIdForName (sceneName);
+	}
+
+	private void MarkLevelCompleted() {
+		LevelManager.MarkLevelCompleted (currentLevel);
+	}
+
+	//For now just unlocks next level
+	void MaybeUnlockLevels() {
+		foreach (Level level in LevelManager.GetLevels()) {
+			if (level.level == currentLevel + 1 && level.locked) {
+				LevelManager.UnlockLevel (level.level);
+			}
 		}
-		return cur;
+
 	}
 
-	private void SetCurrentLevel(int level) {
-		PlayerPrefs.SetInt ("CurrentLevel", level);
-		LevelLocksManager.OpenLevelLock (level);
-		currentLevel = level;
+	bool FirstTimeGameWon() {
+		if (AllLevelsCompleted() && PlayerPrefs.GetInt ("GameWon", 0) == 1) {
+			return true;
+		}
+		return false;
 	}
 
-	private int InitCurrentLevel() {
-		int defaultLevel = 1;
-		SetCurrentLevel (defaultLevel);
-		return defaultLevel;
+	bool AllLevelsCompleted() {
+		foreach (Level level in LevelManager.GetLevels()) {
+			if (!level.completed) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	void ReturnToAntechamber() {
+		SceneManager.LoadScene ("AntechamberScene");
 	}
 }

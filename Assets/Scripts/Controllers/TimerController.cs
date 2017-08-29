@@ -6,7 +6,8 @@ public enum TimerMode
 {
 	PreRace,
 	Starting,
-	Racing
+	Racing,
+	Finished
 }
 
 public class TimerController : MonoBehaviour {
@@ -15,6 +16,7 @@ public class TimerController : MonoBehaviour {
 	private TimerMode mode;
 	private float startTriggeredTime;
 	private float startedTime;
+	private float endedTime;
 	private float totalStartDelay;
 	// Use this for initialization
 	void Start () {
@@ -31,6 +33,8 @@ public class TimerController : MonoBehaviour {
 			DoStarting ();
 			break;
 		case TimerMode.Racing:
+			break;
+		case TimerMode.Finished:
 			break;
 		}
 	}
@@ -50,6 +54,13 @@ public class TimerController : MonoBehaviour {
 		orchestrator.StartRace ();
 		startedTime = Time.time;
 		mode = TimerMode.Racing;
+	}
+
+	//Returns the time to complete the race
+	public float FinishRace() {
+		endedTime = Time.time;
+		mode = TimerMode.Finished;
+		return endedTime - startedTime;
 	}
 
 	void OnMouseDown(){

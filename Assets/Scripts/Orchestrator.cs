@@ -10,6 +10,8 @@ public class Orchestrator : MonoBehaviour {
 	private Grappler grappler;
 	private Vector3 startForce;
 	private LevelController levelController;
+	private TimerController timerController;
+	private LeaderboardController leaderboardController;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
@@ -18,6 +20,8 @@ public class Orchestrator : MonoBehaviour {
 		grappler = player.GetComponent<Grappler> ();
 		startForce = new Vector3 (2000, 0, 0);
 		levelController = GameObject.Find ("LevelObj").GetComponent<LevelController> ();
+		timerController = GameObject.Find ("Start").GetComponent<TimerController> ();
+		leaderboardController = GameObject.Find ("Leaderboard").GetComponent<LeaderboardController> ();
 	}
 	
 	// Update is called once per frame
@@ -29,6 +33,11 @@ public class Orchestrator : MonoBehaviour {
 	}
 
 	public void TargetHit() {
+		//Handle timer stuff
+		float raceTime = timerController.FinishRace();
+		//Handle leaderboard stuff
+		leaderboardController.RegisterTime(raceTime, levelController.GetCurrentLevelId());
+		//Handle level stuff
 		levelController.HandleLevelWin ();
 	}
 

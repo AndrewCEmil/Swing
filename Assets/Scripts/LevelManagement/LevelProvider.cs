@@ -4,11 +4,10 @@ using System.Collections;
 
 public class LevelProvider : MonoBehaviour {
 
-
-	public static Level[] GetLevels() {
-		Level[] levels = new Level[NumLevels ()];
+	public static List<Level> GetLevels() {
+		List<Level> levels = new List<Level>();
 		for (int i = 1; i <= NumLevels (); i++) {
-			levels [i - 1] = GetLevel (i);
+			levels.Add (GetLevel (i));
 		}
 		return levels;
 	}
@@ -27,14 +26,13 @@ public class LevelProvider : MonoBehaviour {
 	}
 
 	public static Level Default() {
-		Vector3[] positions = new Vector3[1];
-		positions [0] = new Vector3 (20, 15, 0);
-		Vector3 target = new Vector3 (32, 00, 0);
-		Vector3 targetLookAt = new Vector3 (60, 20, 0);
 		Level level = new Level ();
 		level.name = "Straight";
 		level.level = 1;
-		level.locked = LevelLocksManager.IsLevelLocked (level.level);
+		level.locked = false;
+		level.completed = false;
 		return level;
 	}
+
+
 }
