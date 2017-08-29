@@ -20,7 +20,7 @@ public class Orchestrator : MonoBehaviour {
 		grappler = player.GetComponent<Grappler> ();
 		startForce = new Vector3 (2000, 0, 0);
 		levelController = GameObject.Find ("LevelObj").GetComponent<LevelController> ();
-		timerController = GameObject.Find ("Start").GetComponent<TimerController> ();
+		timerController = GameObject.Find ("Timer").GetComponent<TimerController> ();
 		leaderboardController = GameObject.Find ("Leaderboard").GetComponent<LeaderboardController> ();
 	}
 	

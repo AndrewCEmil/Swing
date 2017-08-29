@@ -18,11 +18,13 @@ public class TimerController : MonoBehaviour {
 	private float startedTime;
 	private float endedTime;
 	private float totalStartDelay;
+	private Canvas canvas;
 	// Use this for initialization
 	void Start () {
 		orchestrator = GameObject.Find ("Orchestrator").GetComponent<Orchestrator> ();
 		mode = TimerMode.PreRace;
 		totalStartDelay = .5f;
+		canvas = GameObject.Find ("Canvas").GetComponent<Canvas> ();
 	}
 
 	void Update() {
@@ -49,10 +51,11 @@ public class TimerController : MonoBehaviour {
 		}
 	}
 
-	void StartTriggered() {
+	public void StartTriggered() {
 		if (mode == TimerMode.PreRace) {
 			startTriggeredTime = Time.time;
 			mode = TimerMode.Starting;
+			canvas.enabled = false;
 		}
 	}
 
