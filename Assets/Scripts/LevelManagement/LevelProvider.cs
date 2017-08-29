@@ -27,7 +27,7 @@ public class LevelProvider : MonoBehaviour {
 
 	public static Level Default() {
 		Level level = new Level ();
-		level.name = "Straight";
+		level.name = "TestRace";
 		level.level = 1;
 		level.locked = false;
 		level.completed = false;

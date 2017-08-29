@@ -57,7 +57,8 @@ public class LevelController : MonoBehaviour {
 	}
 
 	bool AllLevelsCompleted() {
-		foreach (Level level in LevelManager.GetLevels()) {
+		List<Level> levels = LevelManager.GetLevels ();
+		foreach (Level level in levels) {
 			if (!level.completed) {
 				return false;
 			}

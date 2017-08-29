@@ -58,6 +58,10 @@ public class MenuController : MonoBehaviour {
 		}
 	}
 
+	public void ClearPreferences() {
+		PlayerPrefs.DeleteAll ();
+	}
+
 	private void InitializeSettings() {
 		musicSlider.value = soundController.GetMusicVolume ();
 	}

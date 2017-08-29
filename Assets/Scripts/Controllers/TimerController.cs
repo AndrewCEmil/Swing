@@ -22,7 +22,7 @@ public class TimerController : MonoBehaviour {
 	void Start () {
 		orchestrator = GameObject.Find ("Orchestrator").GetComponent<Orchestrator> ();
 		mode = TimerMode.PreRace;
-		totalStartDelay = 3f;
+		totalStartDelay = .5f;
 	}
 
 	void Update() {
