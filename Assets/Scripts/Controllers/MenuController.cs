@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour {
 
 	public Slider musicSlider;
-	private SoundController soundController;
+	private MusicController soundController;
 	// Use this for initialization
 	void Start () {
 		MaybeInitializeSettings ();
-		soundController = GameObject.Find ("MusicPlayer").GetComponent<SoundController> ();
+		soundController = GameObject.Find ("MusicPlayer").GetComponent<MusicController> ();
 	}
 
 	// Update is called once per frame

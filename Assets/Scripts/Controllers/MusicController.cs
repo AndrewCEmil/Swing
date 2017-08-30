@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SoundController : MonoBehaviour {
+public class MusicController : MonoBehaviour {
 
 	//TODO everything for sound effects
 
-	private static SoundController instance = null;
+	private static MusicController instance = null;
 	private AudioSource audioSource;
 	private float defaultMusicVolume;
-	public static SoundController Instance {
+	public static MusicController MusicInstance {
 		get { return instance; }
 	}
 	void Awake() {

@@ -57,8 +57,10 @@
      <Compile Include="Assets\Scripts\Controllers\FloorController.cs" />
      <Compile Include="Assets\Scripts\Controllers\LeaderboardController.cs" />
      <Compile Include="Assets\Scripts\Controllers\MenuController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\MusicController.cs" />
      <Compile Include="Assets\Scripts\Controllers\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\Controllers\SoundController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\SoundEffectController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\SoundEffectManager.cs" />
      <Compile Include="Assets\Scripts\Controllers\TargetController.cs" />
      <Compile Include="Assets\Scripts\Controllers\TimerController.cs" />
      <Compile Include="Assets\Scripts\DataObjects\LeaderboardEntry.cs" />
