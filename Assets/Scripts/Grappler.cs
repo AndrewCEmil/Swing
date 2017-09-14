@@ -23,6 +23,8 @@ public class Grappler : MonoBehaviour {
 	private Vector3 jointConnectedAnchor;
 	private LineRenderer lineRenderer;
 	private float maxArrowDistance;
+	private bool isRetracting;
+	private float springRetractionScale;
 
 	// Use this for initialization
 	void Start () {
@@ -36,7 +38,9 @@ public class Grappler : MonoBehaviour {
 		secondaryAxis = new Vector3 (0, 1f, 0);
 		mode = GrapplerMode.Off;
 		maxArrowDistance = 50f;
+		isRetracting = false;
 		InitializeLine ();
+		springRetractionScale = 10f;
 	}
 
 	private void InitializeLine() {
@@ -46,6 +50,7 @@ public class Grappler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		HandleRetraction ();
 		switch (mode) {
 		case GrapplerMode.Off:
 			break; //noop
@@ -57,6 +62,30 @@ public class Grappler : MonoBehaviour {
 			DoLine ();
 			break; //noop
 		}
+	}
+
+	void HandleRetraction() {
+		UpdateRetractionMode ();
+		if (isRetracting) {
+			Retract ();
+		}
+	}
+
+	void UpdateRetractionMode() {
+		//first maybe update retraction
+		if (Input.GetMouseButtonDown (0) && mode == GrapplerMode.Attached) {
+			isRetracting = true;
+		} else if (Input.GetMouseButtonUp (0)) {
+			isRetracting = false;
+		} else if (mode != GrapplerMode.Attached) {
+			isRetracting = false;
+		}
+	}
+
+	void Retract() {
+		ConfigurableJoint joint = player.GetComponent<ConfigurableJoint> ();
+		SoftJointLimitSpring spring = joint.linearLimitSpring;
+		spring.spring = spring.spring + Time.deltaTime * springRetractionScale;
 	}
 
 	//TODO shoot should be where the player is LOOKING, but for now its the target they click
