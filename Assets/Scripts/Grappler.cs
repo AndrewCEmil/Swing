@@ -124,7 +124,7 @@ public class Grappler : MonoBehaviour {
 		joint.angularYMotion = ConfigurableJointMotion.Free;
 		joint.angularZMotion = ConfigurableJointMotion.Free;
 		SoftJointLimitSpring spring = new SoftJointLimitSpring ();
-		spring.spring = 0;
+		spring.spring = 50;
 		spring.damper = 0;
 		joint.linearLimitSpring = spring;
 		SoftJointLimit limit = new SoftJointLimit ();
