@@ -5,13 +5,12 @@ using UnityEngine;
 public class AnchorController : MonoBehaviour {
 
 	private Orchestrator orchestrator;
-	private bool mouseOn;
 	void Start() {
+		gameObject.tag = "Anchor";
 		orchestrator = GameObject.Find ("Orchestrator").GetComponent<Orchestrator> ();
-		mouseOn = false;
 	}
 
-	void OnMouseDown(){
+	void OnMouseDown() {
 		orchestrator.HandleShoot (gameObject);
 	}
 }
