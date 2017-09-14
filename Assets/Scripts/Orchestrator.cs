@@ -6,23 +6,23 @@ public class Orchestrator : MonoBehaviour {
 
 	private GameObject player;
 	private Rigidbody playerRb;
-	private GameObject baseLink;
 	private Grappler grappler;
 	private Vector3 startForce;
 	private LevelController levelController;
 	private TimerController timerController;
 	private LeaderboardController leaderboardController;
+	private GameObject platform;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
 		playerRb = player.GetComponent<Rigidbody> ();
-		baseLink = GameObject.Find ("BaseLink");
 		grappler = player.GetComponent<Grappler> ();
 		startForce = new Vector3 (2000, 0, 0);
 		levelController = GameObject.Find ("LevelObj").GetComponent<LevelController> ();
 		timerController = GameObject.Find ("Timer").GetComponent<TimerController> ();
 		leaderboardController = GameObject.Find ("Leaderboard").GetComponent<LeaderboardController> ();
-	}
+			platform = GameObject.Find ("Platform");
+		}
 	
 	// Update is called once per frame
 	void Update () {
@@ -49,7 +49,6 @@ public class Orchestrator : MonoBehaviour {
 	}
 
 	public void StartRace() {
-		//Just kick player
-		playerRb.AddForce(startForce);
+		platform.SetActive (false);
 	}
 }
