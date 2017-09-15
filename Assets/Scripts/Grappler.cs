@@ -62,6 +62,13 @@ public class Grappler : MonoBehaviour {
 			DoLine ();
 			break; //noop
 		}
+		HandleBreakline ();
+	}
+
+	void HandleBreakline() {
+		if (Input.GetMouseButtonUp (1)) {
+			BreakLink ();
+		}
 	}
 
 	void HandleRetraction() {
@@ -153,7 +160,7 @@ public class Grappler : MonoBehaviour {
 		joint.angularYMotion = ConfigurableJointMotion.Free;
 		joint.angularZMotion = ConfigurableJointMotion.Free;
 		SoftJointLimitSpring spring = new SoftJointLimitSpring ();
-		spring.spring = 50;
+		spring.spring = 00;
 		spring.damper = 0;
 		joint.linearLimitSpring = spring;
 		SoftJointLimit limit = new SoftJointLimit ();
