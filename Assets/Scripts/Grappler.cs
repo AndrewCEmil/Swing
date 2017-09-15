@@ -124,7 +124,6 @@ public class Grappler : MonoBehaviour {
 		arrowRb.useGravity = false;
 		arrowRb.isKinematic = true;
 
-		//TODO right here
 		BuildJoint (player, arrow);
 
 		mode = GrapplerMode.Attached;
