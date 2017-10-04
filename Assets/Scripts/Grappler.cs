@@ -131,6 +131,7 @@ public class Grappler : MonoBehaviour {
 		link.AddComponent<ConfigurableJoint> ();
 		ConfigurableJoint joint = link.GetComponent<ConfigurableJoint> ();
 		joint.autoConfigureConnectedAnchor = false;
+		joint.connectedAnchor = new Vector3 (0, 0, 0);
 		joint.axis = axis;
 		joint.secondaryAxis = secondaryAxis;
 		joint.anchor = anchorPosition;
@@ -150,7 +151,7 @@ public class Grappler : MonoBehaviour {
 		limit.contactDistance = .1f;
 		joint.linearLimit = limit;
 		joint.connectedBody = anchor.GetComponent<Rigidbody> ();
-		//joint.projectionMode = JointProjectionMode.PositionAndRotation;
+		joint.projectionMode = JointProjectionMode.PositionAndRotation;
 	}
 
 	void ShootRay(GameObject anchor) {
