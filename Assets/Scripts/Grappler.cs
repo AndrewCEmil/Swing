@@ -5,7 +5,6 @@ using UnityEngine;
 public enum GrapplerMode
 {
 	Off,
-	Shooting,
 	Attached
 }
 
@@ -46,9 +45,6 @@ public class Grappler : MonoBehaviour {
 		switch (mode) {
 		case GrapplerMode.Off:
 			break; //noop
-		case GrapplerMode.Shooting:
-			DoLine ();
-			break;
 		case GrapplerMode.Attached:
 			DoLine ();
 			break; //noop
@@ -93,7 +89,6 @@ public class Grappler : MonoBehaviour {
 			BreakLink ();
 		} else if (mode == GrapplerMode.Off) {
 			ShootRay (anchor);
-			mode = GrapplerMode.Shooting;
 		} else {
 			//Aready shooting or retracting, do nothing
 		}
@@ -101,6 +96,10 @@ public class Grappler : MonoBehaviour {
 
 	 
 	public void BreakLink() {
+		ConfigurableJoint joint = player.GetComponent<ConfigurableJoint> ();
+		if(joint != null) {
+			Destroy (joint);
+		}
 		mode = GrapplerMode.Off;
 		lineRenderer.positionCount = 0;
 	}
