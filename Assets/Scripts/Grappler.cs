@@ -28,7 +28,7 @@ public class Grappler : MonoBehaviour {
 		axis = new Vector3 (1f, 0, 0);
 		secondaryAxis = new Vector3 (0, 1f, 0);
 		mode = GrapplerMode.Off;
-		maxRayDistance = 50f;
+		maxRayDistance = 100f;
 		isRetracting = false;
 		InitializeLine ();
 		springRetractionScale = 10f;

@@ -14,7 +14,7 @@ public class AnchorController : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		ShotAt ();
+		//ShotAt ();
 	}
 
 	public void PointerEnter() {

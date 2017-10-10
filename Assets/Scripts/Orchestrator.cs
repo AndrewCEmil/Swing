@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Orchestrator : MonoBehaviour {
 
@@ -18,37 +20,39 @@ public class Orchestrator : MonoBehaviour {
 		playerRb = player.GetComponent<Rigidbody> ();
 		grappler = player.GetComponent<Grappler> ();
 		startForce = new Vector3 (2000, 0, 0);
-		levelController = GameObject.Find ("LevelObj").GetComponent<LevelController> ();
-		timerController = GameObject.Find ("Timer").GetComponent<TimerController> ();
-		leaderboardController = GameObject.Find ("Leaderboard").GetComponent<LeaderboardController> ();
-			platform = GameObject.Find ("Platform");
-		}
+		//levelController = GameObject.Find ("LevelObj").GetComponent<LevelController> ();
+		//timerController = GameObject.Find ("Timer").GetComponent<TimerController> ();
+		//leaderboardController = GameObject.Find ("Leaderboard").GetComponent<LeaderboardController> ();
+		//platform = GameObject.Find ("Platform");
+	}
 	
 	// Update is called once per frame
 	void Update () {
 	}
 
 	public void HandleShoot(GameObject anchor) {
-		if (timerController.CanShoot ()) {
+		//if (timerController.CanShoot ()) {
 			grappler.Shoot (anchor);
-		}
+		//}
 	}
 
 	public void TargetHit() {
 		//Handle timer stuff
-		float raceTime = timerController.FinishRace();
+		//float raceTime = timerController.FinishRace();
 		//Handle leaderboard stuff
-		leaderboardController.RegisterTime(raceTime, levelController.GetCurrentLevelId());
+		//leaderboardController.RegisterTime(raceTime, levelController.GetCurrentLevelId());
 		//Handle level stuff
-		levelController.HandleLevelWin ();
+		//levelController.HandleLevelWin ();
 	}
 
 	public void TargetDied() {
-		float raceTime = timerController.FinishRace ();
-		levelController.HandleLevelLoss ();
+		//float raceTime = timerController.FinishRace ();
+		//levelController.HandleLevelLoss ();
+		//debug code:
+		SceneManager.LoadScene ("ScratchPlay");
 	}
 
 	public void StartRace() {
-		platform.SetActive (false);
+		//platform.SetActive (false);
 	}
 }

@@ -5,13 +5,15 @@ public class CameraController : MonoBehaviour {
 
 	public GameObject player;
 	private Vector3 offset;
+	private Vector3 holder;
 	// Use this for initialization
 	void Start () {
-		offset = new Vector3 (0, 0, -50);
+		holder = new Vector3 (0, 0, 0);
+		offset = new Vector3 (0, 0, 0);
 	}
 
 	void LateUpdate () {
-		//transform.position = player.transform.position + offset;
-		//transform.LookAt (player.transform.position);
+		holder = player.transform.position + offset;
+		transform.position = holder;
 	}
 }

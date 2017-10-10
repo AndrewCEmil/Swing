@@ -18,7 +18,7 @@ public class FloorController : MonoBehaviour {
 	private void Awake () {
 		InitVariables ();
 		orchestrator = GameObject.Find ("Orchestrator").GetComponent<Orchestrator> ();
-		Generate();
+		//Generate();
 	}
 
 	private void InitVariables() {
