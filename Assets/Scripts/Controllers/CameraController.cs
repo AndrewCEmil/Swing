@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		holder = new Vector3 (0, 0, 0);
-		offset = new Vector3 (0, 0, 0);
+		offset = new Vector3 (1, 1, 1);
 	}
 
 	void LateUpdate () {

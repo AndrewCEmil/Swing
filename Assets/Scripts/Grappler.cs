@@ -145,7 +145,7 @@ public class Grappler : MonoBehaviour {
 		spring.damper = 0;
 		joint.linearLimitSpring = spring;
 		SoftJointLimit limit = new SoftJointLimit ();
-		limit.limit = Vector3.Distance (link.transform.position, anchor.transform.position) + .5f;
+		limit.limit = Vector3.Distance (link.transform.position, anchor.transform.position) + 1f;
 		limit.bounciness = 0f;
 		limit.contactDistance = .1f;
 		joint.linearLimit = limit;

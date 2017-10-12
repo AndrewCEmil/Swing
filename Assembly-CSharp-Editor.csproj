@@ -51,6 +51,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DaydreamElements\Common\Demo\Scripts\Editor\Utility\CombineMeshFiltersEditor.cs" />
+     <Compile Include="Assets\DaydreamElements\Common\Scripts\Editor\Utility\AssetTreePropertyDrawer.cs" />
+     <Compile Include="Assets\DaydreamElements\Elements\Tunneling\Scripts\Editor\TunnelingVignetteEditor.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\AssetPostProcess.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\BakeContext.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\BakeSetDialog.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\BakeSetSettingsDialog.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\BakeSetsInspector.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\DaydreamInspector.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\DaydreamRendererImportManager.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\DaydreamRendererImportSettings.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\DaydreamRendererMaterialHistory.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\DaydreamVertexLightingEditor.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\DaydreamVertexLightingInspector.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\LightSystemDialog.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\MaterialConversionDialog.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\NativeLib.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\OverrideInspector.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\Tests\BVHTestInspector.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\Tests\TriangleTestInspector.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Baking\Editor\VertexBakerLib.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Editor\ColorProperty_TT.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Editor\Daydream Menu.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Editor\DaydreamLightInspector.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Editor\DaydreamMaterialPostProcessor.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Editor\DaydreamMeshRendererInspector.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Editor\DaydreamStandardUI.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Editor\DREditorUtility.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Editor\IconCache.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Editor\RangeProperty_TT.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Editor\TextureProperty_TT.cs" />
+     <Compile Include="Assets\DaydreamRenderer\Editor\TextureProperty_TT_transform.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Editor\DemoInputManagerEditor.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Editor\PermissionsDemoBuildEditor.cs" />
      <Compile Include="Assets\GoogleVR\Demos\Scripts\ScrollingUIDemo\Editor\PagedScrollbarEditor.cs" />
@@ -65,22 +97,85 @@
      <Compile Include="Assets\GoogleVR\Editor\GvrEditorEmulatorEditor.cs" />
      <Compile Include="Assets\GoogleVR\Editor\GvrEditorSettings.cs" />
      <Compile Include="Assets\GoogleVR\Editor\GvrMenu.cs" />
+     <None Include="Assets\DaydreamRenderer\Shaders\daydreamStandardInclude.cginc" />
+     <None Include="Assets\DaydreamElements\Elements\ObjectManipulationDemo\Shaders\FlexLaserReticle.shader" />
+     <None Include="Assets\DaydreamRenderer\Shaders\daydreamGizmo.shader" />
+     <None Include="Assets\DaydreamElements\Elements\ArmModels\Demo\Shaders\ModeHighlight.shader" />
+     <None Include="Assets\DaydreamElements\Elements\Teleport\Shaders\BezierArcLaserProcedural.shader" />
+     <None Include="Assets\DaydreamElements\Elements\ChaseCam\Demo\Shaders\LaserSpark.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\UnlitVertColorSky.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Art\Effects\ExponentialShadowMaps\Shaders\ScreenSpace.shader" />
+     <None Include="Assets\DaydreamElements\Elements\Tunneling\Shaders\VignetteCage.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlayFont.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\DaydreamElementsLighting\GlowingOrb.shader" />
+     <None Include="Assets\DaydreamRenderer\Shaders\daydreamDiffuseReflectInclude.cginc" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\DaydreamElementsLighting\DynamicVertColorWind.shader" />
+     <None Include="Assets\DaydreamElements\Elements\ArmModels\Demo\Shaders\ControllerOutline.shader" />
+     <None Include="Assets\DaydreamElements\Main\Shaders\UIZTestOff.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\UnlitVertColorSolidOverlay.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\InfoCardSpectrumBG.shader" />
+     <None Include="Assets\DaydreamRenderer\Shaders\daydreamDiffuseOnlyInclude.cginc" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\ParticleSolidColorAdditive.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Art\Effects\Stars\Stars.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />
+     <None Include="Assets\DaydreamElements\Elements\Tunneling\Shaders\VignetteIrisGradient.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Art\Effects\ExponentialShadowMaps\Example\ESMReceiverTemplate.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\UnlitTransparentColor.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\DaydreamElementsLighting\VertColorDiffuse.shader" />
+     <None Include="Assets\DaydreamElements\Main\Shaders\ScreenFade.shader" />
+     <None Include="Assets\DaydreamElements\Elements\Tunneling\Shaders\VignetteIrisClearDepth.shader" />
+     <None Include="Assets\DaydreamElements\Elements\Teleport\Shaders\TeleportGlow.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Art\Effects\ExponentialShadowMaps\Shaders\FastBlur.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Art\Effects\ExponentialShadowMaps\Shaders\Combine.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\InfoCardText.shader" />
      <None Include="Assets\GoogleVR\Demos\Environment\DemoEnvUnlitGrayscale.shader" />
+     <None Include="Assets\DaydreamElements\Elements\ClickMenu\Demo\Shaders\ControllerReticleColor.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\ScrollingParticleClouds.shader" />
+     <None Include="Assets\DaydreamElements\Elements\Teleport\Shaders\LaserSpark.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\TextShader.shader" />
+     <None Include="Assets\DaydreamRenderer\Shaders\daydreamDiffuseOnly.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrController.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrUnlitTransparentOverlay.shader" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\GoogleVR\Shaders\GvrUnlitTransparentOverlayColor.shader" />
+     <None Include="Assets\DaydreamElements\Main\Shaders\UnlitTransparentNoZTestColorInside.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\DaydreamElementsLighting\DaydreamElementsLighting.cginc" />
      <None Include="Assets\GoogleVR\Demos\Shaders\GVRDemo\GVRDemoAmbientOcclusion.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\UnlitVertColorBakedIllum.shader" />
      <None Include="Assets\GoogleVR\Shaders\Video\VideoUnlitShader.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrUnlitTextureOverlay.shader" />
+     <None Include="Assets\DaydreamElements\Elements\ObjectManipulationDemo\Demo\Shaders\UnlitInterativeObject.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrControllerReticle.shader" />
+     <None Include="Assets\DaydreamRenderer\Shaders\daydreamStandard.shader" />
+     <None Include="Assets\DaydreamElements\Main\Shaders\UIFontZTestOff.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\UnlitVertColorTransparent.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\DaydreamElementsLighting\DynamicVertColorSimpleAO.shader" />
+     <None Include="Assets\DaydreamElements\Elements\ObjectManipulationDemo\Shaders\FlexLaser.shader" />
+     <None Include="Assets\DaydreamRenderer\Resources\shadowMask.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Art\Effects\ExponentialShadowMaps\Shaders\Depth32.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\VertexColorize.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\UnlitVertColor.shader" />
      <None Include="Assets\GoogleVR\Plugins\Android\AndroidManifest-Daydream.xml" />
      <None Include="Assets\GoogleVR\Demos\Shaders\GVRDemo\GVRDemoUnlitGrayscaleToColor.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrReticleShader.shader" />
+     <None Include="Assets\DaydreamElements\Elements\ArmModels\Demo\Shaders\ZapperRay.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\VertexColorSimpleDiffuse.shader" />
+     <None Include="Assets\DaydreamElements\Elements\ArmModels\Demo\Shaders\Mirror.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\SnowTerrain.shader" />
+     <None Include="Assets\DaydreamRenderer\Examples\Materials\TessTest.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrUIOverlay.shader" />
+     <None Include="Assets\DaydreamRenderer\Shaders\daydreamShared.cginc" />
+     <None Include="Assets\DaydreamRenderer\Shaders\daydreamDiffuseReflect.shader" />
+     <None Include="Assets\DaydreamElements\Elements\ArmModels\Demo\Shaders\Trail.shader" />
      <None Include="Assets\GoogleVR\Plugins\Android\AndroidManifest-Cardboard.xml" />
+     <None Include="Assets\DaydreamElements\Elements\Teleport\Shaders\BezierArcLaserTextured.shader" />
+     <None Include="Assets\DaydreamElements\Elements\ArmModels\Demo\Shaders\UnlitVertColorTransparentOutline.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\ExponentialShadowMaps\UnlitVertColorESMReceiver.shader" />
      <None Include="Assets\GoogleVR\Plugins\Android\proguard-gvr.txt" />
+     <None Include="Assets\DaydreamRenderer\Resources\shadowFilter.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\ExponentialShadowMaps\SnowTerrainESMReceiver.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\PolyObjectLibrary.shader" />
+     <None Include="Assets\DaydreamElements\Common\Demo\Shaders\UnlitVertColorAOTransparent.shader" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -146,6 +241,12 @@
  </Reference>
  <Reference Include="Google.ProtocolBuffers">
  <HintPath>/Users/ace/Desktop/Swing/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
+ </Reference>
+ <Reference Include="fbsdefines_cs">
+ <HintPath>/Users/ace/Desktop/Swing/Assets/DaydreamRenderer/Plugins/fbsdefines_cs.dll</HintPath>
+ </Reference>
+ <Reference Include="FlatBuffers">
+ <HintPath>/Users/ace/Desktop/Swing/Assets/DaydreamRenderer/Plugins/FlatBuffers.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
