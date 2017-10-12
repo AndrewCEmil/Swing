@@ -453,14 +453,14 @@
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
- <Reference Include="Google.ProtocolBuffers">
- <HintPath>/Users/ace/Desktop/Swing/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
- </Reference>
  <Reference Include="fbsdefines_cs">
  <HintPath>/Users/ace/Desktop/Swing/Assets/DaydreamRenderer/Plugins/fbsdefines_cs.dll</HintPath>
  </Reference>
  <Reference Include="FlatBuffers">
  <HintPath>/Users/ace/Desktop/Swing/Assets/DaydreamRenderer/Plugins/FlatBuffers.dll</HintPath>
+ </Reference>
+ <Reference Include="Google.ProtocolBuffers">
+ <HintPath>/Users/ace/Desktop/Swing/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

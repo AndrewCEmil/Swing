@@ -239,14 +239,14 @@
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="Google.ProtocolBuffers">
- <HintPath>/Users/ace/Desktop/Swing/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
- </Reference>
  <Reference Include="fbsdefines_cs">
  <HintPath>/Users/ace/Desktop/Swing/Assets/DaydreamRenderer/Plugins/fbsdefines_cs.dll</HintPath>
  </Reference>
  <Reference Include="FlatBuffers">
  <HintPath>/Users/ace/Desktop/Swing/Assets/DaydreamRenderer/Plugins/FlatBuffers.dll</HintPath>
+ </Reference>
+ <Reference Include="Google.ProtocolBuffers">
+ <HintPath>/Users/ace/Desktop/Swing/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
