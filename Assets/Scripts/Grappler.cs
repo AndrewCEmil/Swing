@@ -24,7 +24,7 @@ public class Grappler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");
-		anchorPosition = new Vector3 (0, 0, .75f);
+		anchorPosition = new Vector3 (0, 0, 0);
 		axis = new Vector3 (1f, 0, 0);
 		secondaryAxis = new Vector3 (0, 1f, 0);
 		mode = GrapplerMode.Off;
