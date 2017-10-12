@@ -20,6 +20,7 @@ public class Grappler : MonoBehaviour {
 	private float maxRayDistance;
 	private bool isRetracting;
 	private float springRetractionScale;
+	private bool clickOccured;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +33,7 @@ public class Grappler : MonoBehaviour {
 		isRetracting = false;
 		InitializeLine ();
 		springRetractionScale = 10f;
+		clickOccured = false;
 	}
 
 	private void InitializeLine() {
@@ -41,6 +43,7 @@ public class Grappler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		clickOccured = false;
 		HandleRetraction ();
 		switch (mode) {
 		case GrapplerMode.Off:
@@ -88,12 +91,18 @@ public class Grappler : MonoBehaviour {
 		if (mode == GrapplerMode.Attached) {
 			BreakLink ();
 		} else if (mode == GrapplerMode.Off) {
-			ShootRay (anchor);
+			Attach (anchor);
 		} else {
 			//Aready shooting or retracting, do nothing
 		}
+		clickOccured = true;
 	}
 
+	public void PointerClicked() {
+		if (!clickOccured && mode == GrapplerMode.Attached) {
+			BreakLink ();
+		}
+	}
 	 
 	public void BreakLink() {
 		FixedJoint joint = player.GetComponent<FixedJoint> ();
@@ -130,43 +139,5 @@ public class Grappler : MonoBehaviour {
 		link.AddComponent<FixedJoint> ();
 		FixedJoint joint = link.GetComponent<FixedJoint> ();
 		joint.connectedBody = anchor.GetComponent<Rigidbody> ();
-		/*
-		link.AddComponent<ConfigurableJoint> ();
-		ConfigurableJoint joint = link.GetComponent<ConfigurableJoint> ();
-		joint.autoConfigureConnectedAnchor = false;
-		joint.connectedAnchor = new Vector3 (0, 0, 0);
-		joint.axis = axis;
-		joint.secondaryAxis = secondaryAxis;
-		joint.anchor = anchorPosition;
-		joint.xMotion = ConfigurableJointMotion.Limited;
-		joint.yMotion = ConfigurableJointMotion.Limited;
-		joint.zMotion = ConfigurableJointMotion.Locked;
-		joint.angularXMotion = ConfigurableJointMotion.Free;
-		joint.angularYMotion = ConfigurableJointMotion.Free;
-		joint.angularZMotion = ConfigurableJointMotion.Free;
-		SoftJointLimitSpring spring = new SoftJointLimitSpring ();
-		spring.spring = 10f;
-		spring.damper = 0;
-		joint.linearLimitSpring = spring;
-		SoftJointLimit limit = new SoftJointLimit ();
-		limit.limit = Vector3.Distance (link.transform.position, anchor.transform.position) + 1f;
-		limit.bounciness = 0f;
-		limit.contactDistance = .1f;
-		joint.linearLimit = limit;
-		joint.connectedBody = anchor.GetComponent<Rigidbody> ();
-		joint.projectionMode = JointProjectionMode.None;
-*/
-	}
-
-	//TODO why is this even here, what does it even do lol
-	void ShootRay(GameObject anchor) {
-		Vector3 direction = (anchor.transform.position - player.transform.position).normalized;
-		RaycastHit hit;
-		bool didHit = Physics.Raycast (player.transform.position, direction, out hit, maxRayDistance);
-		if (didHit && hit.collider.gameObject.CompareTag ("Anchor")) {
-			Attach (hit.collider.gameObject);
-		} else {
-			//TODO miss
-		}
 	}
 }

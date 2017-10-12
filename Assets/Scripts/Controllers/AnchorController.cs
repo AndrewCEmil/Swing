@@ -13,10 +13,6 @@ public class AnchorController : MonoBehaviour {
 		UpdateColor ();
 	}
 
-	void OnMouseDown() {
-		//ShotAt ();
-	}
-
 	public void PointerEnter() {
 		SetPointedAt (true);
 	}
