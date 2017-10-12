@@ -150,7 +150,7 @@ public class Grappler : MonoBehaviour {
 		limit.contactDistance = .1f;
 		joint.linearLimit = limit;
 		joint.connectedBody = anchor.GetComponent<Rigidbody> ();
-		joint.projectionMode = JointProjectionMode.PositionAndRotation;
+		joint.projectionMode = JointProjectionMode.None;
 	}
 
 	//TODO why is this even here, what does it even do lol
