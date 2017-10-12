@@ -96,7 +96,7 @@ public class Grappler : MonoBehaviour {
 
 	 
 	public void BreakLink() {
-		ConfigurableJoint joint = player.GetComponent<ConfigurableJoint> ();
+		FixedJoint joint = player.GetComponent<FixedJoint> ();
 		if(joint != null) {
 			Destroy (joint);
 		}
@@ -127,6 +127,10 @@ public class Grappler : MonoBehaviour {
 	}
 
 	void BuildJoint(GameObject link, GameObject anchor) {
+		link.AddComponent<FixedJoint> ();
+		FixedJoint joint = link.GetComponent<FixedJoint> ();
+		joint.connectedBody = anchor.GetComponent<Rigidbody> ();
+		/*
 		link.AddComponent<ConfigurableJoint> ();
 		ConfigurableJoint joint = link.GetComponent<ConfigurableJoint> ();
 		joint.autoConfigureConnectedAnchor = false;
@@ -141,7 +145,7 @@ public class Grappler : MonoBehaviour {
 		joint.angularYMotion = ConfigurableJointMotion.Free;
 		joint.angularZMotion = ConfigurableJointMotion.Free;
 		SoftJointLimitSpring spring = new SoftJointLimitSpring ();
-		spring.spring = 00;
+		spring.spring = 10f;
 		spring.damper = 0;
 		joint.linearLimitSpring = spring;
 		SoftJointLimit limit = new SoftJointLimit ();
@@ -151,6 +155,7 @@ public class Grappler : MonoBehaviour {
 		joint.linearLimit = limit;
 		joint.connectedBody = anchor.GetComponent<Rigidbody> ();
 		joint.projectionMode = JointProjectionMode.None;
+*/
 	}
 
 	//TODO why is this even here, what does it even do lol
