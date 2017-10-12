@@ -153,6 +153,7 @@ public class Grappler : MonoBehaviour {
 		joint.projectionMode = JointProjectionMode.PositionAndRotation;
 	}
 
+	//TODO why is this even here, what does it even do lol
 	void ShootRay(GameObject anchor) {
 		Vector3 direction = (anchor.transform.position - player.transform.position).normalized;
 		RaycastHit hit;
