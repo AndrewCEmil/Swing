@@ -21,12 +21,11 @@ public class LevelController : MonoBehaviour {
 	}
 
 	public void HandleLevelLoss() {
-		//TODO
-		ReturnToAntechamber();
+		string sceneName = SceneManager.GetActiveScene ().name;
+		LoadScene (sceneName);
 	}
 
 	public void HandleGameWin() {
-		//TODO
 		ReturnToAntechamber();
 	}
 
@@ -68,5 +67,9 @@ public class LevelController : MonoBehaviour {
 
 	void ReturnToAntechamber() {
 		SceneManager.LoadScene ("AntechamberScene");
+	}
+
+	void LoadScene(string sceneName) {
+		SceneManager.LoadScene (sceneName);
 	}
 }

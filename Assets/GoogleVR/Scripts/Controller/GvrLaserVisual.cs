@@ -173,11 +173,6 @@ public class GvrLaserVisual : MonoBehaviour, IGvrArmModelReceiver {
 
   void OnWillRenderObject() {
     Camera camera = Camera.current;
-
-    if (!camera.enabled) {
-      return;
-    }
-
     UpdateReticleSize(camera);
     UpdateReticleOrientation(camera);
   }

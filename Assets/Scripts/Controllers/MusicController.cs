@@ -8,7 +8,7 @@ public class MusicController : MonoBehaviour {
 	private static MusicController instance = null;
 	private AudioSource audioSource;
 	private float defaultMusicVolume;
-	public static MusicController MusicInstance {
+	public static MusicController Instance {
 		get { return instance; }
 	}
 	void Awake() {

@@ -6,11 +6,14 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour {
 
 	public Slider musicSlider;
-	private MusicController soundController;
+	public Slider sfxSlider;
+	private MusicController musicController;
+	private SoundEffectController sfxController;
 	// Use this for initialization
 	void Start () {
+		musicController = GameObject.Find ("MusicPlayer").GetComponent<MusicController> ();
+		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
 		MaybeInitializeSettings ();
-		soundController = GameObject.Find ("MusicPlayer").GetComponent<MusicController> ();
 	}
 
 	// Update is called once per frame
@@ -38,8 +41,8 @@ public class MenuController : MonoBehaviour {
 		SceneManager.LoadScene ("AboutScene");
 	}
 
-	public void LoadTestRace() {
-		SceneManager.LoadScene ("TestRace");
+	public void LoadRace0() {
+		SceneManager.LoadScene ("Race0");
 	}
 
 	public void Quit() {
@@ -48,7 +51,19 @@ public class MenuController : MonoBehaviour {
 	}
 
 	public void SetMusicVolume() {
-		soundController.SetMusicVolume (musicSlider.value);
+		musicController.SetMusicVolume (musicSlider.value);
+	}
+
+	public void SetSoundEffectVolume() {
+		sfxController.SetVolume (sfxSlider.value);
+	}
+
+	public void SfxVolumeSliderClicked() {
+		sfxController.PlayVolumeSound ();
+	}
+
+	public void SfxVolumeSliderReleased() {
+		sfxController.StopVolumeSound ();
 	}
 
 	//TODO initialize settings menu
@@ -58,11 +73,8 @@ public class MenuController : MonoBehaviour {
 		}
 	}
 
-	public void ClearPreferences() {
-		PlayerPrefs.DeleteAll ();
-	}
-
 	private void InitializeSettings() {
-		musicSlider.value = soundController.GetMusicVolume ();
+		musicSlider.value = musicController.GetMusicVolume ();
+		sfxSlider.value = sfxController.GetVolume ();
 	}
 }

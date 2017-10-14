@@ -45,10 +45,8 @@ public class Orchestrator : MonoBehaviour {
 	}
 
 	public void TargetDied() {
-		//float raceTime = timerController.FinishRace ();
-		//levelController.HandleLevelLoss ();
-		//debug code:
-		SceneManager.LoadScene ("ScratchPlay");
+		float raceTime = timerController.FinishRace ();
+		levelController.HandleLevelLoss ();
 	}
 
 	public void StartRace() {
