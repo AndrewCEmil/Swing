@@ -44,7 +44,7 @@ public class Grappler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		clickOccured = false;
-		HandleRetraction ();
+		//HandleRetraction ();
 		switch (mode) {
 		case GrapplerMode.Off:
 			break; //noop
@@ -61,6 +61,7 @@ public class Grappler : MonoBehaviour {
 		}
 	}
 
+	/*
 	void HandleRetraction() {
 		UpdateRetractionMode ();
 		if (isRetracting) {
@@ -84,6 +85,7 @@ public class Grappler : MonoBehaviour {
 		SoftJointLimitSpring spring = joint.linearLimitSpring;
 		spring.spring = spring.spring + Time.deltaTime * springRetractionScale;
 	}
+*/
 
 	//TODO shoot should be where the player is LOOKING, but for now its the target they click
 	public void Shoot(GameObject anchor) {

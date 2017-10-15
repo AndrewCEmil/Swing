@@ -22,7 +22,6 @@ public class Orchestrator : MonoBehaviour {
 		levelController = GameObject.Find ("LevelObj").GetComponent<LevelController> ();
 		timerController = GameObject.Find ("Timer").GetComponent<TimerController> ();
 		leaderboardController = GameObject.Find ("Leaderboard").GetComponent<LeaderboardController> ();
-		platform = GameObject.Find ("Platform");
 	}
 	
 	// Update is called once per frame
@@ -50,6 +49,6 @@ public class Orchestrator : MonoBehaviour {
 	}
 
 	public void StartRace() {
-		platform.SetActive (false);
+		player.GetComponent<Rigidbody> ().useGravity = true;
 	}
 }
