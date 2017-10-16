@@ -23,10 +23,10 @@ public class AnchorController : MonoBehaviour {
 	}
 
 	public void PointerExit() {
-		SetPointedAt (false);
+		orchestrator.AnchorPointerExited (gameObject);
 	}
 
-	private void SetPointedAt(bool pointedAt) {
+	public void SetPointedAt(bool pointedAt) {
 		isPointedAt = pointedAt;
 		UpdateColor ();
 	}

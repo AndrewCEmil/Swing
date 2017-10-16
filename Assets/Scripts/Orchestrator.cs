@@ -32,6 +32,10 @@ public class Orchestrator : MonoBehaviour {
 		grappler.AnchorPointedAt (anchor);
 	}
 
+	public void AnchorPointerExited(GameObject anchor) {
+		grappler.AnchorPointerExit (anchor);
+	}
+
 	public void TargetHit() {
 		//Handle timer stuff
 		float raceTime = timerController.FinishRace();

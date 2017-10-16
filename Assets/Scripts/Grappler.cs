@@ -59,17 +59,30 @@ public class Grappler : MonoBehaviour {
 	}
 
 	void UpdatePointedAt() {
-		if (currentPointedAt != null) {
+		if (currentPointedAt != null && pointedAtSetTime > 0) {
 			if (Time.time - pointedAtSetTime > pointedAtCooldown) {
-				currentPointedAt.GetComponent<AnchorController> ().PointerExit ();
-				currentPointedAt = null;
+				RemoveCurrentPointedAt ();
 			}
 		}
 	}
 
+	private void RemoveCurrentPointedAt() {
+		currentPointedAt.GetComponent<AnchorController> ().SetPointedAt (false);
+		currentPointedAt = null;
+	}
+
 	public void AnchorPointedAt(GameObject anchor) {
+		if (currentPointedAt != null) {
+			RemoveCurrentPointedAt ();
+		}
 		currentPointedAt = anchor;
-		pointedAtSetTime = Time.time;
+		pointedAtSetTime = -1f;
+	}
+
+	public void AnchorPointerExit(GameObject anchor) {
+		if (currentPointedAt.name == anchor.name) {
+			pointedAtSetTime = Time.time;
+		}
 	}
 
 	public void PointerClicked() {
