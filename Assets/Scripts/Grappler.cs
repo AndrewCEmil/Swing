@@ -39,22 +39,14 @@ public class Grappler : MonoBehaviour {
 		lineRenderer.positionCount = 0;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		UpdatePointedAt ();
 		switch (mode) {
 		case GrapplerMode.Off:
-			break; //noop
+			break;
 		case GrapplerMode.Attached:
 			DoLine ();
-			break; //noop
-		}
-		HandleBreakline ();
-	}
-
-	void HandleBreakline() {
-		if (Input.GetMouseButtonUp (1)) {
-			BreakLink ();
+			break;
 		}
 	}
 
@@ -86,21 +78,24 @@ public class Grappler : MonoBehaviour {
 	}
 
 	public void PointerClicked() {
-		if (mode == GrapplerMode.Attached) {
-			BreakLink ();
-		}
 		if (currentPointedAt != null) {
 			Attach (currentPointedAt);
+		} else {
+			BreakLink ();
 		}
 	}
 	 
 	public void BreakLink() {
+		DestroyJoint ();
+		mode = GrapplerMode.Off;
+		lineRenderer.positionCount = 0;
+	}
+
+	private void DestroyJoint() {
 		FixedJoint joint = player.GetComponent<FixedJoint> ();
 		if(joint != null) {
 			Destroy (joint);
 		}
-		mode = GrapplerMode.Off;
-		lineRenderer.positionCount = 0;
 	}
 
 	//TODO need to attach where it _hits_
@@ -126,8 +121,11 @@ public class Grappler : MonoBehaviour {
 	}
 
 	void BuildJoint(GameObject link, GameObject anchor) {
-		link.AddComponent<FixedJoint> ();
 		FixedJoint joint = link.GetComponent<FixedJoint> ();
+		if (joint == null) {
+			link.AddComponent<FixedJoint> ();
+			joint = link.GetComponent<FixedJoint> ();
+		}
 		joint.connectedBody = anchor.GetComponent<Rigidbody> ();
 	}
 }
