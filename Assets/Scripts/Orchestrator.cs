@@ -51,6 +51,6 @@ public class Orchestrator : MonoBehaviour {
 	}
 
 	public void StartRace() {
-		player.GetComponent<Rigidbody> ().useGravity = false;
+		player.GetComponent<Rigidbody> ().useGravity = true;
 	}
 }
