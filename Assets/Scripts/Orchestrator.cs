@@ -28,10 +28,8 @@ public class Orchestrator : MonoBehaviour {
 	void Update () {
 	}
 
-	public void HandleShoot(GameObject anchor) {
-		if (timerController.CanShoot ()) {
-			grappler.Shoot (anchor);
-		}
+	public void AnchorPointedAt(GameObject anchor) {
+		grappler.AnchorPointedAt (anchor);
 	}
 
 	public void TargetHit() {
@@ -49,6 +47,6 @@ public class Orchestrator : MonoBehaviour {
 	}
 
 	public void StartRace() {
-		player.GetComponent<Rigidbody> ().useGravity = true;
+		player.GetComponent<Rigidbody> ().useGravity = false;
 	}
 }

@@ -18,22 +18,20 @@ public class Grappler : MonoBehaviour {
 	private GrapplerMode mode;
 	private LineRenderer lineRenderer;
 	private float maxRayDistance;
-	private bool isRetracting;
-	private float springRetractionScale;
-	private bool clickOccured;
+	private GameObject currentPointedAt;
+	private float pointedAtSetTime;
+	private float pointedAtCooldown;
 
 	// Use this for initialization
 	void Start () {
+		pointedAtCooldown = .5f;
 		player = GameObject.Find ("Player");
 		anchorPosition = new Vector3 (0, 0, 0);
 		axis = new Vector3 (1f, 0, 0);
 		secondaryAxis = new Vector3 (0, 1f, 0);
 		mode = GrapplerMode.Off;
 		maxRayDistance = 100f;
-		isRetracting = false;
 		InitializeLine ();
-		springRetractionScale = 10f;
-		clickOccured = false;
 	}
 
 	private void InitializeLine() {
@@ -43,8 +41,7 @@ public class Grappler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		clickOccured = false;
-		//HandleRetraction ();
+		UpdatePointedAt ();
 		switch (mode) {
 		case GrapplerMode.Off:
 			break; //noop
@@ -61,48 +58,26 @@ public class Grappler : MonoBehaviour {
 		}
 	}
 
-	/*
-	void HandleRetraction() {
-		UpdateRetractionMode ();
-		if (isRetracting) {
-			Retract ();
+	void UpdatePointedAt() {
+		if (currentPointedAt != null) {
+			if (Time.time - pointedAtSetTime > pointedAtCooldown) {
+				currentPointedAt.GetComponent<AnchorController> ().PointerExit ();
+				currentPointedAt = null;
+			}
 		}
 	}
 
-	void UpdateRetractionMode() {
-		//first maybe update retraction
-		if (Input.GetMouseButtonDown (0) && mode == GrapplerMode.Attached) {
-			isRetracting = true;
-		} else if (Input.GetMouseButtonUp (0)) {
-			isRetracting = false;
-		} else if (mode != GrapplerMode.Attached) {
-			isRetracting = false;
-		}
-	}
-
-	void Retract() {
-		ConfigurableJoint joint = player.GetComponent<ConfigurableJoint> ();
-		SoftJointLimitSpring spring = joint.linearLimitSpring;
-		spring.spring = spring.spring + Time.deltaTime * springRetractionScale;
-	}
-*/
-
-	//TODO shoot should be where the player is LOOKING, but for now its the target they click
-	public void Shoot(GameObject anchor) {
-		//TODO this section gets removed once we switch to vr
-		if (mode == GrapplerMode.Attached) {
-			BreakLink ();
-		} else if (mode == GrapplerMode.Off) {
-			Attach (anchor);
-		} else {
-			//Aready shooting or retracting, do nothing
-		}
-		clickOccured = true;
+	public void AnchorPointedAt(GameObject anchor) {
+		currentPointedAt = anchor;
+		pointedAtSetTime = Time.time;
 	}
 
 	public void PointerClicked() {
-		if (!clickOccured && mode == GrapplerMode.Attached) {
+		if (mode == GrapplerMode.Attached) {
 			BreakLink ();
+		}
+		if (currentPointedAt != null) {
+			Attach (currentPointedAt);
 		}
 	}
 	 
