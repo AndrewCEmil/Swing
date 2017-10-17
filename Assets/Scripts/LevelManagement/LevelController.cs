@@ -20,6 +20,7 @@ public class LevelController : MonoBehaviour {
 		ReturnToAntechamber ();
 	}
 
+
 	public void HandleLevelLoss() {
 		string sceneName = SceneManager.GetActiveScene ().name;
 		LoadScene (sceneName);
@@ -27,6 +28,11 @@ public class LevelController : MonoBehaviour {
 
 	public void HandleGameWin() {
 		ReturnToAntechamber();
+	}
+
+	public bool IsRaceLevel() {
+		string sceneName = SceneManager.GetActiveScene ().name;
+		return sceneName.StartsWith ("Race");
 	}
 
 	public int GetCurrentLevelId() {

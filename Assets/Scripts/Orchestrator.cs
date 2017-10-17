@@ -26,6 +26,15 @@ public class Orchestrator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (GvrController.AppButtonUp) {
+			HandleAppButton ();
+		}
+	}
+
+	private void HandleAppButton() {
+		if (levelController.IsRaceLevel ()) {
+			levelController.HandleLevelLoss();
+		}
 	}
 
 	public void AnchorPointedAt(GameObject anchor) {
