@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimePanelController : MonoBehaviour {
 	public GameObject lastTimeTextObj;
 	public GameObject bestTimeTextObj;
 
+	private Text lastTimeText;
+	private Text bestTimeText;
 	private LevelController levelController;
 	void Start () {
-
+		lastTimeText = lastTimeTextObj.GetComponent<Text> ();
+		bestTimeText = bestTimeTextObj.GetComponent<Text> ();
 		levelController = GameObject.Find ("LevelObj").GetComponent<LevelController> ();
 		Initialize ();
 	}
@@ -22,8 +26,8 @@ public class TimePanelController : MonoBehaviour {
 			return;
 		}
 		float bestTime = GetBestRaceTime ();
-		lastTimeTextObj.GetComponent<GUIText>().text = lastTime.ToString ();
-		bestTimeTextObj.GetComponent<GUIText>().text = bestTime.ToString ();
+		lastTimeText.text = lastTime.ToString ();
+		bestTimeText.text = bestTime.ToString ();
 	}
 
 	private void TurnOffPanel() {
