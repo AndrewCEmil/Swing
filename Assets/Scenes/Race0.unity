@@ -5479,11 +5479,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb7f9c728fda40a28940f1977909522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSize: 100
-  ySize: 100
-  scale: 20
-  maxHeight: 0
-  maxDistance: 0
+  xSize: 50
+  ySize: 50
+  scale: 300
+  maxHeight: 2200
+  hillDistance: 4500
 --- !u!4 &1425599836
 Transform:
   m_ObjectHideFlags: 0
@@ -5491,7 +5491,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1425599834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1000, y: -600, z: -1000}
+  m_LocalPosition: {x: -7500, y: -600, z: -7500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
