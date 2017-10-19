@@ -75,7 +75,7 @@ public class Landscape : MonoBehaviour {
 		for (int i = 0, y = 0; y <= ySize * scale; y += scale) {
 			for (int x = 0; x <= xSize * scale; x += scale, i++) {
 				verticies [i] = new Vector3 (x, 0, y);
-				uv [i] = new Vector2 ((float)x / xSize * scale, (float)y / ySize * scale);
+				uv [i] = new Vector2 ((float)x / (xSize * scale), (float)y / (ySize * scale));
 			}
 		}
 
