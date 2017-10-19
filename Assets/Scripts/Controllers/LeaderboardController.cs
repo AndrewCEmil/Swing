@@ -18,6 +18,13 @@ public class LeaderboardController : MonoBehaviour {
 		//TODO
 	}
 
+	private string GetLeaderboardIdForRaceId(int raceTrack) {
+		if (raceTrack == 1) {
+			return "CgkI2LL-oOYDEAIQAA";
+		}
+		return "CgkI2LL-oOYDEAIQAA";
+	}
+
 	public List<LeaderboardEntry> GetEntries(int raceTrack, int pageSize, int startPosition) {
 		//TODO
 		return null;
