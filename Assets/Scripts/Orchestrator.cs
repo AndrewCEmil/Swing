@@ -49,7 +49,7 @@ public class Orchestrator : MonoBehaviour {
 		//Handle timer stuff
 		float raceTime = timerController.FinishRace();
 		//Handle leaderboard stuff
-		leaderboardController.RegisterTime(raceTime, levelController.GetCurrentLevelId());
+		LeaderboardController.RegisterTime(raceTime, levelController.GetCurrentLevelId());
 		//Handle level stuff
 		levelController.HandleLevelWin ();
 	}

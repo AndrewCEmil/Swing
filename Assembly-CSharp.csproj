@@ -541,6 +541,7 @@
      <Compile Include="Assets\Scripts\Controllers\SoundEffectController.cs" />
      <Compile Include="Assets\Scripts\Controllers\SoundEffectManager.cs" />
      <Compile Include="Assets\Scripts\Controllers\TargetController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\TimePanelController.cs" />
      <Compile Include="Assets\Scripts\Controllers\TimerController.cs" />
      <Compile Include="Assets\Scripts\DataObjects\LeaderboardEntry.cs" />
      <Compile Include="Assets\Scripts\DataObjects\Level.cs" />
@@ -669,10 +670,6 @@
  <Reference Include="Google.ProtocolBuffers">
  <HintPath>/Users/ace/Desktop/Swing/Assets/GoogleVR/Plugins/Google.ProtocolBuffers.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{933821DC-55F5-D76D-0401-9FDAF458DBF5}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

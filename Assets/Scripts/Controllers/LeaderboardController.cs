@@ -4,28 +4,43 @@ using UnityEngine;
 
 public class LeaderboardController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public static void RegisterTime(float raceTime, int raceTrack) {
+		SaveLastRaceTime(raceTime, raceTrack);
+		MaybeUpdateBestRaceTime (raceTime, raceTrack);
 	}
 
-	public void RegisterTime(float raceTime, int raceTrack) {
-		//TODO
+	private static void SaveLastRaceTime(float raceTime, int raceTrack) {
+		PlayerPrefs.SetFloat ("last_time" + raceTrack, raceTime);
 	}
 
-	private string GetLeaderboardIdForRaceId(int raceTrack) {
+	private static void MaybeUpdateBestRaceTime(float raceTime, int raceTrack) {
+		float bestTime = GetBestRaceTime (raceTrack);
+		if (raceTime < bestTime) {
+			SetBestRaceTime (raceTime, raceTrack);
+		}
+	}
+
+	public static float GetLastRaceTime(int raceTrack) {
+		return PlayerPrefs.GetFloat ("last_time" + raceTrack, -1);
+	}
+
+	public static float GetBestRaceTime(int raceTrack) {
+		return PlayerPrefs.GetFloat ("best_time" + raceTrack, float.MaxValue);
+	}
+
+	private static void SetBestRaceTime(float raceTime, int raceTrack) {
+		PlayerPrefs.SetFloat ("best_time" + raceTrack, raceTime);
+	}
+
+
+	private static string GetLeaderboardIdForRaceId(int raceTrack) {
 		if (raceTrack == 1) {
 			return "CgkI2LL-oOYDEAIQAA";
 		}
 		return "CgkI2LL-oOYDEAIQAA";
 	}
 
-	public List<LeaderboardEntry> GetEntries(int raceTrack, int pageSize, int startPosition) {
+	public static List<LeaderboardEntry> GetEntries(int raceTrack, int pageSize, int startPosition) {
 		//TODO
 		return null;
 	}

@@ -67,7 +67,7 @@ public class MenuController : MonoBehaviour {
 	}
 
 	public void SignIntoPlay() {
-		//TODO
+		GooglePlayController.SignIn ();
 	}
 
 	//TODO initialize settings menu
