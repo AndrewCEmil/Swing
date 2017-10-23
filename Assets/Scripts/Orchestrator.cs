@@ -13,6 +13,7 @@ public class Orchestrator : MonoBehaviour {
 	private LevelController levelController;
 	private TimerController timerController;
 	private LeaderboardController leaderboardController;
+	private SoundEffectController sfxController;
 	private GameObject platform;
 	void Start () {
 		player = GameObject.Find ("Player");
@@ -22,6 +23,7 @@ public class Orchestrator : MonoBehaviour {
 		levelController = GameObject.Find ("LevelObj").GetComponent<LevelController> ();
 		timerController = GameObject.Find ("Timer").GetComponent<TimerController> ();
 		leaderboardController = GameObject.Find ("Leaderboard").GetComponent<LeaderboardController> ();
+		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
 	}
 	
 	// Update is called once per frame
@@ -29,6 +31,12 @@ public class Orchestrator : MonoBehaviour {
 		if (GvrController.AppButtonUp) {
 			HandleAppButton ();
 		}
+	}
+
+	public void PointerClicked() {
+		//TODO another sound
+		sfxController.PlayButtonClicked ();
+		grappler.PointerClicked ();
 	}
 
 	private void HandleAppButton() {

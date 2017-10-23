@@ -12,6 +12,7 @@ public class Grappler : MonoBehaviour {
 
 	private GameObject player;
 	private GameObject plane;
+	private AnchorController currentAttachedController;
 	private Vector3 anchorPosition;
 	private Vector3 axis;
 	private Vector3 secondaryAxis;
@@ -32,6 +33,7 @@ public class Grappler : MonoBehaviour {
 		mode = GrapplerMode.Off;
 		maxRayDistance = 100f;
 		InitializeLine ();
+		currentAttachedController = null;
 	}
 
 	private void InitializeLine() {
@@ -86,6 +88,7 @@ public class Grappler : MonoBehaviour {
 	}
 	 
 	public void BreakLink() {
+		currentAttachedController.UnLink ();
 		DestroyJoint ();
 		mode = GrapplerMode.Off;
 		lineRenderer.positionCount = 0;
@@ -102,6 +105,8 @@ public class Grappler : MonoBehaviour {
 	public void Attach (GameObject anchor) {
 		BuildJoint (player, anchor);
 		CreateLine (anchor);
+		currentAttachedController = anchor.GetComponent<AnchorController> ();
+		currentAttachedController.Link ();
 
 		anchorPosition = anchor.transform.position;
 		mode = GrapplerMode.Attached;

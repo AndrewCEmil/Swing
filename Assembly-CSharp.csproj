@@ -531,6 +531,7 @@
      <Compile Include="Assets\Nebula Skyboxes\Scripts\SmoothCameraOrbit.cs" />
      <Compile Include="Assets\Scripts\Controllers\AnchorController.cs" />
      <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\FloorColliderController.cs" />
      <Compile Include="Assets\Scripts\Controllers\FloorController.cs" />
      <Compile Include="Assets\Scripts\Controllers\GooglePlayController.cs" />
      <Compile Include="Assets\Scripts\Controllers\LeaderboardController.cs" />

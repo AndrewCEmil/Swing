@@ -10,24 +10,16 @@ public class FloorController : MonoBehaviour {
 	public float maxHeight;
 	public float hillDistance;
 
-	private Orchestrator orchestrator;
 	private Vector3[] verticies;
 	private Vector3 storedVector;
 	private Vector3 middlePosition;
 	private float maxDistance;
 	private void Awake () {
-		orchestrator = GameObject.Find ("Orchestrator").GetComponent<Orchestrator> ();
 		middlePosition = new Vector3 (xSize * scale / 2f, 0, xSize * scale / 2f);
 		maxDistance = Vector3.Distance (middlePosition, new Vector3 (0, 0, 0));
 		CreateMesh();
 	}
 
-	void OnTriggerEnter(Collider other) {
-		Debug.Log ("Trigger with Floor");
-		if (other.name == "Player") {
-			orchestrator.TargetDied ();
-		}
-	}
 
 	private void CreateMesh() {
 		Mesh mesh = new Mesh ();
