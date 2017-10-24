@@ -7,6 +7,7 @@ public class LeaderboardController : MonoBehaviour {
 	public static void RegisterTime(float raceTime, int raceTrack) {
 		SaveLastRaceTime(raceTime, raceTrack);
 		MaybeUpdateBestRaceTime (raceTime, raceTrack);
+		GooglePlayController.PostScore(raceTime, GetLeaderboardIdForRaceId(raceTrack));
 	}
 
 	private static void SaveLastRaceTime(float raceTime, int raceTrack) {

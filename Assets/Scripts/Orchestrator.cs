@@ -35,8 +35,8 @@ public class Orchestrator : MonoBehaviour {
 
 	public void PointerClicked() {
 		//TODO another sound
-		sfxController.PlayButtonClicked ();
 		grappler.PointerClicked ();
+		sfxController.PlayButtonClicked ();
 	}
 
 	private void HandleAppButton() {

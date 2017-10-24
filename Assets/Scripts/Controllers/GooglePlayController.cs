@@ -8,6 +8,7 @@ using UnityEngine.SocialPlatforms;
 public class GooglePlayController : MonoBehaviour {
 
 	public static void SignIn() {
+		GooglePlayGames.PlayGamesPlatform.Activate();
 		Social.localUser.Authenticate((bool success) => {
 			// handle success or failure
 			if(success) {
@@ -16,12 +17,21 @@ public class GooglePlayController : MonoBehaviour {
 				Debug.Log("FAILURE authenticating user with google play");
 			}
 		});
+
+		Debug.Log("Sending score to leaderboard");
+		Social.ReportScore((long) 10, "CgkI2LL-oOYDEAIQAA", (bool success) => {
+			if(success) {
+				Debug.Log("Success posting score to leaderboard");
+			} else {
+				Debug.Log("Failuring posting score to leaderboard");
+			}
+		});
 	}
 
 	public static void PostScore(float score, string leaderboardId) {
 		// post score 12345 to leaderboard ID "Cfji293fjsie_QA")
+		Debug.Log("Sending score to leaderboard");
 		Social.ReportScore((long) score, leaderboardId, (bool success) => {
-			// handle succes			if(success) {
 			if(success) {
 				Debug.Log("Success posting score to leaderboard");
 			} else {

@@ -11,9 +11,9 @@ public class MenuController : MonoBehaviour {
 	private SoundEffectController sfxController;
 	// Use this for initialization
 	void Start () {
-		MaybeInitializeSettings ();
 		musicController = GameObject.Find ("MusicPlayer").GetComponent<MusicController> ();
 		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
+		MaybeInitializeSettings ();
 	}
 
 	// Update is called once per frame
