@@ -7,23 +7,28 @@ public class SpeedPanelController : MonoBehaviour {
 
 	public GameObject speedTextObj;
 	public GameObject lossTextObj;
+	public GameObject totalLossTextObj;
 
 	private GameObject player;
 	private Rigidbody playerRB;
 	private Text speedText;
 	private Text lossText;
+	private Text totalLossText;
 	private LevelController levelController;
 	private Vector3 offset;
 	private float beforeAttachSpeed;
 	private float attachedTriggeredFrameNum;
+	private float totalLoss;
 	void Start () {
 		speedText = speedTextObj.GetComponent<Text> ();
 		lossText = lossTextObj.GetComponent<Text> ();
+		totalLossText = totalLossTextObj.GetComponent<Text> ();
 		player = GameObject.Find ("Player");
 		playerRB = player.GetComponent<Rigidbody> ();
 		offset = new Vector3 (5, 0, 10);
 		attachedTriggeredFrameNum = -10;
 		beforeAttachSpeed = 0;
+		totalLoss = 0;
 	}
 
 	// Update is called once per frame
@@ -53,6 +58,9 @@ public class SpeedPanelController : MonoBehaviour {
 		float loss = beforeAttachSpeed - playerRB.velocity.magnitude;
 		lossText.text = loss.ToString ();
 		attachedTriggeredFrameNum = -10;
+
+		totalLoss += loss;
+		totalLossText.text = totalLoss.ToString ();
 	}
 
 	public void AttachTriggered() {
