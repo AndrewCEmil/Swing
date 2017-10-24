@@ -349,6 +349,7 @@
      <Compile Include="Assets\Scripts\Controllers\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Controllers\SoundEffectController.cs" />
      <Compile Include="Assets\Scripts\Controllers\SoundEffectManager.cs" />
+     <Compile Include="Assets\Scripts\Controllers\SpeedPanelController.cs" />
      <Compile Include="Assets\Scripts\Controllers\TargetController.cs" />
      <Compile Include="Assets\Scripts\Controllers\TimePanelController.cs" />
      <Compile Include="Assets\Scripts\Controllers\TimerController.cs" />

@@ -31,9 +31,13 @@ public class Orchestrator : MonoBehaviour {
 		if (GvrController.AppButtonUp) {
 			HandleAppButton ();
 		}
+
+		if (GvrController.ClickButtonDown) {
+			PointerClicked ();
+		}
 	}
 
-	public void PointerClicked() {
+	private void PointerClicked() {
 		//TODO another sound
 		grappler.PointerClicked ();
 		sfxController.PlayButtonClicked ();
