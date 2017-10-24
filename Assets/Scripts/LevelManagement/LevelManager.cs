@@ -47,10 +47,11 @@ public class LevelManager : MonoBehaviour {
 
 	public static List<Level> GetLevels() {
 		string levelsJson = PlayerPrefs.GetString ("Levels");
-		if (levelsJson.Equals ("") || levelsJson.Equals("{}")) {
+		//TODO re-enable after development is finished
+		//if (levelsJson.Equals ("") || levelsJson.Equals("{}")) {
 			InitLevels ();
 			levelsJson = PlayerPrefs.GetString ("Levels");
-		}
+		//}
 		Levels levels = JsonUtility.FromJson<Levels>(levelsJson);
 		return levels.levels;
 	}

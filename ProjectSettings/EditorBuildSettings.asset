@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Race0.unity
     guid: 8fbd6fda2fd124268bfaa104e558dcef
+  - enabled: 1
+    path: Assets/Scenes/Race1.unity
+    guid: 18388af2064624cb9b2d5338831d4da2

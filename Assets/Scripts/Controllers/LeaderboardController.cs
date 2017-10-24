@@ -7,7 +7,6 @@ public class LeaderboardController : MonoBehaviour {
 	public static void RegisterTime(float raceTime, int raceTrack) {
 		SaveLastRaceTime(raceTime, raceTrack);
 		MaybeUpdateBestRaceTime (raceTime, raceTrack);
-		GooglePlayController.PostScore(raceTime, GetLeaderboardIdForRaceId(raceTrack));
 	}
 
 	private static void SaveLastRaceTime(float raceTime, int raceTrack) {
@@ -31,14 +30,6 @@ public class LeaderboardController : MonoBehaviour {
 
 	private static void SetBestRaceTime(float raceTime, int raceTrack) {
 		PlayerPrefs.SetFloat ("best_time" + raceTrack, raceTime);
-	}
-
-
-	private static string GetLeaderboardIdForRaceId(int raceTrack) {
-		if (raceTrack == 1) {
-			return "CgkI2LL-oOYDEAIQAA";
-		}
-		return "CgkI2LL-oOYDEAIQAA";
 	}
 
 	public static List<LeaderboardEntry> GetEntries(int raceTrack, int pageSize, int startPosition) {

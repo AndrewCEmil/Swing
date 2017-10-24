@@ -45,6 +45,10 @@ public class MenuController : MonoBehaviour {
 		SceneManager.LoadScene ("Race0");
 	}
 
+	public void LoadRace1() {
+		SceneManager.LoadScene ("Race1");
+	}
+
 	public void Quit() {
 		PlayerPrefs.Save ();
 		Application.Quit ();
@@ -64,10 +68,6 @@ public class MenuController : MonoBehaviour {
 
 	public void SfxVolumeSliderReleased() {
 		sfxController.StopVolumeSound ();
-	}
-
-	public void SignIntoPlay() {
-		GooglePlayController.SignIn ();
 	}
 
 	//TODO initialize settings menu

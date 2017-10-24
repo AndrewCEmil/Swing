@@ -15,20 +15,31 @@ public class LevelProvider : MonoBehaviour {
 	public static Level GetLevel(int level) {
 		switch (level) {
 		case 0:
-			return Default();
+			return Race0 ();
+		case 1:
+			return Race1 ();
 		}
 
-		return Default();
+		return Race0();
 	}
 
 	public static int NumLevels() {
-		return 1;
+		return 2;
 	}
 
-	public static Level Default() {
+	public static Level Race0() {
 		Level level = new Level ();
-		level.name = "TestRace";
-		level.level = 1;
+		level.name = "Race0";
+		level.level = 0;
+		level.locked = false;
+		level.completed = false;
+		return level;
+	}
+
+	public static Level Race1() {
+		Level level = new Level ();
+		level.name = "Race1";
+		level.level = 0;
 		level.locked = false;
 		level.completed = false;
 		return level;
