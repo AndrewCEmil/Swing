@@ -36,6 +36,7 @@ public class LevelProvider : MonoBehaviour {
 		return level;
 	}
 
+	//Distance swing
 	public static Level Race1() {
 		Level level = new Level ();
 		level.name = "Race1";
@@ -45,9 +46,20 @@ public class LevelProvider : MonoBehaviour {
 		return level;
 	}
 
+	//Circle
 	public static Level Race2() {
 		Level level = new Level ();
 		level.name = "Race2";
+		level.level = 0;
+		level.locked = false;
+		level.completed = false;
+		return level;
+	}
+
+	//Drop
+	public static Level Race3() {
+		Level level = new Level ();
+		level.name = "Race3";
 		level.level = 0;
 		level.locked = false;
 		level.completed = false;
