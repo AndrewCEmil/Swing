@@ -45,5 +45,13 @@ public class LevelProvider : MonoBehaviour {
 		return level;
 	}
 
+	public static Level Race2() {
+		Level level = new Level ();
+		level.name = "Race2";
+		level.level = 0;
+		level.locked = false;
+		level.completed = false;
+		return level;
+	}
 
 }
