@@ -12,7 +12,7 @@ public class Grappler : MonoBehaviour {
 
 	private GameObject player;
 	private GameObject plane;
-	private SpeedPanelController speedPanelController;
+	//private SpeedPanelController speedPanelController;
 	private AnchorController currentAttachedController;
 	private Vector3 anchorPosition;
 	private Vector3 axis;
@@ -28,7 +28,7 @@ public class Grappler : MonoBehaviour {
 	void Start () {
 		pointedAtCooldown = .5f;
 		player = GameObject.Find ("Player");
-		speedPanelController = GameObject.Find ("SpeedCanvas").GetComponent<SpeedPanelController> ();
+		//speedPanelController = GameObject.Find ("SpeedCanvas").GetComponent<SpeedPanelController> ();
 		anchorPosition = new Vector3 (0, 0, 0);
 		axis = new Vector3 (1f, 0, 0);
 		secondaryAxis = new Vector3 (0, 1f, 0);
@@ -110,7 +110,7 @@ public class Grappler : MonoBehaviour {
 		currentAttachedController = anchor.GetComponent<AnchorController> ();
 		currentAttachedController.Link ();
 
-		speedPanelController.AttachTriggered ();
+		//speedPanelController.AttachTriggered ();
 
 		anchorPosition = anchor.transform.position;
 		mode = GrapplerMode.Attached;
