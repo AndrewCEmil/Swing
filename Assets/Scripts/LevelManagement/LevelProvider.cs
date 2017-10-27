@@ -18,13 +18,19 @@ public class LevelProvider : MonoBehaviour {
 			return Race0 ();
 		case 1:
 			return Race1 ();
+		case 2: 
+			return Race2 ();
+		case 3:
+			return Race3 ();
+		case 4:
+			return Race4 ();
 		}
 
 		return Race0();
 	}
 
 	public static int NumLevels() {
-		return 2;
+		return 5;
 	}
 
 	public static Level Race0() {
@@ -60,6 +66,16 @@ public class LevelProvider : MonoBehaviour {
 	public static Level Race3() {
 		Level level = new Level ();
 		level.name = "Race3";
+		level.level = 0;
+		level.locked = false;
+		level.completed = false;
+		return level;
+	}
+
+	//Right Angles
+	public static Level Race4() {
+		Level level = new Level ();
+		level.name = "Race4";
 		level.level = 0;
 		level.locked = false;
 		level.completed = false;

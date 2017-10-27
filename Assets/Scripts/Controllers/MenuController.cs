@@ -56,6 +56,10 @@ public class MenuController : MonoBehaviour {
 	public void LoadRace3() {
 		SceneManager.LoadScene ("Race3");
 	}
+
+	public void LoadRace4() {
+		SceneManager.LoadScene ("Race4");
+	}
 	public void Quit() {
 		PlayerPrefs.Save ();
 		Application.Quit ();
