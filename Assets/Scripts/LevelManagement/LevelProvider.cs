@@ -24,13 +24,15 @@ public class LevelProvider : MonoBehaviour {
 			return Race3 ();
 		case 4:
 			return Race4 ();
+		case 5:
+			return Race5 ();
 		}
 
 		return Race0();
 	}
 
 	public static int NumLevels() {
-		return 5;
+		return 6;
 	}
 
 	public static Level Race0() {
@@ -76,6 +78,16 @@ public class LevelProvider : MonoBehaviour {
 	public static Level Race4() {
 		Level level = new Level ();
 		level.name = "Race4";
+		level.level = 0;
+		level.locked = false;
+		level.completed = false;
+		return level;
+	}
+
+	//Fields with targeting
+	public static Level Race5() {
+		Level level = new Level ();
+		level.name = "Race5";
 		level.level = 0;
 		level.locked = false;
 		level.completed = false;
