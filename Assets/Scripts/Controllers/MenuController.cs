@@ -98,6 +98,10 @@ public class MenuController : MonoBehaviour {
 		sfxController.StopVolumeSound ();
 	}
 
+	public void ClearUserData() {
+		PlayerPrefs.DeleteAll ();
+	}
+
 	//TODO initialize settings menu
 	private void MaybeInitializeSettings() {
 		if (SceneManager.GetActiveScene ().name == "SettingsScene") {

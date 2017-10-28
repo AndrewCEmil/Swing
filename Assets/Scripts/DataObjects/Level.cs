@@ -8,4 +8,5 @@ public class Level {
 	public string name;
 	public bool locked;
 	public bool completed;
+	public int[] preReqs;
 }

@@ -44,14 +44,21 @@ public class LevelController : MonoBehaviour {
 		LevelManager.MarkLevelCompleted (currentLevel);
 	}
 
-	//For now just unlocks next level
 	void MaybeUnlockLevels() {
-		foreach (Level level in LevelManager.GetLevels()) {
-			if (level.level == currentLevel + 1 && level.locked) {
+		List<Level> levels = LevelManager.GetLevels ();
+		foreach (Level level in levels) {
+			bool unlocked = true;
+			foreach (int preReq in level.preReqs) {
+				if (!levels [preReq].completed) {
+					unlocked = false;
+					break;
+				}
+			}
+
+			if (unlocked) {
 				LevelManager.UnlockLevel (level.level);
 			}
 		}
-
 	}
 
 	bool FirstTimeGameWon() {

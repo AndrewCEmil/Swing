@@ -47,6 +47,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 0;
 		level.locked = false;
 		level.completed = false;
+		level.preReqs = new int[] { 8 };
 		return level;
 	}
 
@@ -57,6 +58,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 1;
 		level.locked = false;
 		level.completed = false;
+		level.preReqs = new int[] { 8 };
 		return level;
 	}
 
@@ -67,6 +69,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 2;
 		level.locked = false;
 		level.completed = false;
+		level.preReqs = new int[] { 8 };
 		return level;
 	}
 
@@ -77,6 +80,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 3;
 		level.locked = false;
 		level.completed = false;
+		level.preReqs = new int[] { 8 };
 		return level;
 	}
 
@@ -87,6 +91,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 4;
 		level.locked = false;
 		level.completed = false;
+		level.preReqs = new int[] { 8 };
 		return level;
 	}
 
@@ -97,6 +102,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 5;
 		level.locked = false;
 		level.completed = false;
+		level.preReqs = new int[] { 8 };
 		return level;
 	}
 
@@ -107,6 +113,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 6;
 		level.locked = false;
 		level.completed = false;
+		level.preReqs = new int[] { };
 		return level;
 	}
 
@@ -117,6 +124,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 7;
 		level.locked = false;
 		level.completed = false;
+		level.preReqs = new int[] { 6 };
 		return level;
 	}
 
@@ -126,6 +134,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 8;
 		level.locked = false;
 		level.completed = false;
+		level.preReqs = new int[] { 7 };
 		return level;
 	}
 }
