@@ -35,12 +35,17 @@ public class Grappler : MonoBehaviour {
 	}
 
 	private void InitializeLine() {
-		lineRenderer = GameObject.Find("Line").GetComponent<LineRenderer> ();
-		lineRenderer.positionCount = 0;
+		GameObject line = GameObject.Find ("Line");
+		if (line != null) {
+			lineRenderer = line.GetComponent<LineRenderer> ();
+			lineRenderer.positionCount = 0;
+		}
 	}
 
 	private void InitializeStartCube() {
-		Attach (startCube);
+		if(startCube != null) {
+			Attach (startCube);
+		}
 	}
 	
 	void Update () {

@@ -47,16 +47,18 @@ public class LevelController : MonoBehaviour {
 	void MaybeUnlockLevels() {
 		List<Level> levels = LevelManager.GetLevels ();
 		foreach (Level level in levels) {
-			bool unlocked = true;
-			foreach (int preReq in level.preReqs) {
-				if (!levels [preReq].completed) {
-					unlocked = false;
-					break;
+			if (level.locked) {
+				bool unlocked = true;
+				foreach (int preReq in level.preReqs) {
+					if (!levels [preReq].completed) {
+						unlocked = false;
+						break;
+					}
 				}
-			}
 
-			if (unlocked) {
-				LevelManager.UnlockLevel (level.level);
+				if (unlocked) {
+					LevelManager.UnlockLevel (level.level);
+				}
 			}
 		}
 	}

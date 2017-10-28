@@ -329,6 +329,11 @@ Prefab:
       propertyPath: m_Name
       value: LevelCanvas0
       objectReference: {fileID: 0}
+    - target: {fileID: 114258955412099784, guid: 6f652e1540fb24967b083b049a6fad5c,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 713627198}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f652e1540fb24967b083b049a6fad5c, type: 2}
   m_IsPrefabParent: 0

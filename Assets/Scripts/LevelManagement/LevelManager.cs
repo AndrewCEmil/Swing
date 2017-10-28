@@ -45,13 +45,16 @@ public class LevelManager : MonoBehaviour {
 		return false;
 	}
 
+	public static Level GetLevel(int levelId) {
+		List<Level> levels = GetLevels ();
+		return levels [levelId];
+	}
 	public static List<Level> GetLevels() {
 		string levelsJson = PlayerPrefs.GetString ("Levels");
-		//TODO re-enable after development is finished
-		//if (levelsJson.Equals ("") || levelsJson.Equals("{}")) {
+		if (levelsJson.Equals ("") || levelsJson.Equals("{}")) {
 			InitLevels ();
 			levelsJson = PlayerPrefs.GetString ("Levels");
-		//}
+		}
 		Levels levels = JsonUtility.FromJson<Levels>(levelsJson);
 		return levels.levels;
 	}

@@ -14,7 +14,7 @@ public class RaceButtonController : MonoBehaviour {
 	void Start () {
 		button = GetComponentInChildren<Button> ();
 		buttonText = GetComponentInChildren<Text> ();
-		level = LevelProvider.GetLevel (raceId);
+		level = LevelManager.GetLevel (raceId);
 
 		buttonText.text = level.name;
 		if (level.locked) {

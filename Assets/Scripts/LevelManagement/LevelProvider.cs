@@ -6,13 +6,13 @@ public class LevelProvider : MonoBehaviour {
 
 	public static List<Level> GetLevels() {
 		List<Level> levels = new List<Level>();
-		for (int i = 1; i <= NumLevels (); i++) {
-			levels.Add (GetLevel (i));
+		for (int i = 0; i < NumLevels (); i++) {
+			levels.Add (GetNewLevel (i));
 		}
 		return levels;
 	}
 
-	public static Level GetLevel(int level) {
+	private static Level GetNewLevel(int level) {
 		switch (level) {
 		case 0:
 			return Race0 ();

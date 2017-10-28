@@ -76,11 +76,11 @@ public class IntroFlowController : MonoBehaviour {
 		switch(panelIndex) {
 		case 0:
 			return "Welcome!  First off, note the menu directly above you.  If you ever want exit play, just click Back up there.";
-		case 2:
+		case 1:
 			return "The goal of each level is to hit the target.  The target is the Red Square in front of you.";
-		case 3:
+		case 2:
 			return "To hit the target you will have to swing through the level by connecting to anchors.  The diamond in front of you is an anchor.";
-		case 4:
+		case 3:
 			return "Connect to the Diamond by pointing your controller at it and clicking the touchpad.";
 		default: 
 			return "Connect to the Diamond by pointing your controller at it and clicking the touchpad.";
