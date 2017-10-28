@@ -22,9 +22,9 @@ public class IntroFlowController : MonoBehaviour {
 	void Start () {
 		clickFrameCountdown = 0;
 		string sceneName = SceneManager.GetActiveScene ().name;
-		if (sceneName == "Race6") {
+		if (sceneName == "IntroI") {
 			mode = IntroMode.Basic;
-		} else if (sceneName == "Race7") {
+		} else if (sceneName == "IntroII") {
 			mode = IntroMode.Intermediate;
 		} else {
 			mode = IntroMode.Advanced;

@@ -218,12 +218,12 @@ Prefab:
       objectReference: {fileID: 1140615070}
     - target: {fileID: 1909341833220858, guid: 6f652e1540fb24967b083b049a6fad5c, type: 2}
       propertyPath: m_Name
-      value: LevelCanvas7
+      value: LevelCanvasIntroII
       objectReference: {fileID: 0}
     - target: {fileID: 114318308529653074, guid: 6f652e1540fb24967b083b049a6fad5c,
         type: 2}
       propertyPath: raceId
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f652e1540fb24967b083b049a6fad5c, type: 2}
@@ -334,6 +334,11 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 713627198}
+    - target: {fileID: 114318308529653074, guid: 6f652e1540fb24967b083b049a6fad5c,
+        type: 2}
+      propertyPath: raceId
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f652e1540fb24967b083b049a6fad5c, type: 2}
   m_IsPrefabParent: 0
@@ -493,12 +498,12 @@ Prefab:
       objectReference: {fileID: 1140615070}
     - target: {fileID: 1909341833220858, guid: 6f652e1540fb24967b083b049a6fad5c, type: 2}
       propertyPath: m_Name
-      value: LevelCanvas6
+      value: LevelCanvasIntroI
       objectReference: {fileID: 0}
     - target: {fileID: 114318308529653074, guid: 6f652e1540fb24967b083b049a6fad5c,
         type: 2}
       propertyPath: raceId
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f652e1540fb24967b083b049a6fad5c, type: 2}
@@ -1171,12 +1176,12 @@ Prefab:
       objectReference: {fileID: 1140615070}
     - target: {fileID: 1909341833220858, guid: 6f652e1540fb24967b083b049a6fad5c, type: 2}
       propertyPath: m_Name
-      value: LevelCanvas8
+      value: LevelCanvasIntroIII
       objectReference: {fileID: 0}
     - target: {fileID: 114318308529653074, guid: 6f652e1540fb24967b083b049a6fad5c,
         type: 2}
       propertyPath: raceId
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f652e1540fb24967b083b049a6fad5c, type: 2}

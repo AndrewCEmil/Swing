@@ -41,16 +41,16 @@ public class MenuController : MonoBehaviour {
 		SceneManager.LoadScene ("AboutScene");
 	}
 
-	public void LoadRace0() {
-		SceneManager.LoadScene ("Race0");
+	public void LoadIntroI() {
+		SceneManager.LoadScene ("IntroI");
 	}
 
-	public void LoadRace1() {
-		SceneManager.LoadScene ("Race1");
+	public void LoadIntroII() {
+		SceneManager.LoadScene ("IntroII");
 	}
 
-	public void LoadRace2() {
-		SceneManager.LoadScene ("Race2");
+	public void LoadIntroIII() {
+		SceneManager.LoadScene ("IntroIII");
 	}
 
 	public void LoadRace3() {
