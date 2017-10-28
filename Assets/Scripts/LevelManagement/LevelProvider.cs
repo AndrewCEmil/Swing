@@ -45,7 +45,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Race0";
 		level.level = 0;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 8 };
 		return level;
@@ -56,7 +56,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Race1";
 		level.level = 1;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 8 };
 		return level;
@@ -67,7 +67,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Race2";
 		level.level = 2;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 8 };
 		return level;
@@ -78,7 +78,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Race3";
 		level.level = 3;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 8 };
 		return level;
@@ -89,7 +89,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Race4";
 		level.level = 4;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 8 };
 		return level;
@@ -100,7 +100,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Race5";
 		level.level = 5;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 8 };
 		return level;
@@ -122,7 +122,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Race7";
 		level.level = 7;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 6 };
 		return level;
@@ -132,7 +132,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Race8";
 		level.level = 8;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 7 };
 		return level;
