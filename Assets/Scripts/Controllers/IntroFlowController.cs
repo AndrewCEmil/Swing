@@ -103,8 +103,14 @@ public class IntroFlowController : MonoBehaviour {
 
 	private string GetAdvancedPanelText() {
 		switch (panelIndex) {
+		case 0:
+			return "Awesome flying on that last level! At this point you have learned everything you need to know to win!";
+		case 1:
+			return "You see how there are two anchors here?  You see how the further one is off to the right a bit?  You see how the target is further off to the right and actually facing the left?";
+		case 2:
+			return "Well you are going to use the further anchor to swing to the right and fly into the target.  If you can hit that target, I know you can hit every other target in this game.  Good luck!";
 		default:
-			return "";
+			return "Well you are going to use the further anchor to swing to the right and fly into the target.  If you can hit that target, I know you can hit every other target in this game.  Good luck!";
 		}
 	}
 
