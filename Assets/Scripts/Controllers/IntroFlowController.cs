@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public enum IntroMode
 {
 	Basic,
+	Intermediate,
 	Advanced
 }
 
@@ -23,6 +24,8 @@ public class IntroFlowController : MonoBehaviour {
 		string sceneName = SceneManager.GetActiveScene ().name;
 		if (sceneName == "Race6") {
 			mode = IntroMode.Basic;
+		} else if (sceneName == "Race7") {
+			mode = IntroMode.Intermediate;
 		} else {
 			mode = IntroMode.Advanced;
 		}
@@ -58,8 +61,13 @@ public class IntroFlowController : MonoBehaviour {
 	}
 
 	private string GetPanelText() {
-		if (mode == IntroMode.Basic) {
-			return GetBasicPanelText();
+		switch (mode) {
+		case IntroMode.Basic:
+			return GetBasicPanelText ();
+		case IntroMode.Intermediate:
+			return GetIntermediatePanelText ();
+		case IntroMode.Advanced:
+			return GetAdvancedPanelText ();
 		}
 		return "";
 	}
@@ -79,13 +87,28 @@ public class IntroFlowController : MonoBehaviour {
 		}
 	}
 
+
 	private string GetIntermediatePanelText() {
+		switch (panelIndex) {
+		case 0:
+			return "Way to go!  On the previous level you swung into the target successfully.";
+		case 1:
+			return "You can detach from your current anchor by pointing away from all anchors and clicking";
+		case 2:
+			return "To beat this level, attach to the anchor in front of you, swing foward, and detach.  You need to fly forward, unattached, in order to hit the target";
+		default:
+			return "To beat this level, attach to the anchor in front of you, swing foward, and detach.  You need to fly forward, unattached, in order to hit the target";
+		}
+	}
+
+	private string GetAdvancedPanelText() {
 		switch (panelIndex) {
 		default:
 			return "";
-
 		}
 	}
+
+
 
 	public void NextButtonClicked() {
 		panelIndex += 1;
