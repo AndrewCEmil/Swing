@@ -3890,7 +3890,7 @@ Prefab:
     - target: {fileID: 54649167267856160, guid: 584ab9c47523249f0bfaed5d26e42970,
         type: 2}
       propertyPath: m_UseGravity
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}

@@ -41,6 +41,7 @@ public class Orchestrator : MonoBehaviour {
 		//TODO another sound
 		if (!timerController.RaceStarted ()) {
 			timerController.StartRace ();
+			playerRb.useGravity = true;
 		}
 		grappler.PointerClicked ();
 		sfxController.PlayButtonClicked ();
