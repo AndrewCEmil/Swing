@@ -39,6 +39,9 @@ public class Orchestrator : MonoBehaviour {
 
 	private void PointerClicked() {
 		//TODO another sound
+		if (!timerController.RaceStarted ()) {
+			timerController.StartRace ();
+		}
 		grappler.PointerClicked ();
 		sfxController.PlayButtonClicked ();
 	}
@@ -69,9 +72,5 @@ public class Orchestrator : MonoBehaviour {
 	public void TargetDied() {
 		float raceTime = timerController.FinishRace ();
 		levelController.HandleLevelLoss ();
-	}
-
-	public void StartRace() {
-		player.GetComponent<Rigidbody> ().useGravity = true;
 	}
 }

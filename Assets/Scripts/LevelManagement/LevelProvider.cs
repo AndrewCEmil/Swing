@@ -32,7 +32,7 @@ public class LevelProvider : MonoBehaviour {
 	}
 
 	public static int NumLevels() {
-		return 6;
+		return 7;
 	}
 
 	public static Level Race0() {
@@ -48,7 +48,7 @@ public class LevelProvider : MonoBehaviour {
 	public static Level Race1() {
 		Level level = new Level ();
 		level.name = "Race1";
-		level.level = 0;
+		level.level = 1;
 		level.locked = false;
 		level.completed = false;
 		return level;
@@ -58,7 +58,7 @@ public class LevelProvider : MonoBehaviour {
 	public static Level Race2() {
 		Level level = new Level ();
 		level.name = "Race2";
-		level.level = 0;
+		level.level = 2;
 		level.locked = false;
 		level.completed = false;
 		return level;
@@ -68,7 +68,7 @@ public class LevelProvider : MonoBehaviour {
 	public static Level Race3() {
 		Level level = new Level ();
 		level.name = "Race3";
-		level.level = 0;
+		level.level = 3;
 		level.locked = false;
 		level.completed = false;
 		return level;
@@ -78,7 +78,7 @@ public class LevelProvider : MonoBehaviour {
 	public static Level Race4() {
 		Level level = new Level ();
 		level.name = "Race4";
-		level.level = 0;
+		level.level = 4;
 		level.locked = false;
 		level.completed = false;
 		return level;
@@ -88,7 +88,17 @@ public class LevelProvider : MonoBehaviour {
 	public static Level Race5() {
 		Level level = new Level ();
 		level.name = "Race5";
-		level.level = 0;
+		level.level = 5;
+		level.locked = false;
+		level.completed = false;
+		return level;
+	}
+
+	//Intro level 1
+	public static Level Race6() {
+		Level level = new Level ();
+		level.name = "Race6";
+		level.level = 6;
 		level.locked = false;
 		level.completed = false;
 		return level;

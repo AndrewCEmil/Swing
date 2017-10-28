@@ -11,15 +11,12 @@ public enum GrapplerMode
 public class Grappler : MonoBehaviour {
 
 	private GameObject player;
-	private GameObject plane;
+	private GameObject startCube;
 	//private SpeedPanelController speedPanelController;
 	private AnchorController currentAttachedController;
 	private Vector3 anchorPosition;
-	private Vector3 axis;
-	private Vector3 secondaryAxis;
 	private GrapplerMode mode;
 	private LineRenderer lineRenderer;
-	private float maxRayDistance;
 	private GameObject currentPointedAt;
 	private float pointedAtSetTime;
 	private float pointedAtCooldown;
@@ -28,19 +25,22 @@ public class Grappler : MonoBehaviour {
 	void Start () {
 		pointedAtCooldown = .5f;
 		player = GameObject.Find ("Player");
+		startCube = GameObject.Find ("StartCube");
 		//speedPanelController = GameObject.Find ("SpeedCanvas").GetComponent<SpeedPanelController> ();
 		anchorPosition = new Vector3 (0, 0, 0);
-		axis = new Vector3 (1f, 0, 0);
-		secondaryAxis = new Vector3 (0, 1f, 0);
 		mode = GrapplerMode.Off;
-		maxRayDistance = 100f;
-		InitializeLine ();
 		currentAttachedController = null;
+		InitializeLine ();
+		InitializeStartCube ();
 	}
 
 	private void InitializeLine() {
 		lineRenderer = GameObject.Find("Line").GetComponent<LineRenderer> ();
 		lineRenderer.positionCount = 0;
+	}
+
+	private void InitializeStartCube() {
+		Attach (startCube);
 	}
 	
 	void Update () {
@@ -103,7 +103,6 @@ public class Grappler : MonoBehaviour {
 		}
 	}
 
-	//TODO need to attach where it _hits_
 	public void Attach (GameObject anchor) {
 		BuildJoint (player, anchor);
 		CreateLine (anchor);

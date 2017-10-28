@@ -22,16 +22,13 @@ public class TimePanelController : MonoBehaviour {
 		//Get last race time
 		float lastTime = GetLastRaceTime();
 		if (lastTime < 0) {
-			TurnOffPanel ();
+			lastTimeText.text = "N/A";
+			bestTimeText.text = "N/A";
 			return;
 		}
 		float bestTime = GetBestRaceTime ();
 		lastTimeText.text = lastTime.ToString ();
 		bestTimeText.text = bestTime.ToString ();
-	}
-
-	private void TurnOffPanel() {
-		gameObject.SetActive (false);
 	}
 
 	private float GetLastRaceTime() {

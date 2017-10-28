@@ -55,6 +55,13 @@ public class AnchorController : MonoBehaviour {
 	}
 
 	private Material getMaterial() {
-		return myRenderer.material;
+		return getRenderer().material;
+	}
+
+	private Renderer getRenderer() {
+		if (myRenderer == null) {
+			myRenderer = GetComponent<Renderer> ();
+		}
+		return myRenderer;
 	}
 }
