@@ -342,6 +342,7 @@
      <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
      <Compile Include="Assets\Scripts\Controllers\FloorColliderController.cs" />
      <Compile Include="Assets\Scripts\Controllers\FloorController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\IntroFlowController.cs" />
      <Compile Include="Assets\Scripts\Controllers\LeaderboardController.cs" />
      <Compile Include="Assets\Scripts\Controllers\LookAtter.cs" />
      <Compile Include="Assets\Scripts\Controllers\MenuController.cs" />
