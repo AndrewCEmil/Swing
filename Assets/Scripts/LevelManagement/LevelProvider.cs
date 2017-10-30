@@ -40,13 +40,15 @@ public class LevelProvider : MonoBehaviour {
 			return LeftRight ();
 		case 12:
 			return Drop ();
+		case 13:
+			return LittleAdventure ();
 		}
 
 		return IntroI();
 	}
 
 	public static int NumLevels() {
-		return 10;
+		return 14;
 	}
 
 	public static Level IntroI() {
@@ -87,7 +89,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 6;
 		level.locked = false;
 		level.completed = false;
-		level.preReqs = new int[] { 2 };
+		level.preReqs = new int[] { 9 };
 		return level;
 	}
 
@@ -108,7 +110,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 8;
 		level.locked = false;
 		level.completed = false;
-		level.preReqs = new int[] { 2 };
+		level.preReqs = new int[] { 13 };
 		return level;
 	}
 
@@ -129,7 +131,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 4;
 		level.locked = false;
 		level.completed = false;
-		level.preReqs = new int[] { 2 };
+		level.preReqs = new int[] { 9 };
 		return level;
 	}
 
@@ -139,7 +141,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 5;
 		level.locked = false;
 		level.completed = false;
-		level.preReqs = new int[] { 2 };
+		level.preReqs = new int[] { 9 };
 		return level;
 	}
 
@@ -149,7 +151,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 9;
 		level.locked = false;
 		level.completed = false;
-		level.preReqs = new int[] { 2 };
+		level.preReqs = new int[] { 8, 12 };
 		return level;
 	}
 
@@ -179,7 +181,17 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 12;
 		level.locked = false;
 		level.completed = false;
-		level.preReqs = new int[] { 2 };
+		level.preReqs = new int[] { 13 };
+		return level;
+	}
+
+	public static Level LittleAdventure() {
+		Level level = new Level ();
+		level.name = "Little Adventure";
+		level.level = 13;
+		level.locked = false;
+		level.completed = false;
+		level.preReqs = new int[] { 11, 12 };
 		return level;
 	}
 }

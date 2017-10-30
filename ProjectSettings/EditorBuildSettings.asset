@@ -56,3 +56,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Races/Drop.unity
     guid: 85f4e4136b8a44586bd7b31297b2a0f8
+  - enabled: 1
+    path: Assets/Scenes/Races/Little Adventure.unity
+    guid: 329c01a0a75a44302afb07df0c8c1ff8
