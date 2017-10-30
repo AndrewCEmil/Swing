@@ -21,7 +21,7 @@ public class LevelProvider : MonoBehaviour {
 		case 2: 
 			return IntroIII ();
 		case 3:
-			return Drop ();
+			return BigDrop ();
 		case 4:
 			return Runway ();
 		case 5:
@@ -34,6 +34,12 @@ public class LevelProvider : MonoBehaviour {
 			return Spiral ();
 		case 9:
 			return FieldTrip ();
+		case 10:
+			return Distance ();
+		case 11:
+			return LeftRight ();
+		case 12:
+			return Drop ();
 		}
 
 		return IntroI();
@@ -107,9 +113,9 @@ public class LevelProvider : MonoBehaviour {
 	}
 
 	//Drop
-	public static Level Drop() {
+	public static Level BigDrop() {
 		Level level = new Level ();
-		level.name = "Drop";
+		level.name = "Big Drop";
 		level.level = 3;
 		level.locked = false;
 		level.completed = false;
@@ -141,6 +147,36 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Field Trip";
 		level.level = 9;
+		level.locked = false;
+		level.completed = false;
+		level.preReqs = new int[] { 2 };
+		return level;
+	}
+
+	public static Level Distance() {
+		Level level = new Level ();
+		level.name = "Distance";
+		level.level = 10;
+		level.locked = false;
+		level.completed = false;
+		level.preReqs = new int[] { 2 };
+		return level;
+	}
+
+	public static Level LeftRight() {
+		Level level = new Level ();
+		level.name = "LeftRight";
+		level.level = 11;
+		level.locked = false;
+		level.completed = false;
+		level.preReqs = new int[] { 2 };
+		return level;
+	}
+
+	public static Level Drop() {
+		Level level = new Level ();
+		level.name = "Drop";
+		level.level = 12;
 		level.locked = false;
 		level.completed = false;
 		level.preReqs = new int[] { 2 };
