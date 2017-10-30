@@ -41,42 +41,6 @@ public class MenuController : MonoBehaviour {
 		SceneManager.LoadScene ("AboutScene");
 	}
 
-	public void LoadIntroI() {
-		SceneManager.LoadScene ("IntroI");
-	}
-
-	public void LoadIntroII() {
-		SceneManager.LoadScene ("IntroII");
-	}
-
-	public void LoadIntroIII() {
-		SceneManager.LoadScene ("IntroIII");
-	}
-
-	public void LoadRace3() {
-		SceneManager.LoadScene ("Drop");
-	}
-
-	public void LoadRace4() {
-		SceneManager.LoadScene ("Runway");
-	}
-
-	public void LoadRace5() {
-		SceneManager.LoadScene ("Longshot");
-	}
-
-	public void LoadRace6() {
-		SceneManager.LoadScene ("Adventure");
-	}
-
-	public void LoadRace7() {
-		SceneManager.LoadScene ("Pure Distance");
-	}
-
-	public void LoadRace8() {
-		SceneManager.LoadScene ("Spiral");
-	}
-
 	public void Quit() {
 		PlayerPrefs.Save ();
 		Application.Quit ();

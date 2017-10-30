@@ -32,13 +32,15 @@ public class LevelProvider : MonoBehaviour {
 			return PureDistance ();
 		case 8:
 			return Spiral ();
+		case 9:
+			return FieldTrip ();
 		}
 
 		return IntroI();
 	}
 
 	public static int NumLevels() {
-		return 9;
+		return 10;
 	}
 
 	public static Level IntroI() {
@@ -125,7 +127,6 @@ public class LevelProvider : MonoBehaviour {
 		return level;
 	}
 
-	//Fields with targeting
 	public static Level Longshot() {
 		Level level = new Level ();
 		level.name = "Longshot";
@@ -136,4 +137,13 @@ public class LevelProvider : MonoBehaviour {
 		return level;
 	}
 
+	public static Level FieldTrip() {
+		Level level = new Level ();
+		level.name = "Field Trip";
+		level.level = 9;
+		level.locked = false;
+		level.completed = false;
+		level.preReqs = new int[] { 2 };
+		return level;
+	}
 }
