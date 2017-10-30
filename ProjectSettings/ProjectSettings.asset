@@ -121,7 +121,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0.5
+  bundleVersion: 1.1.0
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -143,7 +143,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.ACE.SWING
   buildNumber: {}
-  AndroidBundleVersionCode: 105
+  AndroidBundleVersionCode: 110
   AndroidMinSdkVersion: 24
   AndroidTargetSdkVersion: 25
   AndroidPreferredInstallLocation: 1
