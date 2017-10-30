@@ -54,27 +54,27 @@ public class MenuController : MonoBehaviour {
 	}
 
 	public void LoadRace3() {
-		SceneManager.LoadScene ("Race3");
+		SceneManager.LoadScene ("Drop");
 	}
 
 	public void LoadRace4() {
-		SceneManager.LoadScene ("Race4");
+		SceneManager.LoadScene ("Runway");
 	}
 
 	public void LoadRace5() {
-		SceneManager.LoadScene ("Race5");
+		SceneManager.LoadScene ("Longshot");
 	}
 
 	public void LoadRace6() {
-		SceneManager.LoadScene ("Race6");
+		SceneManager.LoadScene ("Adventure");
 	}
 
 	public void LoadRace7() {
-		SceneManager.LoadScene ("Race7");
+		SceneManager.LoadScene ("Pure Distance");
 	}
 
 	public void LoadRace8() {
-		SceneManager.LoadScene ("Race8");
+		SceneManager.LoadScene ("Spiral");
 	}
 
 	public void Quit() {

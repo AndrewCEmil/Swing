@@ -32,8 +32,16 @@ public class LevelController : MonoBehaviour {
 
 	public bool IsRaceLevel() {
 		string sceneName = SceneManager.GetActiveScene ().name;
-		return sceneName.StartsWith ("Race");
+		List<Level> levels = LevelManager.GetLevels ();
+		foreach (Level level in levels) {
+			if (level.name == sceneName) {
+				return true;
+			}
+		}
+		return false;
 	}
+
+
 
 	public int GetCurrentLevelId() {
 		string sceneName = SceneManager.GetActiveScene ().name;

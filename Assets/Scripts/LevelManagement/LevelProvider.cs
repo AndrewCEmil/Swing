@@ -21,17 +21,17 @@ public class LevelProvider : MonoBehaviour {
 		case 2: 
 			return IntroIII ();
 		case 3:
-			return Race3 ();
+			return Drop ();
 		case 4:
-			return Race4 ();
+			return Runway ();
 		case 5:
-			return Race5 ();
+			return Longshot ();
 		case 6:
-			return Race6 ();
+			return Adventure ();
 		case 7:
-			return Race7 ();
+			return PureDistance ();
 		case 8:
-			return Race8 ();
+			return Spiral ();
 		}
 
 		return IntroI();
@@ -55,7 +55,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Intro II";
 		level.level = 1;
-		level.locked = true;
+		level.locked = false;
 		level.completed = false;
 		level.preReqs = new int[] { 0 };
 		return level;
@@ -65,7 +65,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Intro III";
 		level.level = 2;
-		level.locked = true;
+		level.locked = false;
 		level.completed = false;
 		level.preReqs = new int[] { 1 };
 		return level;
@@ -73,66 +73,64 @@ public class LevelProvider : MonoBehaviour {
 
 	}
 
-	public static Level Race6() {
+	public static Level Adventure() {
 		Level level = new Level ();
-		level.name = "Race6";
-		level.level = 0;
-		level.locked = true;
+		level.name = "Adventure";
+		level.level = 6;
+		level.locked = false;
 		level.completed = false;
 		level.preReqs = new int[] { 2 };
 		return level;
 	}
 
-	//Distance swing
-	public static Level Race7() {
+	public static Level PureDistance() {
 		Level level = new Level ();
-		level.name = "Race7";
+		level.name = "Pure Distance";
 		level.level = 7;
-		level.locked = true;
+		level.locked = false;
 		level.completed = false;
 		level.preReqs = new int[] { 2 };
 		return level;
 	}
 
 	//Circle
-	public static Level Race8() {
+	public static Level Spiral() {
 		Level level = new Level ();
-		level.name = "Race8";
+		level.name = "Spiral";
 		level.level = 8;
-		level.locked = true;
+		level.locked = false;
 		level.completed = false;
 		level.preReqs = new int[] { 2 };
 		return level;
 	}
 
 	//Drop
-	public static Level Race3() {
+	public static Level Drop() {
 		Level level = new Level ();
-		level.name = "Race3";
+		level.name = "Drop";
 		level.level = 3;
-		level.locked = true;
+		level.locked = false;
 		level.completed = false;
 		level.preReqs = new int[] { 2 };
 		return level;
 	}
 
-	//Right Angles
-	public static Level Race4() {
+	public static Level Runway() {
 		Level level = new Level ();
-		level.name = "Race4";
+		level.name = "Runway";
 		level.level = 4;
-		level.locked = true;
+		level.locked = false;
 		level.completed = false;
 		level.preReqs = new int[] { 2 };
 		return level;
 	}
 
 	//Fields with targeting
-	public static Level Race5() {
+	public static Level Longshot() {
 		Level level = new Level ();
-		level.name = "Race5";
+		level.name = "Longshot";
 		level.level = 5;
-		level.locked = true;
+		level.locked = false;
 		level.completed = false;
 		level.preReqs = new int[] { 2 };
 		return level;
