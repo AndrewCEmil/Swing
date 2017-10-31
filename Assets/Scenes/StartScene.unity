@@ -471,6 +471,7 @@ MonoBehaviour:
   attachClip: {fileID: 8300000, guid: 7444948ebd2434ce3b535e5c5a6a4402, type: 3}
   detachClip: {fileID: 8300000, guid: 57ae053b7e954413093a2cee57a6e764, type: 3}
   attachedClip: {fileID: 8300000, guid: df00993cc9cc145ec8529fb87cc6833a, type: 3}
+  unlockClip: {fileID: 0}
   soundEffectVolume: 0
 --- !u!82 &466014228
 AudioSource:
