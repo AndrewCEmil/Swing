@@ -33,10 +33,12 @@ public class RaceButtonController : MonoBehaviour {
 		button.interactable = false;
 	}
 
+	//TODO maybe do this on a delay?
 	private void NewlyUnlocked() {
 		ColorBlock colorBlock = button.colors;
 		colorBlock.normalColor = new Color(1f,0f, 0f);
 		button.colors = colorBlock;
+		GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ().PlayUnlock ();
 	}
 
 	private void SetColor(bool completed) {

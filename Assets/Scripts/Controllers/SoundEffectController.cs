@@ -34,6 +34,10 @@ public class SoundEffectController : MonoBehaviour {
 		SoundEffectManager.SFXInstance.PlayDetach ();
 	}
 
+	public void PlayUnlock() {
+		SoundEffectManager.SFXInstance.PlayLevelUnlock ();
+	}
+
 	public void StartAttached() {
 		SoundEffectManager.SFXInstance.StartAttachedSound ();
 	}
