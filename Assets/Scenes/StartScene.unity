@@ -468,8 +468,8 @@ MonoBehaviour:
   buttonClickClip: {fileID: 8300000, guid: a96ea989e2a234fb289ea462ddc7c4d4, type: 3}
   volumeClip: {fileID: 8300000, guid: df00993cc9cc145ec8529fb87cc6833a, type: 3}
   hitTargetClip: {fileID: 8300000, guid: e744c157479ca494d88d2e66cdd6c915, type: 3}
-  attachClip: {fileID: 8300000, guid: df00993cc9cc145ec8529fb87cc6833a, type: 3}
-  detachClip: {fileID: 8300000, guid: df00993cc9cc145ec8529fb87cc6833a, type: 3}
+  attachClip: {fileID: 8300000, guid: 7444948ebd2434ce3b535e5c5a6a4402, type: 3}
+  detachClip: {fileID: 8300000, guid: 57ae053b7e954413093a2cee57a6e764, type: 3}
   attachedClip: {fileID: 8300000, guid: df00993cc9cc145ec8529fb87cc6833a, type: 3}
   soundEffectVolume: 0
 --- !u!82 &466014228

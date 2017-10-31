@@ -100,7 +100,7 @@ public class Grappler : MonoBehaviour {
 		currentAttachedController.UnLink ();
 		DestroyJoint ();
 		if (mode == GrapplerMode.Attached) {
-			sfxController.StopAttached ();
+			//sfxController.StopAttached ();
 			sfxController.PlayDetach ();
 		}
 		mode = GrapplerMode.Off;
@@ -125,7 +125,7 @@ public class Grappler : MonoBehaviour {
 		anchorPosition = anchor.transform.position;
 		mode = GrapplerMode.Attached;
 		sfxController.PlayAttach ();
-		sfxController.StartAttached ();
+		//sfxController.StartAttached ();
 	}
 
 	private void CreateLine(GameObject anchor) {
