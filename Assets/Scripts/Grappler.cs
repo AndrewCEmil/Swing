@@ -20,12 +20,14 @@ public class Grappler : MonoBehaviour {
 	private GameObject currentPointedAt;
 	private float pointedAtSetTime;
 	private float pointedAtCooldown;
+	private SoundEffectController sfxController;
 
 	// Use this for initialization
 	void Start () {
 		pointedAtCooldown = .5f;
 		player = GameObject.Find ("Player");
 		startCube = GameObject.Find ("StartCube");
+		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
 		//speedPanelController = GameObject.Find ("SpeedCanvas").GetComponent<SpeedPanelController> ();
 		anchorPosition = new Vector3 (0, 0, 0);
 		mode = GrapplerMode.Off;
@@ -97,6 +99,10 @@ public class Grappler : MonoBehaviour {
 	public void BreakLink() {
 		currentAttachedController.UnLink ();
 		DestroyJoint ();
+		if (mode == GrapplerMode.Attached) {
+			sfxController.StopAttached ();
+			sfxController.PlayDetach ();
+		}
 		mode = GrapplerMode.Off;
 		lineRenderer.positionCount = 0;
 	}
@@ -118,6 +124,8 @@ public class Grappler : MonoBehaviour {
 
 		anchorPosition = anchor.transform.position;
 		mode = GrapplerMode.Attached;
+		sfxController.PlayAttach ();
+		sfxController.StartAttached ();
 	}
 
 	private void CreateLine(GameObject anchor) {

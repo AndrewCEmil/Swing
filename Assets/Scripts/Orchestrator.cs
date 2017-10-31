@@ -53,7 +53,6 @@ public class Orchestrator : MonoBehaviour {
 			playerRb.useGravity = true;
 		}
 		grappler.PointerClicked ();
-		sfxController.PlayButtonClicked ();
 	}
 
 	private void HandleAppButton() {
@@ -77,6 +76,8 @@ public class Orchestrator : MonoBehaviour {
 		LeaderboardController.RegisterTime(raceTime, levelController.GetCurrentLevelId());
 		//Handle level stuff
 		levelController.HandleLevelWin ();
+
+		sfxController.PlayButtonClicked ();
 	}
 
 	public void TargetDied() {

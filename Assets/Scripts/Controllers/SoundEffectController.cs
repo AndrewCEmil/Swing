@@ -26,6 +26,22 @@ public class SoundEffectController : MonoBehaviour {
 		SoundEffectManager.SFXInstance.StopVolumeSound ();
 	}
 
+	public void PlayAttach() {
+		SoundEffectManager.SFXInstance.PlayAttach ();
+	}
+
+	public void PlayDetach() {
+		SoundEffectManager.SFXInstance.PlayDetach ();
+	}
+
+	public void StartAttached() {
+		SoundEffectManager.SFXInstance.StartAttachedSound ();
+	}
+
+	public void StopAttached() {
+		SoundEffectManager.SFXInstance.StopAttachedSound ();
+	}
+
 	public void SetVolume(float volume) {
 		SoundEffectManager.SFXInstance.SetVolume (volume);
 	}
