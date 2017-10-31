@@ -18,12 +18,35 @@ public class RaceButtonController : MonoBehaviour {
 
 		buttonText.text = level.name;
 		if (level.locked) {
-			LockLevel ();
+			bool newlyUnlocked = LevelController.MaybeUnlockLevel (raceId);
+			if (newlyUnlocked) {
+				NewlyUnlocked ();
+			} else {
+				LockLevel ();
+			}
+		} else {
+			SetColor (level.completed);
 		}
 	}
 
 	private void LockLevel() {
 		button.interactable = false;
+	}
+
+	private void NewlyUnlocked() {
+		ColorBlock colorBlock = button.colors;
+		colorBlock.normalColor = new Color(1f,0f, 0f);
+		button.colors = colorBlock;
+	}
+
+	private void SetColor(bool completed) {
+		ColorBlock colorBlock = button.colors;
+		if (completed) {
+			colorBlock.normalColor = new Color (0f, 1f, 0f);
+		} else {
+			colorBlock.normalColor = new Color (0f, 0f, 1f);
+		}
+		button.colors = colorBlock;
 	}
 
 	public void OnClick() {

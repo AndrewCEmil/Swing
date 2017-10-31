@@ -9,11 +9,9 @@ public class TimePanelController : MonoBehaviour {
 
 	private Text lastTimeText;
 	private Text bestTimeText;
-	private LevelController levelController;
 	void Start () {
 		lastTimeText = lastTimeTextObj.GetComponent<Text> ();
 		bestTimeText = bestTimeTextObj.GetComponent<Text> ();
-		levelController = GameObject.Find ("LevelObj").GetComponent<LevelController> ();
 		Initialize ();
 	}
 
@@ -32,10 +30,10 @@ public class TimePanelController : MonoBehaviour {
 	}
 
 	private float GetLastRaceTime() {
-		return LeaderboardController.GetLastRaceTime (levelController.GetCurrentLevelId ());
+		return LeaderboardController.GetLastRaceTime (LevelController.GetCurrentLevelId ());
 	}
 
 	private float GetBestRaceTime() {
-		return LeaderboardController.GetBestRaceTime (levelController.GetCurrentLevelId ());
+		return LeaderboardController.GetBestRaceTime (LevelController.GetCurrentLevelId ());
 	}
 }

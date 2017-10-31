@@ -55,7 +55,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Intro I";
 		level.level = 0;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { };
 		return level;
@@ -65,7 +65,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Intro II";
 		level.level = 1;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 0 };
 		return level;
@@ -75,19 +75,17 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Intro III";
 		level.level = 2;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 1 };
 		return level;
-
-
 	}
 
 	public static Level Adventure() {
 		Level level = new Level ();
 		level.name = "Adventure";
 		level.level = 6;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 9 };
 		return level;
@@ -97,7 +95,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Pure Distance";
 		level.level = 7;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 2 };
 		return level;
@@ -108,7 +106,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Spiral";
 		level.level = 8;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 13 };
 		return level;
@@ -119,7 +117,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Big Drop";
 		level.level = 3;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 2 };
 		return level;
@@ -129,7 +127,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Runway";
 		level.level = 4;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 9 };
 		return level;
@@ -139,7 +137,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Longshot";
 		level.level = 5;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 9 };
 		return level;
@@ -149,7 +147,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Field Trip";
 		level.level = 9;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 8, 12 };
 		return level;
@@ -159,7 +157,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Distance";
 		level.level = 10;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 2 };
 		return level;
@@ -169,7 +167,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "LeftRight";
 		level.level = 11;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 2 };
 		return level;
@@ -179,7 +177,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Drop";
 		level.level = 12;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 13 };
 		return level;
@@ -189,7 +187,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Little Adventure";
 		level.level = 13;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 11, 12 };
 		return level;

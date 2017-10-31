@@ -5,32 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour {
 
-	private int currentLevel;
-	void Start () {
-		currentLevel = GetCurrentLevelId ();
-	}
-
-	public void HandleLevelWin() {
+	public static void HandleLevelWin() {
 		MarkLevelCompleted ();
-		MaybeUnlockLevels ();
-		if (FirstTimeGameWon ()) {
-			HandleGameWin ();
-			return;
-		}
 		ReturnToAntechamber ();
 	}
 
-
-	public void HandleLevelLoss() {
+	public static void HandleLevelLoss() {
 		string sceneName = SceneManager.GetActiveScene ().name;
 		LoadScene (sceneName);
 	}
 
-	public void HandleGameWin() {
+	public static void HandleGameWin() {
 		ReturnToAntechamber();
 	}
 
-	public bool IsRaceLevel() {
+	public static bool IsRaceLevel() {
 		string sceneName = SceneManager.GetActiveScene ().name;
 		List<Level> levels = LevelManager.GetLevels ();
 		foreach (Level level in levels) {
@@ -43,42 +32,43 @@ public class LevelController : MonoBehaviour {
 
 
 
-	public int GetCurrentLevelId() {
+	public static int GetCurrentLevelId() {
 		string sceneName = SceneManager.GetActiveScene ().name;
 		return LevelManager.LevelIdForName (sceneName);
 	}
 
-	private void MarkLevelCompleted() {
-		LevelManager.MarkLevelCompleted (currentLevel);
+	private static void MarkLevelCompleted() {
+		LevelManager.MarkLevelCompleted (GetCurrentLevelId());
 	}
 
-	void MaybeUnlockLevels() {
+	//Only returns true on newly unlocked level
+	public static bool MaybeUnlockLevel(int levelId) {
 		List<Level> levels = LevelManager.GetLevels ();
-		foreach (Level level in levels) {
-			if (level.locked) {
-				bool unlocked = true;
-				foreach (int preReq in level.preReqs) {
-					if (!levels [preReq].completed) {
-						unlocked = false;
-						break;
-					}
-				}
-
-				if (unlocked) {
-					LevelManager.UnlockLevel (level.level);
-				}
+		Level level = LevelManager.GetLevel (levelId);
+		if (!level.locked) {
+			return false;
+		}
+		bool unlocked = true;
+		foreach (int preReq in level.preReqs) {
+			if (!levels [preReq].completed) {
+				unlocked = false;
+				break;
 			}
 		}
+		if (unlocked) {
+			LevelManager.UnlockLevel (level.level);
+		}
+		return unlocked;
 	}
 
-	bool FirstTimeGameWon() {
+	static bool FirstTimeGameWon() {
 		if (AllLevelsCompleted() && PlayerPrefs.GetInt ("GameWon", 0) == 1) {
 			return true;
 		}
 		return false;
 	}
 
-	bool AllLevelsCompleted() {
+	static bool AllLevelsCompleted() {
 		List<Level> levels = LevelManager.GetLevels ();
 		foreach (Level level in levels) {
 			if (!level.completed) {
@@ -88,11 +78,11 @@ public class LevelController : MonoBehaviour {
 		return true;
 	}
 
-	void ReturnToAntechamber() {
+	static void ReturnToAntechamber() {
 		SceneManager.LoadScene ("AntechamberScene");
 	}
 
-	void LoadScene(string sceneName) {
+	static void LoadScene(string sceneName) {
 		SceneManager.LoadScene (sceneName);
 	}
 }

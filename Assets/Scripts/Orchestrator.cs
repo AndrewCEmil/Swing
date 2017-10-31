@@ -9,7 +9,6 @@ public class Orchestrator : MonoBehaviour {
 	private GameObject player;
 	private Rigidbody playerRb;
 	private Grappler grappler;
-	private LevelController levelController;
 	private TimerController timerController;
 	private LeaderboardController leaderboardController;
 	private SoundEffectController sfxController;
@@ -20,7 +19,6 @@ public class Orchestrator : MonoBehaviour {
 		player = GameObject.Find ("Player");
 		playerRb = player.GetComponent<Rigidbody> ();
 		grappler = player.GetComponent<Grappler> ();
-		levelController = GameObject.Find ("LevelObj").GetComponent<LevelController> ();
 		timerController = GameObject.Find ("Timer").GetComponent<TimerController> ();
 		leaderboardController = GameObject.Find ("Leaderboard").GetComponent<LeaderboardController> ();
 		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
@@ -56,8 +54,8 @@ public class Orchestrator : MonoBehaviour {
 	}
 
 	private void HandleAppButton() {
-		if (levelController.IsRaceLevel ()) {
-			levelController.HandleLevelLoss();
+		if (LevelController.IsRaceLevel ()) {
+			LevelController.HandleLevelLoss();
 		}
 	}
 
@@ -73,15 +71,15 @@ public class Orchestrator : MonoBehaviour {
 		//Handle timer stuff
 		float raceTime = timerController.FinishRace();
 		//Handle leaderboard stuff
-		LeaderboardController.RegisterTime(raceTime, levelController.GetCurrentLevelId());
+		LeaderboardController.RegisterTime(raceTime, LevelController.GetCurrentLevelId());
 		//Handle level stuff
-		levelController.HandleLevelWin ();
+		LevelController.HandleLevelWin ();
 
 		sfxController.PlayButtonClicked ();
 	}
 
 	public void TargetDied() {
 		float raceTime = timerController.FinishRace ();
-		levelController.HandleLevelLoss ();
+		LevelController.HandleLevelLoss ();
 	}
 }
