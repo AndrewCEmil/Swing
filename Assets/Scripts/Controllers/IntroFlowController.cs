@@ -8,7 +8,8 @@ public enum IntroMode
 {
 	Basic,
 	Intermediate,
-	Advanced
+	Advanced,
+	Final
 }
 
 public class IntroFlowController : MonoBehaviour {
@@ -26,8 +27,10 @@ public class IntroFlowController : MonoBehaviour {
 			mode = IntroMode.Basic;
 		} else if (sceneName == "Intro II") {
 			mode = IntroMode.Intermediate;
-		} else {
+		} else if (sceneName == "Intro III") {
 			mode = IntroMode.Advanced;
+		} else {
+			mode = IntroMode.Final;
 		}
 		FillPanelText ();
 		isHighlighted = false;
@@ -68,6 +71,8 @@ public class IntroFlowController : MonoBehaviour {
 			return GetIntermediatePanelText ();
 		case IntroMode.Advanced:
 			return GetAdvancedPanelText ();
+		case IntroMode.Final:
+			return GetFinalPanelText ();
 		}
 		return "";
 	}
@@ -104,13 +109,24 @@ public class IntroFlowController : MonoBehaviour {
 	private string GetAdvancedPanelText() {
 		switch (panelIndex) {
 		case 0:
+			return "Nice flying!  Now we will try moving from anchor to anchor.";
+		case 1:
+			return "On this level there are two anchors.  Attach to the first, swing forward, and then attach to the second.  Once you are attached the to second, swing forward and release to fly into the target";
+		default:
+			return "On this level there are two anchors.  Attach to the first, swing forward, and then attach to the second.  Once you are attached the to second, swing forward and release to fly into the target";
+		}
+	}
+
+	private string GetFinalPanelText() {
+		switch (panelIndex) {
+		case 0:
 			return "Awesome flying on that last level! At this point you have learned everything you need to know to win!";
 		case 1:
-			return "You see how there are two anchors here?  You see how the further one is off to the right a bit?  You see how the target is further off to the right and actually facing the left?";
+			return "This is your final test.  Attach to the first anchor, swing forward, release, and fly.  Then attach to the second anchor (on your right) and notice how you rotate around.";
 		case 2:
-			return "Well you are going to use the further anchor to swing to the right and fly into the target.  If you can hit that target, I know you can hit every other target in this game.  Good luck!";
+			return "If you time it right, you can fly off the second anchor and into the target.  If you can hit this target, I know you can hit every other target in this game.  Good luck!";
 		default:
-			return "Well you are going to use the further anchor to swing to the right and fly into the target.  If you can hit that target, I know you can hit every other target in this game.  Good luck!";
+			return "If you time it right, you can fly off the second anchor and into the target.  If you can hit this target, I know you can hit every other target in this game.  Good luck!";
 		}
 	}
 
