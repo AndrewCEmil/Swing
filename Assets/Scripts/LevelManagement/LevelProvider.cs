@@ -44,13 +44,19 @@ public class LevelProvider : MonoBehaviour {
 			return LittleAdventure ();
 		case 14:
 			return BigDrop ();
+		case 15:
+			return MoreDistance ();
+		case 16:
+			return Walkway ();
+		case 17:
+			return Playground ();
 		}
 
 		return IntroI();
 	}
 
 	public static int NumLevels() {
-		return 14;
+		return 18;
 	}
 
 	public static Level IntroI() {
@@ -110,7 +116,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 8;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 13 };
+		level.preReqs = new int[] { 9, 12 };
 		return level;
 	}
 
@@ -151,7 +157,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 9;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 8, 12 };
+		level.preReqs = new int[] { 17 };
 		return level;
 	}
 
@@ -181,7 +187,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 12;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 13 };
+		level.preReqs = new int[] { 17 };
 		return level;
 	}
 
@@ -202,6 +208,36 @@ public class LevelProvider : MonoBehaviour {
 		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 2 };
+		return level;
+	}
+
+	public static Level MoreDistance() {
+		Level level = new Level ();
+		level.name = "More Distance";
+		level.level = 15;
+		level.locked = true;
+		level.completed = false;
+		level.preReqs = new int[] { 13 };
+		return level;
+	}
+
+	public static Level Walkway() {
+		Level level = new Level ();
+		level.name = "Walkway";
+		level.level = 16;
+		level.locked = true;
+		level.completed = false;
+		level.preReqs = new int[] { 13 };
+		return level;
+	}
+
+	public static Level Playground() {
+		Level level = new Level ();
+		level.name = "Playground";
+		level.level = 17;
+		level.locked = true;
+		level.completed = false;
+		level.preReqs = new int[] { 15, 16 };
 		return level;
 	}
 }
