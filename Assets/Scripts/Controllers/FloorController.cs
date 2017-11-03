@@ -4,6 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class FloorController : MonoBehaviour {
+	public int deformType;
 	public int xSize;
 	public int ySize;
 	public int scale;
@@ -14,9 +15,13 @@ public class FloorController : MonoBehaviour {
 	private Vector3 storedVector;
 	private Vector3 middlePosition;
 	private float maxDistance;
+	private float maxX;
+	private float maxY;
 	private void Awake () {
-		middlePosition = new Vector3 (xSize * scale / 2f, 0, xSize * scale / 2f);
+		middlePosition = new Vector3 (xSize * scale / 2f, 0, ySize * scale / 2f);
 		maxDistance = Vector3.Distance (middlePosition, new Vector3 (0, 0, 0));
+		maxX = xSize * scale / 2f;
+		maxY = ySize * scale / 2f;
 		CreateMesh();
 	}
 
@@ -32,9 +37,12 @@ public class FloorController : MonoBehaviour {
 			for (int x = 0; x <= xSize * scale; x += scale, i++) {
 				vertex = new Vector3 (x, 0, y);
 				uv [i] = new Vector2 ((float)x / (xSize * scale), (float)y / (ySize * scale));
-				float heightScale = GetScale (vertex);
-				float noise = Mathf.PerlinNoise (3.14f + vertex.x, 3.14f + vertex.z);
-				vertex.y = noise * heightScale;
+
+				if (deformType == 0) {
+					vertex.y = GetPerlinNoise (vertex);
+				} else if (deformType == 1) {
+					vertex.y = GetRidgeNoise (vertex);
+				}
 				verticies[i] = vertex;
 			}
 		}
@@ -55,6 +63,41 @@ public class FloorController : MonoBehaviour {
 
 		mesh.RecalculateNormals();
 		mesh.MarkDynamic ();
+	}
+
+	private float GetPerlinNoise(Vector3 vertex) {
+		float heightScale = GetScale (vertex);
+		float noise = Mathf.PerlinNoise (3.14f + vertex.x, 3.14f + vertex.z);
+		return noise * heightScale;
+	}
+
+	private float GetRidgeNoise(Vector3 vertex) {
+		float scale = GetScale (vertex);
+		float noise = RidgeNoise (vertex);
+		return noise * scale / 100f;
+	}
+
+	private float RidgeNoise(Vector3 vertex) {
+		vertex.x = vertex.x / maxX;
+		vertex.z = vertex.z / maxY;
+		float result = 0f;
+		float amplitud = .5f;
+		float lacunarity = 1f;
+		float gain = .8f;
+		int octaves = 8;
+		float prev = 0f;;
+		for (int i = 0; i < octaves; i++) {
+			float noise = Mathf.Abs (Mathf.Sin (Mathf.PerlinNoise (vertex.x + 3.14f / 5f, vertex.z + 3.14f / 5f)));
+			noise = 1 - noise;
+			noise = noise * noise;
+
+			result += amplitud * noise;
+			result += result + noise * amplitud * prev;
+			prev = result;
+			vertex = vertex * lacunarity;
+			amplitud = amplitud * gain;
+		}
+		return result;
 	}
 
 	float GetScale(Vector3 position) {
