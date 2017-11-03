@@ -1,31 +1,33 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controllers/MenuController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelManagement/LevelProvider.cs">
     <Files>
-      <File FileName="Assets/Scripts/Controllers/IntroFlowController.cs" Line="29" Column="10" />
-      <File FileName="Assets/Scripts/Controllers/RaceButtonController.cs" Line="17" Column="22" />
-      <File FileName="Assets/Scripts/Orchestrator.cs" Line="66" Column="1" />
-      <File FileName="Assets/Scripts/Grappler.cs" Line="43" Column="2" />
+      <File FileName="Assets/Scripts/Controllers/IntroFlowController.cs" Line="125" Column="183" />
+      <File FileName="Assets/Scripts/Controllers/RaceButtonController.cs" Line="36" Column="33" />
+      <File FileName="Assets/Scripts/Orchestrator.cs" Line="12" Column="2" />
+      <File FileName="Assets/Scripts/Grappler.cs" Line="128" Column="4" />
       <File FileName="Assets/Scripts/Controllers/FloorController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LevelManagement/LevelManager.cs" Line="50" Column="26" />
-      <File FileName="Assets/Scripts/Controllers/MenuController.cs" Line="42" Column="2" />
+      <File FileName="Assets/Scripts/LevelManagement/LevelManager.cs" Line="50" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/MenuController.cs" Line="44" Column="2" />
       <File FileName="Assets/Scripts/Controllers/AnchorController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Controllers/TargetController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Controllers/SoundEffectController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/TargetController.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/SoundEffectController.cs" Line="38" Column="52" />
       <File FileName="Assets/Scripts/Controllers/FloorColliderController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LevelManagement/LevelController.cs" Line="50" Column="1" />
+      <File FileName="Assets/Scripts/LevelManagement/LevelController.cs" Line="63" Column="1" />
       <File FileName="Assets/Scripts/Controllers/LeaderboardController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LevelManagement/LevelProvider.cs" Line="37" Column="15" />
-      <File FileName="Assets/Scripts/Controllers/TimePanelController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelManagement/LevelProvider.cs" Line="46" Column="21" />
+      <File FileName="Assets/Scripts/Controllers/TimePanelController.cs" Line="15" Column="3" />
       <File FileName="Assets/Scripts/Controllers/SpeedPanelController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Controllers/LookAtter.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Controllers/TimerController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/MusicController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/SoundEffectManager.cs" Line="63" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/ace/Desktop/Swing/Assets/Scripts/ArrowController.cs" line="24" column="1" />
-      <Breakpoint file="/Users/ace/Desktop/Swing/Assets/Scripts/LevelManagement/LevelController.cs" line="14" column="1" />
+      <Breakpoint file="/Users/ace/Desktop/Swing/Assets/Scripts/LevelManagement/LevelController.cs" line="9" column="1" />
       <Breakpoint file="/Users/ace/Desktop/Swing/Assets/Scripts/Controllers/ArrowController.cs" line="25" column="1" />
       <Breakpoint file="/Users/ace/Desktop/Swing/Assets/Scripts/Controllers/FloorColliderController.cs" line="17" column="1" />
       <Breakpoint file="/Users/ace/Desktop/Swing/Assets/Scripts/Controllers/GooglePlayController.cs" line="15" column="1" />
@@ -33,8 +35,7 @@
       <Breakpoint file="/Users/ace/Desktop/Swing/Assets/Scripts/Controllers/GooglePlayController.cs" line="34" column="1" />
       <Breakpoint file="/Users/ace/Desktop/Swing/Assets/Scripts/Controllers/GooglePlayController.cs" line="35" column="1" />
       <Breakpoint file="/Users/ace/Desktop/Swing/Assets/Scripts/LevelManagement/LevelManager.cs" line="80" column="1" />
-      <Breakpoint file="/Users/ace/Desktop/Swing/Assets/Scripts/LevelManagement/LevelController.cs" line="15" column="1" />
-      <Breakpoint file="/Users/ace/Desktop/Swing/Assets/Scripts/LevelManagement/LevelController.cs" line="50" column="1" />
+      <Breakpoint file="/Users/ace/Desktop/Swing/Assets/Scripts/LevelManagement/LevelManager.cs" line="50" column="18" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
