@@ -62,3 +62,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Races/Intro III.unity
     guid: aa83fafd3a83f4c35a00a55d0817db2e
+  - enabled: 1
+    path: Assets/Scenes/Races/More Distance.unity
+    guid: 24a2b27727e144c8da0991407fe87c3d
+  - enabled: 1
+    path: Assets/Scenes/Races/Walkway.unity
+    guid: f47e2d466cb834c3296b7525e5d620bc
+  - enabled: 1
+    path: Assets/Scenes/Races/Playground.unity
+    guid: 9cb63eb7514674525a7efa880ec23644
