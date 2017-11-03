@@ -472,6 +472,7 @@ MonoBehaviour:
   scale: 300
   maxHeight: 2200
   hillDistance: 2000
+  seed: 3.14
 --- !u!4 &1425599836
 Transform:
   m_ObjectHideFlags: 0

@@ -143,6 +143,7 @@ MonoBehaviour:
   scale: 300
   maxHeight: 2200
   hillDistance: 2000
+  seed: 4.2
 --- !u!23 &76427684
 MeshRenderer:
   m_ObjectHideFlags: 0

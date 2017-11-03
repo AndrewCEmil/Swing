@@ -10,6 +10,7 @@ public class FloorController : MonoBehaviour {
 	public int scale;
 	public float maxHeight;
 	public float hillDistance;
+	public float seed;
 
 	private Vector3[] verticies;
 	private Vector3 storedVector;
@@ -67,7 +68,7 @@ public class FloorController : MonoBehaviour {
 
 	private float GetPerlinNoise(Vector3 vertex) {
 		float heightScale = GetScale (vertex);
-		float noise = Mathf.PerlinNoise (3.14f + vertex.x, 3.14f + vertex.z);
+		float noise = Mathf.PerlinNoise (seed + vertex.x, seed + vertex.z);
 		return noise * heightScale;
 	}
 
@@ -87,7 +88,7 @@ public class FloorController : MonoBehaviour {
 		int octaves = 8;
 		float prev = 0f;;
 		for (int i = 0; i < octaves; i++) {
-			float noise = Mathf.Abs (Mathf.Sin (Mathf.PerlinNoise (vertex.x + 3.14f / 5f, vertex.z + 3.14f / 5f)));
+			float noise = Mathf.Abs (Mathf.Sin (Mathf.PerlinNoise (vertex.x + seed / 5f, vertex.z + seed / 5f)));
 			noise = 1 - noise;
 			noise = noise * noise;
 
