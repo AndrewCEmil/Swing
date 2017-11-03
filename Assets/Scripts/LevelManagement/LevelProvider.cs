@@ -161,7 +161,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 10;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 2 };
+		level.preReqs = new int[] { 3 };
 		return level;
 	}
 
@@ -171,7 +171,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 11;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 2 };
+		level.preReqs = new int[] { 3 };
 		return level;
 	}
 
