@@ -177,7 +177,6 @@
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\ExponentialShadowMaps\UnlitVertColorESMReceiver.shader" />
      <None Include="Assets\GoogleVR\Plugins\Android\proguard-gvr.txt" />
      <None Include="Assets\DaydreamRenderer\Resources\shadowFilter.shader" />
-     <None Include="Assets\Breakable Objects\Scripts\C# Version\- IMPORTANT - Version Change Readme.txt" />
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\ExponentialShadowMaps\SnowTerrainESMReceiver.shader" />
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\PolyObjectLibrary.shader" />
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\UnlitVertColorAOTransparent.shader" />

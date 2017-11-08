@@ -62,9 +62,20 @@ public class BreakableObject:MonoBehaviour{
 	public bool mouseClickDestroy;			//Mouse Click breaks the object
 	Transform fragmentd;		//Stores the fragmented object after break
 	bool broken; 			//Determines if the object has been broken or not 
+	private Orchestrator orchestrator;
+
+	void Start () {
+		orchestrator = GameObject.Find ("Orchestrator").GetComponent<Orchestrator> ();
+	}
+
+	void OnTriggerEnter(Collider other) {
+
+	}
 	
 	public void OnCollisionEnter(Collision collision) {
-	    if (collision.relativeVelocity.magnitude > durability) {
+		Debug.Log ("Trigger with Target");
+		if (collision.collider.name == "Player") {
+			orchestrator.TargetHit ();
 	        triggerBreak();
 	    }
 	}

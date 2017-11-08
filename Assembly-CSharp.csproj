@@ -51,7 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Breakable Objects\Scripts\BreakableObject.cs" />
      <Compile Include="Assets\DaydreamElements\Common\Demo\Art\Effects\ExponentialShadowMaps\Scripts\ShadowRendering.cs" />
      <Compile Include="Assets\DaydreamElements\Common\Demo\Art\Effects\Stars\StarRendering.cs" />
      <Compile Include="Assets\DaydreamElements\Common\Demo\Scripts\Effects\EonSpinner.cs" />
@@ -339,6 +338,7 @@
      <Compile Include="Assets\Nebula Skyboxes\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Nebula Skyboxes\Scripts\SmoothCameraOrbit.cs" />
      <Compile Include="Assets\Scripts\Controllers\AnchorController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\BreakableObject.cs" />
      <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
      <Compile Include="Assets\Scripts\Controllers\FloorColliderController.cs" />
      <Compile Include="Assets\Scripts\Controllers\FloorController.cs" />
@@ -445,7 +445,6 @@
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\ExponentialShadowMaps\UnlitVertColorESMReceiver.shader" />
      <None Include="Assets\GoogleVR\Plugins\Android\proguard-gvr.txt" />
      <None Include="Assets\DaydreamRenderer\Resources\shadowFilter.shader" />
-     <None Include="Assets\Breakable Objects\Scripts\C# Version\- IMPORTANT - Version Change Readme.txt" />
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\ExponentialShadowMaps\SnowTerrainESMReceiver.shader" />
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\PolyObjectLibrary.shader" />
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\UnlitVertColorAOTransparent.shader" />
