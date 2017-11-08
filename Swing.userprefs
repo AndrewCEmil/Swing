@@ -1,27 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelManagement/LevelProvider.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controllers/Landscape.cs">
     <Files>
-      <File FileName="Assets/Scripts/Controllers/IntroFlowController.cs" Line="125" Column="183" />
-      <File FileName="Assets/Scripts/Controllers/RaceButtonController.cs" Line="36" Column="33" />
-      <File FileName="Assets/Scripts/Orchestrator.cs" Line="12" Column="2" />
-      <File FileName="Assets/Scripts/Grappler.cs" Line="128" Column="4" />
-      <File FileName="Assets/Scripts/Controllers/FloorController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LevelManagement/LevelManager.cs" Line="50" Column="1" />
-      <File FileName="Assets/Scripts/Controllers/MenuController.cs" Line="44" Column="2" />
-      <File FileName="Assets/Scripts/Controllers/AnchorController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Controllers/TargetController.cs" Line="13" Column="1" />
-      <File FileName="Assets/Scripts/Controllers/SoundEffectController.cs" Line="38" Column="52" />
-      <File FileName="Assets/Scripts/Controllers/FloorColliderController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LevelManagement/LevelController.cs" Line="63" Column="1" />
-      <File FileName="Assets/Scripts/Controllers/LeaderboardController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/LevelManagement/LevelProvider.cs" Line="46" Column="21" />
-      <File FileName="Assets/Scripts/Controllers/TimePanelController.cs" Line="15" Column="3" />
-      <File FileName="Assets/Scripts/Controllers/SpeedPanelController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Controllers/LookAtter.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Controllers/TimerController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Controllers/MusicController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Controllers/SoundEffectManager.cs" Line="63" Column="27" />
+      <File FileName="Assets/Scripts/Controllers/Landscape.cs" Line="178" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/FloorController.cs" Line="91" Column="95" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -18,6 +18,7 @@ public class FloorController : MonoBehaviour {
 	private float maxDistance;
 	private float maxX;
 	private float maxY;
+	private List<Vector3> worlyPoints;
 	private void Awake () {
 		middlePosition = new Vector3 (xSize * scale / 2f, 0, ySize * scale / 2f);
 		maxDistance = Vector3.Distance (middlePosition, new Vector3 (0, 0, 0));
@@ -43,6 +44,8 @@ public class FloorController : MonoBehaviour {
 					vertex.y = GetPerlinNoise (vertex);
 				} else if (deformType == 1) {
 					vertex.y = GetRidgeNoise (vertex);
+				} else if (deformType == 2) {
+					vertex.y = GetWorlyNoise (vertex);
 				}
 				verticies[i] = vertex;
 			}
@@ -76,6 +79,31 @@ public class FloorController : MonoBehaviour {
 		float scale = GetScale (vertex);
 		float noise = RidgeNoise (vertex);
 		return noise * scale / 100f;
+	}
+
+	private float GetWorlyNoise(Vector3 vertex) {
+		InitWorlyPoints ();
+		float scale = GetScale (vertex);
+		float noise =  MinDistance (vertex, worlyPoints) / maxDistance;
+		return noise / scale - 10f;
+	}
+
+	private void InitWorlyPoints() {
+		Random.InitState((int) seed);
+		float numRandoms = 10;
+		worlyPoints = new List<Vector3> ();
+		for (int i = 0; i < numRandoms; i++) {
+			worlyPoints.Add (new Vector3 (Random.Range (0, maxX), 0, Random.Range (0, maxY)));
+		}
+	}
+
+	private float MinDistance(Vector3 point, List<Vector3> points) {
+		point.y = 0f;
+		float minDist = float.MaxValue;
+		foreach (Vector3 p in points) {
+			minDist = Mathf.Min (minDist, Vector3.Distance (point, p));
+		}
+		return minDist;
 	}
 
 	private float RidgeNoise(Vector3 vertex) {
