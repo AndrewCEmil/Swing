@@ -110,6 +110,7 @@ public class BreakableObject:MonoBehaviour{
 	        fragmentd.localScale = transform.localScale; // set size of fragments
 	        Transform frags = fragmentd.Find("fragments");
 	        foreach(Transform child in frags) {
+				//TODO want this to point in the direction the player came from really
 				child.GetComponent<Rigidbody>().AddForce(Random.Range(-explosiveForce, explosiveForce), Random.Range(-explosiveForce, explosiveForce), Random.Range(-explosiveForce, explosiveForce));
 	            child.GetComponent<Rigidbody>().AddTorque(Random.Range(-explosiveForce, explosiveForce), Random.Range(-explosiveForce, explosiveForce), Random.Range(-explosiveForce, explosiveForce));
 	        }

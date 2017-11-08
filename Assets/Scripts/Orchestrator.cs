@@ -15,6 +15,9 @@ public class Orchestrator : MonoBehaviour {
 	private GameObject platform;
 	private GameObject introCanvas;
 	private IntroFlowController introFlowController;
+
+	float targetHitTime;
+	float targetHitDelay;
 	void Start () {
 		player = GameObject.Find ("Player");
 		playerRb = player.GetComponent<Rigidbody> ();
@@ -26,6 +29,8 @@ public class Orchestrator : MonoBehaviour {
 		if (introCanvas != null) {
 			introFlowController = introCanvas.GetComponent<IntroFlowController> ();
 		}
+		targetHitDelay = 4f;
+		targetHitTime = -1f;
 	}
 	
 	// Update is called once per frame
@@ -36,6 +41,10 @@ public class Orchestrator : MonoBehaviour {
 
 		if (GvrControllerInput.ClickButtonDown) {
 			PointerClicked ();
+		}
+
+		if (targetHitTime > 0 && Time.time - targetHitTime > targetHitDelay) {
+			LevelController.HandleLevelWin ();
 		}
 	}
 
@@ -73,9 +82,7 @@ public class Orchestrator : MonoBehaviour {
 		//Handle leaderboard stuff
 		LeaderboardController.RegisterTime(raceTime, LevelController.GetCurrentLevelId());
 		//Handle level stuff
-		LevelController.HandleLevelWin ();
-
-		sfxController.PlayButtonClicked ();
+		targetHitTime = Time.time;
 	}
 
 	public void TargetDied() {

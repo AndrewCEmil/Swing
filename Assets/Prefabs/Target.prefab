@@ -135,10 +135,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fragments: {fileID: 400000, guid: c538483d9207f42099e295d32772d1d3, type: 2}
-  waitForRemoveCollider: 3
-  waitForRemoveRigid: 4
-  waitForDestroy: 4
-  explosiveForce: 100
+  waitForRemoveCollider: 9
+  waitForRemoveRigid: 9
+  waitForDestroy: 9
+  explosiveForce: 1000
   durability: 3
   breakParticles: {fileID: 0}
   mouseClickDestroy: 0
