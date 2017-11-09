@@ -44,6 +44,7 @@ public class Orchestrator : MonoBehaviour {
 		}
 
 		if (targetHitTime > 0 && Time.time - targetHitTime > targetHitDelay) {
+			//Time.timeScale = 1f;
 			LevelController.HandleLevelWin ();
 		}
 	}
@@ -83,6 +84,7 @@ public class Orchestrator : MonoBehaviour {
 		LeaderboardController.RegisterTime(raceTime, LevelController.GetCurrentLevelId());
 		//Handle level stuff
 		targetHitTime = Time.time;
+		//Time.timeScale = 0.3f;
 	}
 
 	public void TargetDied() {
