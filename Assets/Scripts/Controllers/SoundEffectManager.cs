@@ -63,6 +63,10 @@ public class SoundEffectManager : MonoBehaviour {
 		playOneShot (unlockClip);
 	}
 
+	public void PlayTargetHit() {
+		playOneShot (hitTargetClip);
+	}
+
 	private void playOneShot(AudioClip audioClip) {
 		audioSource.PlayOneShot (audioClip, soundEffectVolume);
 	}

@@ -84,6 +84,7 @@ public class Orchestrator : MonoBehaviour {
 		LeaderboardController.RegisterTime(raceTime, LevelController.GetCurrentLevelId());
 		//Handle level stuff
 		targetHitTime = Time.time;
+		sfxController.PlayTargetHit ();
 		//Time.timeScale = 0.3f;
 	}
 
