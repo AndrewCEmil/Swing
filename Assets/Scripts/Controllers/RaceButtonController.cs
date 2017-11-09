@@ -36,7 +36,7 @@ public class RaceButtonController : MonoBehaviour {
 	//TODO maybe do this on a delay?
 	private void NewlyUnlocked() {
 		ColorBlock colorBlock = button.colors;
-		colorBlock.normalColor = new Color(1f,0f, 0f);
+		colorBlock.normalColor = new Color (234f/255f, 141f/255f, 219f/255f, .33f);
 		button.colors = colorBlock;
 		GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ().PlayUnlock ();
 	}
@@ -44,9 +44,9 @@ public class RaceButtonController : MonoBehaviour {
 	private void SetColor(bool completed) {
 		ColorBlock colorBlock = button.colors;
 		if (completed) {
-			colorBlock.normalColor = new Color (0f, 1f, 0f);
+			colorBlock.normalColor = new Color (0f/255f, 116f/255f, 39f/255f, 0.33f);
 		} else {
-			colorBlock.normalColor = new Color (0f, 0f, 1f);
+			colorBlock.normalColor = new Color (44f/255f, 174f/255f, 186f/255f, 0.33f);
 		}
 		button.colors = colorBlock;
 	}

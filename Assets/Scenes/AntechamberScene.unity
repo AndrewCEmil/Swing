@@ -1481,24 +1481,19 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114258955412099784, guid: 6f652e1540fb24967b083b049a6fad5c,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 713627198}
     - target: {fileID: 114513451035377428, guid: 6f652e1540fb24967b083b049a6fad5c,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1140615070}
+    - target: {fileID: 114258955412099784, guid: 6f652e1540fb24967b083b049a6fad5c,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 713627198}
     - target: {fileID: 1909341833220858, guid: 6f652e1540fb24967b083b049a6fad5c, type: 2}
       propertyPath: m_Name
       value: LevelCanvasIntroI
-      objectReference: {fileID: 0}
-    - target: {fileID: 114318308529653074, guid: 6f652e1540fb24967b083b049a6fad5c,
-        type: 2}
-      propertyPath: raceId
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f652e1540fb24967b083b049a6fad5c, type: 2}
