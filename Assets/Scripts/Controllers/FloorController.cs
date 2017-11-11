@@ -48,6 +48,8 @@ public class FloorController : MonoBehaviour {
 					vertex.y = GetRidgeNoise (vertex);
 				} else if (deformType == 2) {
 					vertex.y = GetWorlyNoise (vertex);
+				} else if (deformType == 3) {
+					vertex.y = GetSphere (vertex);
 				}
 				verticies[i] = vertex;
 			}
@@ -87,6 +89,17 @@ public class FloorController : MonoBehaviour {
 		float scale = GetWorlyScale (vertex);
 		float noise =  MinDistance (vertex, worlyPoints) / maxWorlyDistance;
 		return noise * scale;
+	}
+
+	private float GetSphere(Vector3 vertex) {
+		float radius = .5f;
+		float scaledX = ((vertex.x / maxX) - .5f) / 1.5f;
+		float scaledZ = ((vertex.z / maxY) - .5f) / 1.5f;
+		float y = radius - Mathf.Sqrt (Mathf.Abs(-1 * Mathf.Sqrt(radius) + Mathf.Pow (scaledX, 2) + Mathf.Pow (scaledZ, 2)));
+		y = y /.3409f;
+		y = -1 - y;
+		y = y * maxHeight;
+		return y;
 	}
 
 	private void InitWorlyPoints() {
