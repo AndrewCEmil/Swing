@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
   m_Fog: 1
-  m_FogColor: {r: 0.7892405, g: 0.5564446, b: 0.9117647, a: 1}
+  m_FogColor: {r: 0.122, g: 0.159, b: 0.947, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.00015
   m_LinearFogStart: 0
@@ -317,12 +317,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb7f9c728fda40a28940f1977909522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deformType: 1
+  deformType: 2
   xSize: 50
   ySize: 50
   scale: 300
-  maxHeight: 2200
-  hillDistance: 2000
+  maxHeight: 4000
+  hillDistance: 3000
   seed: 0
 --- !u!23 &884122013
 MeshRenderer:
@@ -370,7 +370,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 884122011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7500, y: -1000, z: -7500}
+  m_LocalPosition: {x: -7500, y: -700, z: -7500}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1252081541}

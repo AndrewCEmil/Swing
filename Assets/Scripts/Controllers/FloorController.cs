@@ -16,14 +16,16 @@ public class FloorController : MonoBehaviour {
 	private Vector3 storedVector;
 	private Vector3 middlePosition;
 	private float maxDistance;
+	private float maxWorlyDistance;
 	private float maxX;
 	private float maxY;
 	private List<Vector3> worlyPoints;
 	private void Awake () {
 		middlePosition = new Vector3 (xSize * scale / 2f, 0, ySize * scale / 2f);
 		maxDistance = Vector3.Distance (middlePosition, new Vector3 (0, 0, 0));
-		maxX = xSize * scale / 2f;
-		maxY = ySize * scale / 2f;
+		maxX = xSize * scale;
+		maxY = ySize * scale;
+		InitWorlyPoints ();
 		CreateMesh();
 	}
 
@@ -82,19 +84,30 @@ public class FloorController : MonoBehaviour {
 	}
 
 	private float GetWorlyNoise(Vector3 vertex) {
-		InitWorlyPoints ();
-		float scale = GetScale (vertex);
-		float noise =  MinDistance (vertex, worlyPoints) / maxDistance;
-		return noise / scale - 10f;
+		float scale = GetWorlyScale (vertex);
+		float noise =  MinDistance (vertex, worlyPoints) / maxWorlyDistance;
+		return noise * scale;
 	}
 
 	private void InitWorlyPoints() {
 		Random.InitState((int) seed);
-		float numRandoms = 10;
+		float numRandoms = 36;
+		float sectionSize = maxX / Mathf.Sqrt (numRandoms);
 		worlyPoints = new List<Vector3> ();
-		for (int i = 0; i < numRandoms; i++) {
-			worlyPoints.Add (new Vector3 (Random.Range (0, maxX), 0, Random.Range (0, maxY)));
+		for (int x = 0; x < Mathf.Sqrt(numRandoms); x++) {
+			for (int y = 0; y < Mathf.Sqrt (numRandoms); y++) {
+				Vector3 randomPoint = new Vector3 (Random.Range (0, sectionSize), 0, Random.Range (0, sectionSize));
+				worlyPoints.Add (randomPoint + new Vector3 (x * sectionSize, 0, y * sectionSize));
+			}
 		}
+		maxWorlyDistance = Vector3.Distance (new Vector3 (0, 0, 0), new Vector3 (sectionSize, 0, sectionSize));
+		//put one at each corner for style
+		/*
+		worlyPoints.Add(new Vector3(0, 0, 0));
+		worlyPoints.Add(new Vector3(maxX, 0, 0));
+		worlyPoints.Add(new Vector3(maxX, 0, maxY));
+		worlyPoints.Add(new Vector3(0, 0, maxY));
+*/
 	}
 
 	private float MinDistance(Vector3 point, List<Vector3> points) {
@@ -134,7 +147,16 @@ public class FloorController : MonoBehaviour {
 		if (radius > hillDistance) {
 			return maxHeight * ScaleFunction (position);
 		} else {
-			return 1f;
+			return 0f;
+		}
+	}
+
+	float GetWorlyScale(Vector3 position) {
+		float radius = GetRadius (position);
+		if (radius > hillDistance) {
+			return maxHeight * ScaleFunction (position);
+		} else {
+			return 0f;
 		}
 	}
 
