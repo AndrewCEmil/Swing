@@ -50,7 +50,10 @@ public class FloorController : MonoBehaviour {
 					vertex.y = GetWorlyNoise (vertex);
 				} else if (deformType == 3) {
 					vertex.y = GetSphere (vertex);
+				} else if (deformType == 4) {
+					vertex.y = 0f;
 				}
+
 				verticies[i] = vertex;
 			}
 		}
