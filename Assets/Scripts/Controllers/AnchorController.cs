@@ -11,7 +11,7 @@ public class AnchorController : MonoBehaviour {
 	private Renderer myRenderer;
 	void Start() {
 		gameObject.tag = "Anchor";
-		orchestrator = GameObject.Find ("Orchestrator").GetComponent<Orchestrator> ();
+		orchestrator = Utils.GetOrchestrator ();
 		isPointedAt = false;
 		isLinked = false;
 		emissionIntensity = 1f;

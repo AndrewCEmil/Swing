@@ -65,7 +65,7 @@ public class BreakableObject:MonoBehaviour{
 	private Orchestrator orchestrator;
 
 	void Start () {
-		orchestrator = GameObject.Find ("Orchestrator").GetComponent<Orchestrator> ();
+		orchestrator = Utils.GetOrchestrator ();
 	}
 
 	void OnTriggerEnter(Collider other) {

@@ -15,46 +15,69 @@ public class SoundEffectController : MonoBehaviour {
 	}
 
 	public void PlayButtonClicked() {
-		SoundEffectManager.SFXInstance.PlayButtonClicked ();
+		if (SoundEffectManager.SFXInstance != null) {
+			SoundEffectManager.SFXInstance.PlayButtonClicked ();
+		}
 	}
 
 	public void PlayVolumeSound() {
-		SoundEffectManager.SFXInstance.StartVolumeSound ();
+		if (SoundEffectManager.SFXInstance != null) {
+			SoundEffectManager.SFXInstance.StartVolumeSound ();
+		}
 	}
 
 	public void StopVolumeSound() {
-		SoundEffectManager.SFXInstance.StopVolumeSound ();
+		if (SoundEffectManager.SFXInstance != null) {
+			SoundEffectManager.SFXInstance.StopVolumeSound ();
+		}
 	}
 
 	public void PlayAttach() {
-		SoundEffectManager.SFXInstance.PlayAttach ();
+		if (SoundEffectManager.SFXInstance != null) {
+			SoundEffectManager.SFXInstance.PlayAttach ();
+		}
 	}
 
 	public void PlayDetach() {
-		SoundEffectManager.SFXInstance.PlayDetach ();
+		if (SoundEffectManager.SFXInstance != null) {
+			SoundEffectManager.SFXInstance.PlayDetach ();
+		}
 	}
 
 	public void PlayUnlock() {
-		SoundEffectManager.SFXInstance.PlayLevelUnlock ();
+		if (SoundEffectManager.SFXInstance != null) {
+			SoundEffectManager.SFXInstance.PlayLevelUnlock ();
+		}
 	}
 
 	public void PlayTargetHit() {
-		SoundEffectManager.SFXInstance.PlayTargetHit ();
+		if (SoundEffectManager.SFXInstance != null) {
+			SoundEffectManager.SFXInstance.PlayTargetHit ();
+		}
 	}
 
 	public void StartAttached() {
-		SoundEffectManager.SFXInstance.StartAttachedSound ();
+		if (SoundEffectManager.SFXInstance != null) {
+			SoundEffectManager.SFXInstance.StartAttachedSound ();
+		}
 	}
 
 	public void StopAttached() {
-		SoundEffectManager.SFXInstance.StopAttachedSound ();
+		if (SoundEffectManager.SFXInstance != null) {
+			SoundEffectManager.SFXInstance.StopAttachedSound ();
+		}
 	}
 
 	public void SetVolume(float volume) {
-		SoundEffectManager.SFXInstance.SetVolume (volume);
+		if (SoundEffectManager.SFXInstance != null) {
+			SoundEffectManager.SFXInstance.SetVolume (volume);
+		}
 	}
 
 	public float GetVolume() {
-		return SoundEffectManager.SFXInstance.GetVolume ();
+		if (SoundEffectManager.SFXInstance != null) {
+			return SoundEffectManager.SFXInstance.GetVolume ();
+		}
+		return 0f;
 	}
 }

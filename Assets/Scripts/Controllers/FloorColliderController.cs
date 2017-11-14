@@ -7,7 +7,7 @@ public class FloorColliderController : MonoBehaviour {
 	// Use this for initialization
 	private Orchestrator orchestrator;
 	void Start () {
-		orchestrator = GameObject.Find ("Orchestrator").GetComponent<Orchestrator> ();
+		orchestrator = Utils.GetOrchestrator ();
 	}
 	
 	// Update is called once per frame

@@ -348,7 +348,6 @@
      <Compile Include="Assets\Scripts\Controllers\LookAtter.cs" />
      <Compile Include="Assets\Scripts\Controllers\MenuController.cs" />
      <Compile Include="Assets\Scripts\Controllers\MusicController.cs" />
-     <Compile Include="Assets\Scripts\Controllers\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Controllers\RaceButtonController.cs" />
      <Compile Include="Assets\Scripts\Controllers\SoundEffectController.cs" />
      <Compile Include="Assets\Scripts\Controllers\SoundEffectManager.cs" />
@@ -356,6 +355,7 @@
      <Compile Include="Assets\Scripts\Controllers\TargetController.cs" />
      <Compile Include="Assets\Scripts\Controllers\TimePanelController.cs" />
      <Compile Include="Assets\Scripts\Controllers\TimerController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\TutorialController.cs" />
      <Compile Include="Assets\Scripts\DataObjects\LeaderboardEntry.cs" />
      <Compile Include="Assets\Scripts\DataObjects\Level.cs" />
      <Compile Include="Assets\Scripts\DataObjects\Levels.cs" />
@@ -364,7 +364,7 @@
      <Compile Include="Assets\Scripts\LevelManagement\LevelManager.cs" />
      <Compile Include="Assets\Scripts\LevelManagement\LevelProvider.cs" />
      <Compile Include="Assets\Scripts\Orchestrator.cs" />
-     <Compile Include="Assets\Scripts\rotateCamera.cs" />
+     <Compile Include="Assets\Scripts\Utils.cs" />
      <None Include="Assets\DaydreamRenderer\Shaders\daydreamStandardInclude.cginc" />
      <None Include="Assets\DaydreamElements\Elements\ObjectManipulationDemo\Shaders\FlexLaserReticle.shader" />
      <None Include="Assets\DaydreamRenderer\Shaders\daydreamGizmo.shader" />

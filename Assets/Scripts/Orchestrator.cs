@@ -14,6 +14,7 @@ public class Orchestrator : MonoBehaviour {
 	private SoundEffectController sfxController;
 	private GameObject platform;
 	private GameObject introCanvas;
+	private GameObject tutorialCanvas;
 	private IntroFlowController introFlowController;
 
 	float targetHitTime;

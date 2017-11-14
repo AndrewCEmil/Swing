@@ -115,6 +115,9 @@ public class Grappler : MonoBehaviour {
 	}
 
 	public void Attach (GameObject anchor) {
+		if (currentAttachedController != null) {
+			currentAttachedController.UnLink ();
+		}
 		BuildJoint (player, anchor);
 		CreateLine (anchor);
 		currentAttachedController = anchor.GetComponent<AnchorController> ();
