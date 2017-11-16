@@ -75,9 +75,27 @@ public class BreakableObject:MonoBehaviour{
 	public void OnCollisionEnter(Collision collision) {
 		Debug.Log ("Trigger with Target");
 		if (collision.collider.name == "Player") {
-			orchestrator.TargetHit ();
+			if (orchestrator != null) {
+				orchestrator.TargetHit ();
+			} else {
+				TutorialTargetHit ();
+			}
 	        triggerBreak();
 	    }
+	}
+
+	//I know this is horrific, but I don't care I want to move on
+	private void TutorialTargetHit() {
+		TutorialController1 tc1 = GameObject.Find ("TutorialObject").GetComponent<TutorialController1> ();
+		if (tc1 != null) {
+			tc1.TargetHit ();
+			return;
+		}
+		TutorialController2 tc2 = GameObject.Find ("TutorialObject").GetComponent<TutorialController2> ();
+		if (tc2 != null) {
+			tc2.TargetHit ();
+			return;
+		}
 	}
 	
 	public void OnMouseDown() {

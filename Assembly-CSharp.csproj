@@ -355,7 +355,8 @@
      <Compile Include="Assets\Scripts\Controllers\TargetController.cs" />
      <Compile Include="Assets\Scripts\Controllers\TimePanelController.cs" />
      <Compile Include="Assets\Scripts\Controllers\TimerController.cs" />
-     <Compile Include="Assets\Scripts\Controllers\TutorialController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\TutorialController1.cs" />
+     <Compile Include="Assets\Scripts\Controllers\TutorialController2.cs" />
      <Compile Include="Assets\Scripts\DataObjects\LeaderboardEntry.cs" />
      <Compile Include="Assets\Scripts\DataObjects\Level.cs" />
      <Compile Include="Assets\Scripts\DataObjects\Levels.cs" />

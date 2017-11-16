@@ -2,31 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class TutorialController : MonoBehaviour {
+public class TutorialController2 : MonoBehaviour {
 
+	private GameObject player;
 	private GameObject canvas;
+	private GameObject startCube;
 	private Text textField;
 	private int tutorialPosition;
 	private Grappler grappler;
 	private Rigidbody playerRB;
 	private GameObject anchor;
+	private float targetHitDelay;
+	private float targetHitTime;
 	// Use this for initialization
 	void Start () {
 		InitVariables ();
 	}
 
 	private void InitVariables() {
+		targetHitDelay = 1f;
+		targetHitTime = -1f;
 		canvas = GameObject.Find ("TutorialCanvas");
 		textField = canvas.GetComponentInChildren<Text> ();
-		grappler = GameObject.Find ("Player").GetComponent<Grappler> ();
-		playerRB = GameObject.Find ("Player").GetComponent<Rigidbody> ();
+		player = GameObject.Find ("Player");
+		grappler = player.GetComponent<Grappler> ();
+		playerRB = player.GetComponent<Rigidbody> ();
 		anchor = GameObject.Find ("Anchor0");
+		startCube = GameObject.Find ("StartCube");
 		tutorialPosition = 0;
 	}
 
 	void Update () {
-		
+		if (tutorialPosition == 1 && player.transform.position.x > 0 && player.transform.position.y > -35f) {
+			Detach ();
+		}
+		if (targetHitTime > 0 && Time.time - targetHitTime > targetHitDelay) {
+			SceneManager.LoadScene ("AntechamberScene");
+		}
+	}
+
+	public void TargetHit() {
+		targetHitTime = Time.time;
 	}
 
 	public void HandleNextClicked() {
@@ -36,12 +54,16 @@ public class TutorialController : MonoBehaviour {
 			FillPanelText ();
 			break;
 		case 1:
-			FirstAttach ();
+			Attach ();
 			break;
 		}
 	}
 
-	private void FirstAttach() {
+	private void Detach() {
+		grappler.BreakLink ();
+	}
+
+	private void Attach() {
 		//attach player to anchor0
 		playerRB.useGravity = true;
 		grappler.Attach(anchor);
