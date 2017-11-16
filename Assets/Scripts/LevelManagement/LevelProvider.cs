@@ -249,7 +249,7 @@ public class LevelProvider : MonoBehaviour {
 		Level level = new Level ();
 		level.name = "Big Adventure";
 		level.level = 18;
-		level.locked = false;
+		level.locked = true;
 		level.completed = false;
 		level.preReqs = new int[] { 15, 16 };
 		return level;
