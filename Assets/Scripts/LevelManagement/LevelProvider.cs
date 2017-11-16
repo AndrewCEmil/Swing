@@ -52,13 +52,15 @@ public class LevelProvider : MonoBehaviour {
 			return Playground ();
 		case 18:
 			return BigAdventure ();
+		case 19:
+			return Tutorial ();
 		}
 
 		return IntroI();
 	}
 
 	public static int NumLevels() {
-		return 19;
+		return 20;
 	}
 
 	public static Level IntroI() {
@@ -67,7 +69,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 0;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { };
+		level.preReqs = new int[] { 19 };
 		return level;
 	}
 
@@ -250,6 +252,16 @@ public class LevelProvider : MonoBehaviour {
 		level.locked = false;
 		level.completed = false;
 		level.preReqs = new int[] { 15, 16 };
+		return level;
+	}
+
+	public static Level Tutorial() {
+		Level level = new Level ();
+		level.name = "Tutorial";
+		level.level = 19;
+		level.locked = true;
+		level.completed = false;
+		level.preReqs = new int[] { };
 		return level;
 	}
 }

@@ -8,7 +8,6 @@ public class TutorialController1 : MonoBehaviour {
 
 	private GameObject player;
 	private GameObject canvas;
-	private GameObject startCube;
 	private Text textField;
 	private int tutorialPosition;
 	private Grappler grappler;
@@ -30,8 +29,8 @@ public class TutorialController1 : MonoBehaviour {
 		grappler = player.GetComponent<Grappler> ();
 		playerRB = player.GetComponent<Rigidbody> ();
 		anchor = GameObject.Find ("Anchor0");
-		startCube = GameObject.Find ("StartCube");
 		tutorialPosition = 0;
+		FillPanelText ();
 	}
 
 	void Update () {
@@ -46,13 +45,10 @@ public class TutorialController1 : MonoBehaviour {
 
 	public void HandleNextClicked() {
 		tutorialPosition += 1;
-		switch (tutorialPosition) {
-		case 0:
+		if (tutorialPosition < 3) {
 			FillPanelText ();
-			break;
-		case 1:
+		} else {
 			Attach ();
-			break;
 		}
 	}
 
@@ -71,7 +67,11 @@ public class TutorialController1 : MonoBehaviour {
 	private string GetPanelText() {
 		switch (tutorialPosition) {
 		case 0:
-			return "TEST";
+			return "WELCOME!  This tutorial will provide a 3rd person perspective on gameplay.  Keep in mind that when you start playing you will be seeing everything from the perspective of the ball";
+		case 1:
+			return "The point of the game is to swing through levels and crash into the red glass.  You swing through levels by connecting to anchors.  The diamond you see in front of you is an anchor";
+		case 2:
+			return "Now, lets demonstate how this works.  When you click Okay, the \"player\" will attach to an anchor and swing into the target";
 		default:
 			return "FIN";
 		}
