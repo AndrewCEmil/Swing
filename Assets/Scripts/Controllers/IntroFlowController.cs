@@ -44,6 +44,10 @@ public class IntroFlowController : MonoBehaviour {
 		if (clickFrameCountdown > 0) {
 			clickFrameCountdown--;
 		}
+
+		if (!button.IsActive ()) { 
+			isHighlighted = false;
+		}
 	}
 
 	public void PointerEnter() {
@@ -66,7 +70,7 @@ public class IntroFlowController : MonoBehaviour {
 		StringPair panelText = GetPanelText ();
 		textField.text = panelText.a;
 		if (panelText.b == "") {
-			Destroy (button);
+			button.gameObject.SetActive (false);
 		} else {
 			buttonText.text = panelText.b;
 		}
