@@ -360,6 +360,7 @@
      <Compile Include="Assets\Scripts\DataObjects\LeaderboardEntry.cs" />
      <Compile Include="Assets\Scripts\DataObjects\Level.cs" />
      <Compile Include="Assets\Scripts\DataObjects\Levels.cs" />
+     <Compile Include="Assets\Scripts\DataObjects\StringPair.cs" />
      <Compile Include="Assets\Scripts\Grappler.cs" />
      <Compile Include="Assets\Scripts\LevelManagement\LevelController.cs" />
      <Compile Include="Assets\Scripts\LevelManagement\LevelManager.cs" />

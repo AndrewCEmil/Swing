@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,12 +17,15 @@ public class IntroFlowController : MonoBehaviour {
 
 	// Use this for initialization
 	public Text textField;
+	public Button button;
+	private Text buttonText;
 	private IntroMode mode;
 	private int panelIndex;
 	private int clickFrameCountdown;
 	private bool isHighlighted;
 	void Start () {
 		clickFrameCountdown = 0;
+		buttonText = button.GetComponentInChildren<Text>();
 		string sceneName = SceneManager.GetActiveScene ().name;
 		if (sceneName == "Intro I") {
 			mode = IntroMode.Basic;
@@ -59,11 +63,16 @@ public class IntroFlowController : MonoBehaviour {
 	}
 
 	private void FillPanelText() {
-		string panelText = GetPanelText ();
-		textField.text = panelText;
+		StringPair panelText = GetPanelText ();
+		textField.text = panelText.a;
+		if (panelText.b == "") {
+			Destroy (button);
+		} else {
+			buttonText.text = panelText.b;
+		}
 	}
 
-	private string GetPanelText() {
+	private StringPair GetPanelText() {
 		switch (mode) {
 		case IntroMode.Basic:
 			return GetBasicPanelText ();
@@ -74,59 +83,59 @@ public class IntroFlowController : MonoBehaviour {
 		case IntroMode.Final:
 			return GetFinalPanelText ();
 		}
-		return "";
+		return new StringPair ();
 	}
 
-	private string GetBasicPanelText() {
+	private StringPair GetBasicPanelText() {
 		switch(panelIndex) {
 		case 0:
-			return "Welcome!  First off, note the menu directly above you.  If you ever want exit play, just click Back up there.";
+			return new StringPair ("Welcome!  First off, note the menu directly above you.  If you ever want exit play, just click Back up there.", "Got it");
 		case 1:
-			return "The goal of each level is to hit the target.  The target is the Red Square in front of you.";
+			return new StringPair ("As you learned in the tutorial, the goal of each level is to hit the target", "Yep");
 		case 2:
-			return "To hit the target you will have to swing through the level by connecting to anchors.  The diamond in front of you is an anchor.";
+			return new StringPair ("To beat this level you need to connect to the anchor in front of you and swing into the target", "Right");
 		case 3:
-			return "Connect to the Diamond by pointing your controller at it and clicking the touchpad.";
+			return new StringPair ("Alright, so connect to the Diamond by pointing your controller at it and clicking the touchpad", "");
 		default: 
-			return "Connect to the Diamond by pointing your controller at it and clicking the touchpad.";
+			return new StringPair ("Alright, so connect to the Diamond by pointing your controller at it and clicking the touchpad", "");
 		}
 	}
 
 
-	private string GetIntermediatePanelText() {
+	private StringPair GetIntermediatePanelText() {
 		switch (panelIndex) {
 		case 0:
-			return "Way to go!  On the previous level you swung into the target successfully.";
+			return new StringPair ("Way to go!  On the previous level you swung into the target successfully.", "Thanks");
 		case 1:
-			return "You can detach from your current anchor by pointing away from all anchors and clicking";
+			return new StringPair ("You can detach from your current anchor by pointing away from all anchors and clicking", "Okay");
 		case 2:
-			return "To beat this level, attach to the anchor in front of you, swing foward, and detach.  You need to fly forward, unattached, in order to hit the target";
+			return new StringPair ("To beat this level, attach to the anchor in front of you, swing foward, and detach.", "");
 		default:
-			return "To beat this level, attach to the anchor in front of you, swing foward, and detach.  You need to fly forward, unattached, in order to hit the target";
+			return new StringPair ("To beat this level, attach to the anchor in front of you, swing foward, and detach.", "");
 		}
 	}
 
-	private string GetAdvancedPanelText() {
+	private StringPair GetAdvancedPanelText() {
 		switch (panelIndex) {
 		case 0:
-			return "Nice flying!  Now we will try moving from anchor to anchor.";
+			return new StringPair ("Nice flying!  Now we will try moving from anchor to anchor.", "Sweet");
 		case 1:
-			return "On this level there are two anchors.  Attach to the first, swing forward, and then attach to the second.  Once you are attached the to second, swing forward and release to fly into the target";
+			return new StringPair ("On this level there are two anchors.  Attach to the first, swing forward, and then attach to the second.  Once you are attached the to second, swing forward and release to fly into the target", "");
 		default:
-			return "On this level there are two anchors.  Attach to the first, swing forward, and then attach to the second.  Once you are attached the to second, swing forward and release to fly into the target";
+			return new StringPair ("On this level there are two anchors.  Attach to the first, swing forward, and then attach to the second.  Once you are attached the to second, swing forward and release to fly into the target", "");
 		}
 	}
 
-	private string GetFinalPanelText() {
+	private StringPair GetFinalPanelText() {
 		switch (panelIndex) {
 		case 0:
-			return "Awesome flying on that last level! At this point you have learned everything you need to know to win!";
+			return new StringPair ("Awesome flying on that last level! At this point you have learned everything you need to know to win!", "Great");
 		case 1:
-			return "This is your final test.  Attach to the first anchor, swing forward, release, and fly.  Then attach to the second anchor (on your right) and notice how you rotate around.";
+			return new StringPair ("This is your final test.  Attach to the first anchor, swing forward, release, and fly.  Then attach to the second anchor (on your right) and notice how you rotate around.", "Whoa");
 		case 2:
-			return "If you time it right, you can fly off the second anchor and into the target.  If you can hit this target, I know you can hit every other target in this game.  Good luck!";
+			return new StringPair ("If you time it right, you can fly off the second anchor and into the target.  If you can hit this target, I know you can hit every other target in this game.  Good luck!", "");
 		default:
-			return "If you time it right, you can fly off the second anchor and into the target.  If you can hit this target, I know you can hit every other target in this game.  Good luck!";
+			return new StringPair ("If you time it right, you can fly off the second anchor and into the target.  If you can hit this target, I know you can hit every other target in this game.  Good luck!", "");
 		}
 	}
 

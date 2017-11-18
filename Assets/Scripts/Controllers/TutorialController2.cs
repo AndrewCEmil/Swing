@@ -56,7 +56,8 @@ public class TutorialController2 : MonoBehaviour {
 		} else if (tutorialPosition > 3 && tutorialPosition < 6) {
 			FillPanelText ();
 		} else if (tutorialPosition == 6) {
-			LevelController.HandleLevelWin ();
+			LevelManager.MarkLevelCompleted (19);
+			SceneManager.LoadScene ("AntechamberScene");
 		}
 	}
 
