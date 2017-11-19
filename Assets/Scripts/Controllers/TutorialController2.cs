@@ -8,6 +8,8 @@ public class TutorialController2 : MonoBehaviour {
 
 	private GameObject player;
 	private GameObject canvas;
+	private Button button;
+	private Text buttonText;
 	private Text textField;
 	private int tutorialPosition;
 	private Grappler grappler;
@@ -25,6 +27,8 @@ public class TutorialController2 : MonoBehaviour {
 		targetHitTime = -1f;
 		canvas = GameObject.Find ("TutorialCanvas");
 		textField = canvas.GetComponentInChildren<Text> ();
+		button = canvas.GetComponentInChildren<Button> ();
+		buttonText = button.GetComponentInChildren<Text> ();
 		player = GameObject.Find ("Player");
 		grappler = player.GetComponent<Grappler> ();
 		playerRB = player.GetComponent<Rigidbody> ();
@@ -79,24 +83,25 @@ public class TutorialController2 : MonoBehaviour {
 	}
 
 	private void FillPanelText() {
-		string panelText = GetPanelText ();
-		textField.text = panelText;
+		StringPair panelText = GetPanelText ();
+		textField.text = panelText.a;
+		buttonText.text = panelText.b;
 	}
 
-	private string GetPanelText() {
+	private StringPair GetPanelText() {
 		switch (tutorialPosition) {
 		case 0:
-			return "Pretty simple right?  There is one more thing you need to understand: detaching";
+			return new StringPair ("Pretty simple right?  There is one more thing you need to understand: detaching", "Okay");
 		case 1:
-			return "You can detach from the anchor you are connected to at any time.  By detaching at the right moment you can use your momentum and fly through the level.";
+			return new StringPair ("You can detach from the anchor you are connected to at any time.  By detaching at the right moment you can use your momentum and fly through the level.", "Got it");
 		case 2:
-			return "When you click next, the player will attach to the anchor and swing forwad.  Once the player has momentum, they will detach from the anchor and fly forward";
+			return new StringPair ("When you click \"play\", the player will attach to the anchor and swing forwad.  Once the player has momentum, they will detach from the anchor and fly forward", "play");
 		case 4:
-			return "Okay well thats it for this tutorial.  You can now go play the intro levels which will give you a feel for how this all works in practice.";
+			return new StringPair ("Okay well thats it for this tutorial.  You can now go play the intro levels which will give you a feel for how this all works in practice.", "Thanks!");
 		case 5:
-			return "If you want to read more details on how to play, click the About button in the start scene";
+			return new StringPair ("If you want to read more details on how to play, click the About button in the start scene", "Okay");
 		default:
-			return tutorialPosition.ToString ();
+			return new StringPair (tutorialPosition.ToString (), "");
 		}
 	}
 }

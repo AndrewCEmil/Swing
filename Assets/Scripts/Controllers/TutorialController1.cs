@@ -9,6 +9,8 @@ public class TutorialController1 : MonoBehaviour {
 	private GameObject player;
 	private GameObject canvas;
 	private Text textField;
+	private Button button;
+	private Text buttonText;
 	private int tutorialPosition;
 	private Grappler grappler;
 	private Rigidbody playerRB;
@@ -25,6 +27,8 @@ public class TutorialController1 : MonoBehaviour {
 		targetHitTime = -1f;
 		canvas = GameObject.Find ("TutorialCanvas");
 		textField = canvas.GetComponentInChildren<Text> ();
+		button = canvas.GetComponentInChildren<Button> ();
+		buttonText = button.GetComponentInChildren<Text> ();
 		player = GameObject.Find ("Player");
 		grappler = player.GetComponent<Grappler> ();
 		playerRB = player.GetComponent<Rigidbody> ();
@@ -60,20 +64,21 @@ public class TutorialController1 : MonoBehaviour {
 	}
 
 	private void FillPanelText() {
-		string panelText = GetPanelText ();
-		textField.text = panelText;
+		StringPair panelText = GetPanelText ();
+		textField.text = panelText.a;
+		buttonText.text = panelText.b;
 	}
 
-	private string GetPanelText() {
+	private StringPair GetPanelText() {
 		switch (tutorialPosition) {
 		case 0:
-			return "WELCOME!  This tutorial will provide a 3rd person perspective on gameplay.  Keep in mind that when you start playing you will be seeing everything from the perspective of the ball";
+			return new StringPair("WELCOME!  This tutorial will provide a 3rd person perspective on gameplay.  Keep in mind that when you start playing you will be seeing everything from the perspective of the ball", "Cool");
 		case 1:
-			return "The point of the game is to swing through levels and crash into the red glass.  You swing through levels by connecting to anchors.  The diamond you see in front of you is an anchor";
+			return new StringPair ("The point of the game is to swing through levels and crash into the red glass.  You swing through levels by connecting to anchors.  The diamond you see in front of you is an anchor", "Got it");
 		case 2:
-			return "Now, lets demonstate how this works.  When you click Okay, the \"player\" will attach to an anchor and swing into the target";
+			return new StringPair("Now, lets demonstate how this works.  When you click Okay, the \"player\" will attach to an anchor and swing into the target", "Okay");
 		default:
-			return "FIN";
+			return null;
 		}
 	}
 }
