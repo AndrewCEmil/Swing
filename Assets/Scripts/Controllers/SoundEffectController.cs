@@ -56,6 +56,12 @@ public class SoundEffectController : MonoBehaviour {
 		}
 	}
 
+	public void PlayShot() {
+		if (SoundEffectManager.SFXInstance != null) {
+			SoundEffectManager.SFXInstance.PlayShot ();
+		}
+	}
+
 	public void StartAttached() {
 		if (SoundEffectManager.SFXInstance != null) {
 			SoundEffectManager.SFXInstance.StartAttachedSound ();

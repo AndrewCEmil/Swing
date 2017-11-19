@@ -138,6 +138,7 @@ public class Grappler : MonoBehaviour {
 		rb.AddForce(direction * 6000);
 		Physics.IgnoreCollision(bullet.GetComponent<Collider>(), player.GetComponent<Collider>());
 
+		sfxController.PlayShot ();
 		mode = GrapplerMode.Shooting;
 	}
 
