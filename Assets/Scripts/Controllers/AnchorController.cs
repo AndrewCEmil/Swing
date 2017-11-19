@@ -7,16 +7,16 @@ public class AnchorController : MonoBehaviour {
 	private Orchestrator orchestrator;
 	private bool isPointedAt;
 	private bool isLinked;
-	private float emissionIntensity;
 	private Renderer myRenderer;
+	private ParticleSystem ps;
 	void Start() {
 		gameObject.tag = "Anchor";
 		orchestrator = Utils.GetOrchestrator ();
 		isPointedAt = false;
 		isLinked = false;
-		emissionIntensity = 1f;
 		myRenderer = GetComponent<Renderer> ();
 		UpdateColor ();
+		ps = GetComponentInChildren<ParticleSystem> ();
 	}
 
 	public void PointerEnter() {
@@ -31,6 +31,9 @@ public class AnchorController : MonoBehaviour {
 	public void Link() {
 		isLinked = true;
 		UpdateColor ();
+		if (ps != null) {
+			ps.Emit (1000);
+		}
 	}
 
 	public void UnLink() {
