@@ -5,12 +5,14 @@ using UnityEngine;
 public enum GrapplerMode
 {
 	Off,
+	Shooting,
 	Attached
 }
 
 public class Grappler : MonoBehaviour {
 
 	private GameObject player;
+	private GameObject bullet;
 	private GameObject startCube;
 	//private SpeedPanelController speedPanelController;
 	private AnchorController currentAttachedController;
@@ -21,11 +23,13 @@ public class Grappler : MonoBehaviour {
 	private float pointedAtSetTime;
 	private float pointedAtCooldown;
 	private SoundEffectController sfxController;
+	private GameObject shotAtTarget;
 
 	// Use this for initialization
 	void Start () {
 		pointedAtCooldown = .5f;
 		player = GameObject.Find ("Player");
+		bullet = GameObject.Find ("Bullet");
 		startCube = GameObject.Find ("StartCube");
 		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
 		//speedPanelController = GameObject.Find ("SpeedCanvas").GetComponent<SpeedPanelController> ();
@@ -55,9 +59,18 @@ public class Grappler : MonoBehaviour {
 		switch (mode) {
 		case GrapplerMode.Off:
 			break;
+		case GrapplerMode.Shooting:
+			DoShooting ();
+			break;
 		case GrapplerMode.Attached:
 			DoLine ();
 			break;
+		}
+	}
+
+	private void DoShooting() {
+		if (Vector3.Distance (player.transform.position, shotAtTarget.transform.position) > Vector3.Distance (player.transform.position, bullet.transform.position)) {
+			Attach (shotAtTarget);
 		}
 	}
 
@@ -90,7 +103,8 @@ public class Grappler : MonoBehaviour {
 
 	public void PointerClicked() {
 		if (currentPointedAt != null) {
-			Attach (currentPointedAt);
+			shotAtTarget = currentPointedAt;
+			Shoot ();
 		} else {
 			BreakLink ();
 		}
@@ -114,7 +128,21 @@ public class Grappler : MonoBehaviour {
 		}
 	}
 
+	private void Shoot() {
+		//Shoot bullet, set state
+		bullet.SetActive(true);
+		Rigidbody rb = bullet.GetComponent<Rigidbody> ();
+		rb.MovePosition (player.transform.position);
+		rb.velocity = new Vector3 (0f, 0f, 0f);
+		Vector3 direction = (shotAtTarget.transform.position - player.transform.position).normalized;
+		rb.AddForce(direction * 3000);
+		Physics.IgnoreCollision(bullet.GetComponent<Collider>(), player.GetComponent<Collider>());
+
+		mode = GrapplerMode.Shooting;
+	}
+
 	public void Attach (GameObject anchor) {
+		bullet.SetActive (false);
 		if (currentAttachedController != null) {
 			currentAttachedController.UnLink ();
 		}

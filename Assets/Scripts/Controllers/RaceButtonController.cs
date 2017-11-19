@@ -10,22 +10,32 @@ public class RaceButtonController : MonoBehaviour {
 	private Level level;
 	private Button button;
 	private Text buttonText;
+	private float timeDelay;
+	private bool newlyUnlocked;
+	private float startTime;
 	// Use this for initialization
 	void Start () {
+		timeDelay = .1f;
 		button = GetComponentInChildren<Button> ();
 		buttonText = GetComponentInChildren<Text> ();
 		level = LevelManager.GetLevel (raceId);
 
 		buttonText.text = level.name;
 		if (level.locked) {
-			bool newlyUnlocked = LevelController.MaybeUnlockLevel (raceId);
+			newlyUnlocked = LevelController.MaybeUnlockLevel (raceId);
 			if (newlyUnlocked) {
-				NewlyUnlocked ();
-			} else {
-				LockLevel ();
+				startTime = Time.time;
 			}
+			LockLevel ();
 		} else {
 			SetColor (level.completed);
+		}
+	}
+
+	void Update() {
+		if (newlyUnlocked && ((timeDelay * raceId) < Time.time - startTime)) {
+			NewlyUnlocked ();
+			newlyUnlocked = false;
 		}
 	}
 
