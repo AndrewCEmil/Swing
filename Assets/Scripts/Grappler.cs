@@ -69,7 +69,7 @@ public class Grappler : MonoBehaviour {
 	}
 
 	private void DoShooting() {
-		if (Vector3.Distance (player.transform.position, shotAtTarget.transform.position) > Vector3.Distance (player.transform.position, bullet.transform.position)) {
+		if (Vector3.Distance (player.transform.position, shotAtTarget.transform.position) < Vector3.Distance (player.transform.position, bullet.transform.position)) {
 			Attach (shotAtTarget);
 		}
 	}
@@ -135,7 +135,7 @@ public class Grappler : MonoBehaviour {
 		rb.MovePosition (player.transform.position);
 		rb.velocity = new Vector3 (0f, 0f, 0f);
 		Vector3 direction = (shotAtTarget.transform.position - player.transform.position).normalized;
-		rb.AddForce(direction * 3000);
+		rb.AddForce(direction * 6000);
 		Physics.IgnoreCollision(bullet.GetComponent<Collider>(), player.GetComponent<Collider>());
 
 		mode = GrapplerMode.Shooting;
