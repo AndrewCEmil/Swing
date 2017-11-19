@@ -349,6 +349,7 @@
      <Compile Include="Assets\Scripts\Controllers\MenuController.cs" />
      <Compile Include="Assets\Scripts\Controllers\MusicController.cs" />
      <Compile Include="Assets\Scripts\Controllers\RaceButtonController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\RandomRotater.cs" />
      <Compile Include="Assets\Scripts\Controllers\SoundEffectController.cs" />
      <Compile Include="Assets\Scripts\Controllers\SoundEffectManager.cs" />
      <Compile Include="Assets\Scripts\Controllers\SpeedPanelController.cs" />
