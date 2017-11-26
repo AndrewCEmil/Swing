@@ -45,6 +45,7 @@ public class RaceButtonController : MonoBehaviour {
 
 	//TODO maybe do this on a delay?
 	private void NewlyUnlocked() {
+		button.interactable = true;
 		ColorBlock colorBlock = button.colors;
 		colorBlock.normalColor = new Color (234f/255f, 141f/255f, 219f/255f, .66f);
 		colorBlock.highlightedColor = new Color (234f / 255f, 141f / 255f, 219f / 255f, 1f);
