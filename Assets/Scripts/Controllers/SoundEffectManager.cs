@@ -75,7 +75,7 @@ public class SoundEffectManager : MonoBehaviour {
 	}
 
 	public void PlayButtonHightlight() {
-		playOneShot (buttonHighlightClip);
+		playOneShotVolumeOffset (buttonHighlightClip, .3f);
 	}
 
 	public void PlayAnchorHighlight() {
@@ -83,7 +83,15 @@ public class SoundEffectManager : MonoBehaviour {
 	}
 
 	private void playOneShot(AudioClip audioClip) {
-		audioSource.PlayOneShot (audioClip, soundEffectVolume);
+		playOneShotVolumeOffset (audioClip, 0);
+	}
+
+	private void playOneShotVolumeOffset(AudioClip audioClip, float volumeOffset) {
+		playOneShotVolume (audioClip, soundEffectVolume - volumeOffset);
+	}
+
+	private void playOneShotVolume(AudioClip audioClip, float volume) {
+		audioSource.PlayOneShot (audioClip, volume);
 	}
 
 	public void StartAttachedSound() {
