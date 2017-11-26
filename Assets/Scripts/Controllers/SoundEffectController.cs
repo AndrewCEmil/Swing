@@ -62,6 +62,18 @@ public class SoundEffectController : MonoBehaviour {
 		}
 	}
 
+	public void PlayButtonHighlight() {
+		if (SoundEffectManager.SFXInstance != null) {
+			SoundEffectManager.SFXInstance.PlayButtonHightlight ();
+		}
+	}
+
+	public void PlayAnchorHighlight() {
+		if (SoundEffectManager.SFXInstance != null) {
+			SoundEffectManager.SFXInstance.PlayAnchorHighlight ();
+		}
+	}
+
 	public void StartAttached() {
 		if (SoundEffectManager.SFXInstance != null) {
 			SoundEffectManager.SFXInstance.StartAttachedSound ();

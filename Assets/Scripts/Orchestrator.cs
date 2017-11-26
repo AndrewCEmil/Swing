@@ -71,6 +71,7 @@ public class Orchestrator : MonoBehaviour {
 	}
 
 	public void AnchorPointedAt(GameObject anchor) {
+		sfxController.PlayAnchorHighlight ();
 		grappler.AnchorPointedAt (anchor);
 	}
 

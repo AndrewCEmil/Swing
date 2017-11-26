@@ -12,6 +12,8 @@ public class SoundEffectManager : MonoBehaviour {
 	public AudioClip attachedClip;
 	public AudioClip unlockClip;
 	public AudioClip shotClip;
+	public AudioClip buttonHighlightClip;
+	public AudioClip anchorHighlightClip;
 
 	private AudioSource audioSource;
 	public float soundEffectVolume;
@@ -70,6 +72,14 @@ public class SoundEffectManager : MonoBehaviour {
 
 	public void PlayShot() {
 		playOneShot (shotClip);
+	}
+
+	public void PlayButtonHightlight() {
+		playOneShot (buttonHighlightClip);
+	}
+
+	public void PlayAnchorHighlight() {
+		playOneShot (anchorHighlightClip);
 	}
 
 	private void playOneShot(AudioClip audioClip) {
