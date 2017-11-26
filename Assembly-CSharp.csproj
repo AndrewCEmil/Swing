@@ -334,9 +334,6 @@
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrMathHelpers.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrUIHelpers.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
-     <Compile Include="Assets\Nebula Skyboxes\Scripts\ColorPicker_Material.cs" />
-     <Compile Include="Assets\Nebula Skyboxes\Scripts\MouseLook.cs" />
-     <Compile Include="Assets\Nebula Skyboxes\Scripts\SmoothCameraOrbit.cs" />
      <Compile Include="Assets\Scripts\Controllers\AnchorController.cs" />
      <Compile Include="Assets\Scripts\Controllers\BreakableObject.cs" />
      <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
@@ -382,7 +379,6 @@
      <None Include="Assets\DaydreamRenderer\Shaders\daydreamDiffuseReflectInclude.cginc" />
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\DaydreamElementsLighting\DynamicVertColorWind.shader" />
      <None Include="Assets\DaydreamElements\Elements\ArmModels\Demo\Shaders\ControllerOutline.shader" />
-     <None Include="Assets\Nebula Skyboxes\Nebula Skyboxes - Readme.txt" />
      <None Include="Assets\DaydreamElements\Main\Shaders\UIZTestOff.shader" />
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\UnlitVertColorSolidOverlay.shader" />
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\InfoCardSpectrumBG.shader" />
