@@ -12,6 +12,7 @@ public enum GrapplerMode
 public class Grappler : MonoBehaviour {
 
 	private GameObject player;
+	private Rigidbody playerRB;
 	private GameObject bullet;
 	private GameObject startCube;
 	//private SpeedPanelController speedPanelController;
@@ -25,10 +26,14 @@ public class Grappler : MonoBehaviour {
 	private SoundEffectController sfxController;
 	private GameObject shotAtTarget;
 
+	private float attachSpeedMagnitude;
+	private float attachedAtFrame;
+
 	// Use this for initialization
 	void Start () {
 		pointedAtCooldown = .5f;
 		player = GameObject.Find ("Player");
+		playerRB = player.GetComponent<Rigidbody> ();
 		bullet = GameObject.Find ("Bullet");
 		startCube = GameObject.Find ("StartCube");
 		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
@@ -38,6 +43,7 @@ public class Grappler : MonoBehaviour {
 		currentAttachedController = null;
 		InitializeLine ();
 		InitializeStartCube ();
+		attachedAtFrame = -1f;
 	}
 
 	private void InitializeLine() {
@@ -56,6 +62,7 @@ public class Grappler : MonoBehaviour {
 	
 	void Update () {
 		UpdatePointedAt ();
+		MaybeDoBoost ();
 		switch (mode) {
 		case GrapplerMode.Off:
 			break;
@@ -66,6 +73,22 @@ public class Grappler : MonoBehaviour {
 			DoLine ();
 			break;
 		}
+	}
+
+	private void MaybeDoBoost() {
+		if (attachedAtFrame + 1 == Time.frameCount) {
+			DoBoost ();
+		}
+	}
+
+	private void DoBoost() {
+		float currentVelocityMagnitude = playerRB.velocity.sqrMagnitude;
+		//new velocity = (currentVelocity) + (currentVelocity.normalized * lostVelocity)
+		float lostVelocity = attachSpeedMagnitude - currentVelocityMagnitude;
+		if (lostVelocity <= 0) {
+			return;
+		}
+		playerRB.velocity = playerRB.velocity + (playerRB.velocity.normalized * Mathf.Sqrt (lostVelocity));
 	}
 
 	private void DoShooting() {
@@ -153,11 +176,12 @@ public class Grappler : MonoBehaviour {
 		currentAttachedController.Link ();
 
 		//speedPanelController.AttachTriggered ();
+		//Section for boosting
+		attachSpeedMagnitude = playerRB.velocity.sqrMagnitude;
 
 		anchorPosition = anchor.transform.position;
 		mode = GrapplerMode.Attached;
 		sfxController.PlayAttach ();
-		//sfxController.StartAttached ();
 	}
 
 	private void CreateLine(GameObject anchor) {
