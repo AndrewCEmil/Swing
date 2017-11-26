@@ -1,26 +1,27 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Controllers/RaceButtonController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Orchestrator.cs">
     <Files>
-      <File FileName="Assets/Scripts/Controllers/FloorController.cs" Line="19" Column="27" />
-      <File FileName="Assets/Scripts/Controllers/TutorialController1.cs" Line="74" Column="9" />
-      <File FileName="Assets/Scripts/Controllers/SoundEffectController.cs" Line="61" Column="46" />
-      <File FileName="Assets/Scripts/Controllers/SoundEffectManager.cs" Line="72" Column="25" />
-      <File FileName="Assets/GoogleVR/Scripts/Controller/GvrControllerInput.cs" Line="379" Column="1" />
-      <File FileName="Assets/Scripts/Controllers/AnchorController.cs" Line="36" Column="3" />
-      <File FileName="Assets/Scripts/Grappler.cs" Line="141" Column="28" />
-      <File FileName="Assets/Scripts/Orchestrator.cs" Line="88" Column="33" />
-      <File FileName="Assets/Scripts/Controllers/TargetController.cs" Line="7" Column="18" />
-      <File FileName="Assets/Scripts/Controllers/BreakableObject.cs" Line="99" Column="2" />
-      <File FileName="Assets/Scripts/LevelManagement/LevelController.cs" Line="37" Column="26" />
-      <File FileName="Assets/Scripts/Controllers/TutorialController2.cs" Line="11" Column="15" />
-      <File FileName="Assets/Scripts/LevelManagement/LevelProvider.cs" Line="48" Column="11" />
-      <File FileName="Assets/Scripts/LevelManagement/LevelManager.cs" Line="17" Column="53" />
-      <File FileName="Assets/Scripts/Controllers/IntroFlowController.cs" Line="48" Column="29" />
-      <File FileName="Assets/Scripts/DataObjects/StringPair.cs" Line="16" Column="2" />
+      <File FileName="Assets/Scripts/Controllers/SoundEffectManager.cs" Line="82" Column="36" />
+      <File FileName="Assets/Scripts/Controllers/FloorController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/TutorialController1.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/SoundEffectController.cs" Line="74" Column="3" />
+      <File FileName="Assets/GoogleVR/Scripts/Controller/GvrControllerInput.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/AnchorController.cs" Line="23" Column="21" />
+      <File FileName="Assets/Scripts/Grappler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Orchestrator.cs" Line="74" Column="39" />
+      <File FileName="Assets/Scripts/Controllers/TargetController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/BreakableObject.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelManagement/LevelController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/TutorialController2.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelManagement/LevelProvider.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelManagement/LevelManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/IntroFlowController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DataObjects/StringPair.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Controllers/RaceButtonController.cs" Line="61" Column="78" />
-      <File FileName="Assets/Scripts/Controllers/FloorColliderController.cs" Line="17" Column="1" />
-      <File FileName="Assets/Scripts/Controllers/RandomRotater.cs" Line="9" Column="66" />
+      <File FileName="Assets/Scripts/Controllers/FloorColliderController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/RandomRotater.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Controllers/SpeedPanelController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
