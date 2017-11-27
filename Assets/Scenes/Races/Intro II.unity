@@ -702,7 +702,12 @@ Prefab:
     - target: {fileID: 198889896324819350, guid: 584ab9c47523249f0bfaed5d26e42970,
         type: 2}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
-      value: 0.13482666
+      value: 0.056172825
+      objectReference: {fileID: 0}
+    - target: {fileID: 198889896324819350, guid: 584ab9c47523249f0bfaed5d26e42970,
+        type: 2}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].time
+      value: 0.0026109666
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
