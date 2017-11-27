@@ -6,11 +6,9 @@ public class LookAtter : MonoBehaviour {
 
 	public GameObject target;
 	void Start () {
+		if (target == null) {
+			target = GameObject.Find ("Player");
+		}
 		transform.LookAt(2 * transform.position - target.transform.position);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }
