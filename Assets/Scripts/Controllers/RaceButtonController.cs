@@ -13,12 +13,14 @@ public class RaceButtonController : MonoBehaviour {
 	private float timeDelay;
 	private bool newlyUnlocked;
 	private float startTime;
+	private SoundEffectController sfxController;
 	// Use this for initialization
 	void Start () {
 		timeDelay = .1f;
 		button = GetComponentInChildren<Button> ();
 		buttonText = GetComponentInChildren<Text> ();
 		level = LevelManager.GetLevel (raceId);
+		sfxController = Utils.GetSFXController ();
 
 		buttonText.text = level.name;
 		if (level.locked) {
@@ -67,5 +69,11 @@ public class RaceButtonController : MonoBehaviour {
 
 	public void OnClick() {
 		SceneManager.LoadScene (level.name);
+	}
+
+	public void PointerEnter() {
+		if (button.IsInteractable()) {
+			sfxController.PlayButtonHighlight ();
+		}
 	}
 }
