@@ -30,7 +30,7 @@ public class Orchestrator : MonoBehaviour {
 		if (introCanvas != null) {
 			introFlowController = introCanvas.GetComponent<IntroFlowController> ();
 		}
-		targetHitDelay = 1f;
+		targetHitDelay = 2.5f;
 		targetHitTime = -1f;
 	}
 	
@@ -91,6 +91,9 @@ public class Orchestrator : MonoBehaviour {
 	}
 
 	public void TargetDied() {
+		if (targetHitTime > 0) {
+			return;
+		}
 		float raceTime = timerController.FinishRace ();
 		LevelController.HandleLevelLoss ();
 	}
