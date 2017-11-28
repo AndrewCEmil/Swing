@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Orchestrator : MonoBehaviour {
 
 	private GameObject player;
-	private ParticleSystem playerParticleSystem;
+	private ParticleSystem targetHitParticleSystem;
 	private Rigidbody playerRb;
 	private Grappler grappler;
 	private TimerController timerController;
@@ -22,7 +22,7 @@ public class Orchestrator : MonoBehaviour {
 	void Start () {
 		player = GameObject.Find ("Player");
 		playerRb = player.GetComponent<Rigidbody> ();
-		playerParticleSystem = player.GetComponentInChildren<ParticleSystem> ();
+		targetHitParticleSystem = GameObject.Find ("TargetHitParticleSystem").GetComponent<ParticleSystem> ();
 		grappler = player.GetComponent<Grappler> ();
 		timerController = GameObject.Find ("Timer").GetComponent<TimerController> ();
 		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
@@ -87,7 +87,7 @@ public class Orchestrator : MonoBehaviour {
 		//Handle level stuff
 		targetHitTime = Time.time;
 		sfxController.PlayTargetHit ();
-		playerParticleSystem.Emit (10000);
+		targetHitParticleSystem.Emit (10000);
 	}
 
 	public void TargetDied() {
