@@ -121,7 +121,7 @@ public class Grappler : MonoBehaviour {
 			sfxController.PlayDetach ();
 		}
 		mode = GrapplerMode.Off;
-		//lineRenderer.positionCount = 0;
+		lineRenderer.positionCount = 0;
 		lineParticleSystem.Stop ();
 	}
 
@@ -167,11 +167,9 @@ public class Grappler : MonoBehaviour {
 	}
 
 	private void CreateLine(GameObject anchor) {
-		/*
 		lineRenderer.positionCount = 2;
 		lineRenderer.SetPosition (0, player.transform.position);
 		lineRenderer.SetPosition (1, anchor.transform.position);
-*/
 	}
 
 	private void DoParticleLine() {
@@ -184,12 +182,10 @@ public class Grappler : MonoBehaviour {
 	}
 
 	private void DoLine() {
-		/*
 		if (lineRenderer.positionCount > 0) {
 			lineRenderer.SetPosition (0, player.transform.position);
 			lineRenderer.SetPosition (1, anchorPosition);
 		}
-*/
 	}
 
 	void BuildJoint(GameObject link, GameObject anchor) {
