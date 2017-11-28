@@ -16,14 +16,16 @@ public enum IntroMode
 public class IntroFlowController : MonoBehaviour {
 
 	// Use this for initialization
-	public Text textField;
-	public Button button;
+	private Text textField;
+	private Button button;
 	private Text buttonText;
 	private IntroMode mode;
 	private int panelIndex;
 	private int clickFrameCountdown;
 	private bool isHighlighted;
 	void Start () {
+		textField = GetComponentInChildren<Text> ();
+		button = GetComponentInChildren<Button> ();
 		clickFrameCountdown = 0;
 		buttonText = button.GetComponentInChildren<Text>();
 		string sceneName = SceneManager.GetActiveScene ().name;
