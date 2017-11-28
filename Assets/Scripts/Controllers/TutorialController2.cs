@@ -38,7 +38,7 @@ public class TutorialController2 : MonoBehaviour {
 	}
 
 	void Update () {
-		if (tutorialPosition == 3 && player.transform.position.x > 0 && player.transform.position.y > -35f) {
+		if (tutorialPosition == 3 && player.transform.position.x > 0 && player.transform.position.y > -45f) {
 			Detach ();
 		}
 		if (targetHitTime > 0 && Time.time - targetHitTime > targetHitDelay) {
