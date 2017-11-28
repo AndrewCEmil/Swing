@@ -30,7 +30,7 @@ public class Orchestrator : MonoBehaviour {
 		if (introCanvas != null) {
 			introFlowController = introCanvas.GetComponent<IntroFlowController> ();
 		}
-		targetHitDelay = 2.5f;
+		targetHitDelay = 2.2f;
 		targetHitTime = -1f;
 	}
 	
