@@ -14,7 +14,7 @@ public class Grappler : MonoBehaviour {
 	private GameObject player;
 	private GameObject bullet;
 	private GameObject startCube;
-	//private SpeedPanelController speedPanelController;
+	private SpeedPanelController speedPanelController;
 	private AnchorController currentAttachedController;
 	private Vector3 anchorPosition;
 	private GrapplerMode mode;
@@ -32,7 +32,7 @@ public class Grappler : MonoBehaviour {
 		bullet = GameObject.Find ("Bullet");
 		startCube = GameObject.Find ("StartCube");
 		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
-		//speedPanelController = GameObject.Find ("SpeedCanvas").GetComponent<SpeedPanelController> ();
+		speedPanelController = Utils.GetSpeedPanelController ();
 		anchorPosition = new Vector3 (0, 0, 0);
 		mode = GrapplerMode.Off;
 		currentAttachedController = null;
@@ -152,7 +152,9 @@ public class Grappler : MonoBehaviour {
 		currentAttachedController = anchor.GetComponent<AnchorController> ();
 		currentAttachedController.Link ();
 
-		//speedPanelController.AttachTriggered ();
+		if (speedPanelController != null) {
+			speedPanelController.AttachTriggered ();
+		}
 
 		anchorPosition = anchor.transform.position;
 		mode = GrapplerMode.Attached;

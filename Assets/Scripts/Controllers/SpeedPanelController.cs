@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class SpeedPanelController : MonoBehaviour {
 
-	public GameObject speedTextObj;
-	public GameObject lossTextObj;
-	public GameObject totalLossTextObj;
+	private GameObject speedTextObj;
+	private GameObject lossTextObj;
+	private GameObject totalLossTextObj;
 
 	private GameObject player;
 	private Rigidbody playerRB;
@@ -20,15 +20,22 @@ public class SpeedPanelController : MonoBehaviour {
 	private float attachedTriggeredFrameNum;
 	private float totalLoss;
 	void Start () {
+		speedTextObj = GameObject.Find ("SpeedText");
+		lossTextObj = GameObject.Find ("LossText");
+		totalLossTextObj = GameObject.Find ("TotalLossText");
 		speedText = speedTextObj.GetComponent<Text> ();
 		lossText = lossTextObj.GetComponent<Text> ();
 		totalLossText = totalLossTextObj.GetComponent<Text> ();
 		player = GameObject.Find ("Player");
 		playerRB = player.GetComponent<Rigidbody> ();
-		offset = new Vector3 (5, 0, 10);
+		offset = new Vector3 (20f, 6.5f, 20f);
 		attachedTriggeredFrameNum = -10;
 		beforeAttachSpeed = 0;
 		totalLoss = 0;
+
+		if (PlayerPrefs.GetInt ("SpeedPanelEnabled") == 0) {
+			gameObject.SetActive (false);
+		}
 	}
 
 	// Update is called once per frame

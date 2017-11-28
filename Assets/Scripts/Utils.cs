@@ -27,4 +27,12 @@ public class Utils {
 		}
 		return null;
 	}
+
+	public static SpeedPanelController GetSpeedPanelController() {
+		GameObject obj = GameObject.Find ("SpeedCanvas");
+		if (obj != null) {
+			return obj.GetComponent<SpeedPanelController> ();
+		}
+		return null;
+	}
 }
