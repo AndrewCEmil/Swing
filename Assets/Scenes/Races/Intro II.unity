@@ -540,66 +540,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 198889896324819350, guid: 584ab9c47523249f0bfaed5d26e42970,
-        type: 2}
-      propertyPath: SubModule.subEmitters.Array.data[0].emitter
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 198086358388769076, guid: 584ab9c47523249f0bfaed5d26e42970,
-        type: 2}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 198086358388769076, guid: 584ab9c47523249f0bfaed5d26e42970,
-        type: 2}
-      propertyPath: randomSeed
-      value: 2098307124
-      objectReference: {fileID: 0}
-    - target: {fileID: 198086358388769076, guid: 584ab9c47523249f0bfaed5d26e42970,
-        type: 2}
-      propertyPath: InitialModule.maxNumParticles
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 198086358388769076, guid: 584ab9c47523249f0bfaed5d26e42970,
-        type: 2}
-      propertyPath: ShapeModule.type
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 198086358388769076, guid: 584ab9c47523249f0bfaed5d26e42970,
-        type: 2}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.003
-      objectReference: {fileID: 0}
-    - target: {fileID: 198086358388769076, guid: 584ab9c47523249f0bfaed5d26e42970,
-        type: 2}
-      propertyPath: ShapeModule.m_Rotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198086358388769076, guid: 584ab9c47523249f0bfaed5d26e42970,
-        type: 2}
-      propertyPath: ShapeModule.m_Rotation.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 198086358388769076, guid: 584ab9c47523249f0bfaed5d26e42970,
-        type: 2}
-      propertyPath: ShapeModule.m_Rotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198086358388769076, guid: 584ab9c47523249f0bfaed5d26e42970,
-        type: 2}
-      propertyPath: InitialModule.size3D
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198086358388769076, guid: 584ab9c47523249f0bfaed5d26e42970,
-        type: 2}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 198086358388769076, guid: 584ab9c47523249f0bfaed5d26e42970,
-        type: 2}
-      propertyPath: ShapeModule.arc.value
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
   m_IsPrefabParent: 0
