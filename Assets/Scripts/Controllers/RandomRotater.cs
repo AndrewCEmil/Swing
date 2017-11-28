@@ -6,7 +6,8 @@ public class RandomRotater : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GetComponent<Rigidbody> ().AddTorque (Random.onUnitSphere * 100f);
+		Vector3 torque = Random.onUnitSphere * 10f;
+		GetComponent<Rigidbody> ().AddTorque (torque);
 	}
 	
 	// Update is called once per frame
