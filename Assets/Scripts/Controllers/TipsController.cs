@@ -13,7 +13,15 @@ public class TipsController : MonoBehaviour {
 			gameObject.SetActive (false);
 		} else {
 			text = GetComponentInChildren<Text> ();
-			texts = new List<string> { "a", "b", "c" };
+			texts = new List<string> { 
+				"Remember that you can exit a race by looking above you for the back button",
+				"Try attaching to anchors as your fly perpendicular to them - this will minimize your speed loss",
+				"You can always restart a level simply by pressing the \"-\" button on your Daydream controller",
+				"Recallibrate your Daydream setup by holding down the bottom button - it drifts quite easily!",
+				"Try using the speed panel (described in the about area) to help improve your play",
+				"You can turn off these tips in the settings panel",
+				"DON'T. GIVE. UP."
+			}
 			text.text = GetText ();
 		}
 	}
