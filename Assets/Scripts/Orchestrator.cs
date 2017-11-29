@@ -10,7 +10,6 @@ public class Orchestrator : MonoBehaviour {
 	private ParticleSystem targetHitParticleSystem;
 	private Rigidbody playerRb;
 	private Grappler grappler;
-	private TimerController timerController;
 	private SoundEffectController sfxController;
 	private GameObject platform;
 	private GameObject introCanvas;
@@ -24,7 +23,6 @@ public class Orchestrator : MonoBehaviour {
 		playerRb = player.GetComponent<Rigidbody> ();
 		targetHitParticleSystem = GameObject.Find ("TargetHitParticleSystem").GetComponent<ParticleSystem> ();
 		grappler = player.GetComponent<Grappler> ();
-		timerController = GameObject.Find ("Timer").GetComponent<TimerController> ();
 		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
 		introCanvas = GameObject.Find ("IntroCanvas");
 		if (introCanvas != null) {
@@ -58,11 +56,12 @@ public class Orchestrator : MonoBehaviour {
 				return;
 			}
 		}
-		//TODO another sound
-		if (!timerController.RaceStarted ()) {
-			timerController.StartRace ();
+
+		//Used to initialize race
+		if (!playerRb.useGravity) {
 			playerRb.useGravity = true;
 		}
+
 		grappler.PointerClicked ();
 	}
 
@@ -83,9 +82,6 @@ public class Orchestrator : MonoBehaviour {
 
 	public void TargetHit() {
 		//Handle timer stuff
-		float raceTime = timerController.FinishRace();
-		//Handle leaderboard stuff
-		LeaderboardController.RegisterTime(raceTime, LevelController.GetCurrentLevelId());
 		//Handle level stuff
 		targetHitTime = Time.time;
 		targetHitParticleSystem.Emit (10000);
@@ -96,7 +92,6 @@ public class Orchestrator : MonoBehaviour {
 		if (targetHitTime > 0) {
 			return;
 		}
-		float raceTime = timerController.FinishRace ();
 		LevelController.HandleLevelLoss ();
 	}
 }

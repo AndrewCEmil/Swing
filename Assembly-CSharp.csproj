@@ -335,13 +335,11 @@
      <Compile Include="Assets\GoogleVR\Scripts\Utilities\GvrUIHelpers.cs" />
      <Compile Include="Assets\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
      <Compile Include="Assets\Scripts\Controllers\AnchorController.cs" />
-     <Compile Include="Assets\Scripts\Controllers\BreakableObject.cs" />
      <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
      <Compile Include="Assets\Scripts\Controllers\FloorColliderController.cs" />
      <Compile Include="Assets\Scripts\Controllers\FloorController.cs" />
      <Compile Include="Assets\Scripts\Controllers\IntroFlowController.cs" />
      <Compile Include="Assets\Scripts\Controllers\Landscape.cs" />
-     <Compile Include="Assets\Scripts\Controllers\LeaderboardController.cs" />
      <Compile Include="Assets\Scripts\Controllers\LookAtter.cs" />
      <Compile Include="Assets\Scripts\Controllers\MenuController.cs" />
      <Compile Include="Assets\Scripts\Controllers\MusicController.cs" />
@@ -351,12 +349,9 @@
      <Compile Include="Assets\Scripts\Controllers\SoundEffectManager.cs" />
      <Compile Include="Assets\Scripts\Controllers\SpeedPanelController.cs" />
      <Compile Include="Assets\Scripts\Controllers\TargetController.cs" />
-     <Compile Include="Assets\Scripts\Controllers\TimePanelController.cs" />
-     <Compile Include="Assets\Scripts\Controllers\TimerController.cs" />
      <Compile Include="Assets\Scripts\Controllers\TipsController.cs" />
      <Compile Include="Assets\Scripts\Controllers\TutorialController1.cs" />
      <Compile Include="Assets\Scripts\Controllers\TutorialController2.cs" />
-     <Compile Include="Assets\Scripts\DataObjects\LeaderboardEntry.cs" />
      <Compile Include="Assets\Scripts\DataObjects\Level.cs" />
      <Compile Include="Assets\Scripts\DataObjects\Levels.cs" />
      <Compile Include="Assets\Scripts\DataObjects\StringPair.cs" />
@@ -387,7 +382,6 @@
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\ParticleSolidColorAdditive.shader" />
      <None Include="Assets\DaydreamElements\Common\Demo\Art\Effects\Stars\Stars.shader" />
      <None Include="Assets\GoogleVR\Shaders\GvrAdditiveOverlay.shader" />
-     <None Include="Assets\Breakable Objects\Breakable Window\Breakable Window Readme.txt" />
      <None Include="Assets\DaydreamElements\Elements\Tunneling\Shaders\VignetteIrisGradient.shader" />
      <None Include="Assets\DaydreamElements\Common\Demo\Art\Effects\ExponentialShadowMaps\Example\ESMReceiverTemplate.shader" />
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\UnlitTransparentColor.shader" />
@@ -398,7 +392,6 @@
      <None Include="Assets\DaydreamElements\Common\Demo\Art\Effects\ExponentialShadowMaps\Shaders\FastBlur.shader" />
      <None Include="Assets\DaydreamElements\Common\Demo\Art\Effects\ExponentialShadowMaps\Shaders\Combine.shader" />
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\InfoCardText.shader" />
-     <None Include="Assets\Breakable Objects\Breakable Window\Shaders\Unluck Reflective Glass SDR.shader" />
      <None Include="Assets\GoogleVR\Demos\Environment\DemoEnvUnlitGrayscale.shader" />
      <None Include="Assets\DaydreamElements\Elements\ClickMenu\Demo\Shaders\ControllerReticleColor.shader" />
      <None Include="Assets\DaydreamElements\Common\Demo\Shaders\ScrollingParticleClouds.shader" />
