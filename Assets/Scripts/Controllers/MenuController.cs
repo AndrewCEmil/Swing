@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour {
 	public Slider musicSlider;
 	public Slider sfxSlider;
 	public Toggle speedPanelToggle;
+	public Toggle tipsPanelToggle;
 	private MusicController musicController;
 	private SoundEffectController sfxController;
 	// Use this for initialization
@@ -67,6 +68,14 @@ public class MenuController : MonoBehaviour {
 		PlayerPrefs.DeleteAll ();
 	}
 
+	public void TipsPanelEnabledChganged() {
+		if (tipsPanelToggle.isOn) {
+			PlayerPrefs.SetInt ("TipsPanelDisabled", 0);
+		} else {
+			PlayerPrefs.SetInt ("TipsPanelDisabled", 1);
+		}
+	}
+
 	public void SpeedPanelEnabledChanged() {
 		if (speedPanelToggle.isOn) {
 			PlayerPrefs.SetInt ("SpeedPanelEnabled", 1);
@@ -86,10 +95,18 @@ public class MenuController : MonoBehaviour {
 		musicSlider.value = musicController.GetMusicVolume ();
 		sfxSlider.value = sfxController.GetVolume ();
 		speedPanelToggle.isOn = isSpeedPanelEnabled ();
+		tipsPanelToggle.isOn = isSpeedPanelEnabled ();
 	}
 
 	private bool isSpeedPanelEnabled() {
 		if (PlayerPrefs.GetInt ("SpeedPanelEnabled") == 0) {
+			return false;
+		}
+		return true;
+	}
+
+	private bool isTipsPanelEnabled() {
+		if (PlayerPrefs.GetInt ("TipsPanelDisabled") == 1) {
 			return false;
 		}
 		return true;
