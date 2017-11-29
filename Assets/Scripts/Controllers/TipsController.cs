@@ -21,7 +21,7 @@ public class TipsController : MonoBehaviour {
 				"Try using the speed panel (described in the about area) to help improve your play",
 				"You can turn off these tips in the settings panel",
 				"DON'T. GIVE. UP."
-			}
+			};
 			text.text = GetText ();
 		}
 	}
