@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.38797578, g: 1, b: 0.6775682, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.0002
@@ -678,17 +678,17 @@ Prefab:
     - target: {fileID: 224355596786342028, guid: 41f0168b404ad4e39a0bd455b57cc37a,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224355596786342028, guid: 41f0168b404ad4e39a0bd455b57cc37a,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224355596786342028, guid: 41f0168b404ad4e39a0bd455b57cc37a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 224355596786342028, guid: 41f0168b404ad4e39a0bd455b57cc37a,
         type: 2}
