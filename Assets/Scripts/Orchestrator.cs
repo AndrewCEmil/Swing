@@ -32,6 +32,8 @@ public class Orchestrator : MonoBehaviour {
 		}
 		targetHitDelay = 2.2f;
 		targetHitTime = -1f;
+		//Dunno why i have to do this, seems like a unity bug
+		targetHitParticleSystem.Emit (1);
 	}
 	
 	// Update is called once per frame
@@ -86,8 +88,8 @@ public class Orchestrator : MonoBehaviour {
 		LeaderboardController.RegisterTime(raceTime, LevelController.GetCurrentLevelId());
 		//Handle level stuff
 		targetHitTime = Time.time;
-		sfxController.PlayTargetHit ();
 		targetHitParticleSystem.Emit (10000);
+		sfxController.PlayTargetHit ();
 	}
 
 	public void TargetDied() {
