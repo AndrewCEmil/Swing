@@ -20,7 +20,7 @@ public class FloorController : MonoBehaviour {
 	private float maxX;
 	private float maxY;
 	private List<Vector3> worlyPoints;
-	private void Awake () {
+	private void Start () {
 		middlePosition = new Vector3 (xSize * scale / 2f, 0, ySize * scale / 2f);
 		maxDistance = Vector3.Distance (middlePosition, new Vector3 (0, 0, 0));
 		maxX = xSize * scale;
@@ -31,6 +31,7 @@ public class FloorController : MonoBehaviour {
 
 
 	private void CreateMesh() {
+		Debug.Log ("Start mesh creation at: " + Time.time);
 		Mesh mesh = new Mesh ();
 		mesh.name = "Landscape";
 		GetComponent<MeshFilter> ().mesh = mesh;
@@ -74,6 +75,7 @@ public class FloorController : MonoBehaviour {
 
 		mesh.RecalculateNormals();
 		mesh.MarkDynamic ();
+		Debug.Log ("Finished mesh creation at: " + Time.time);
 	}
 
 	private float GetPerlinNoise(Vector3 vertex) {
