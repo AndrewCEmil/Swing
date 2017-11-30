@@ -170,7 +170,7 @@ Prefab:
     - target: {fileID: 198597054383326362, guid: 9852d1c61ecde450ab40b6fb0c6c1a24,
         type: 2}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 198597054383326362, guid: 9852d1c61ecde450ab40b6fb0c6c1a24,
         type: 2}
@@ -180,7 +180,7 @@ Prefab:
     - target: {fileID: 198597054383326362, guid: 9852d1c61ecde450ab40b6fb0c6c1a24,
         type: 2}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9852d1c61ecde450ab40b6fb0c6c1a24, type: 2}
@@ -432,17 +432,17 @@ Prefab:
     - target: {fileID: 198889896324819350, guid: 584ab9c47523249f0bfaed5d26e42970,
         type: 2}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].minCount
-      value: 10000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 198889896324819350, guid: 584ab9c47523249f0bfaed5d26e42970,
         type: 2}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].maxCount
-      value: 10000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 198889896324819350, guid: 584ab9c47523249f0bfaed5d26e42970,
         type: 2}
       propertyPath: InitialModule.maxNumParticles
-      value: 10000
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 198889896324819350, guid: 584ab9c47523249f0bfaed5d26e42970,
         type: 2}
@@ -463,6 +463,11 @@ Prefab:
         type: 2}
       propertyPath: randomSeed
       value: 2098307124
+      objectReference: {fileID: 0}
+    - target: {fileID: 198889896324819350, guid: 584ab9c47523249f0bfaed5d26e42970,
+        type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}

@@ -84,7 +84,7 @@ public class Orchestrator : MonoBehaviour {
 		//Handle timer stuff
 		//Handle level stuff
 		targetHitTime = Time.time;
-		targetHitParticleSystem.Emit (10000);
+		targetHitParticleSystem.Emit (1000);
 		sfxController.PlayTargetHit ();
 	}
 
