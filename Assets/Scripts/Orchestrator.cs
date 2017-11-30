@@ -67,7 +67,7 @@ public class Orchestrator : MonoBehaviour {
 
 	private void HandleAppButton() {
 		if (LevelController.IsRaceLevel ()) {
-			LevelController.HandleLevelLoss();
+			ResetPlayer ();
 		}
 	}
 
@@ -81,8 +81,6 @@ public class Orchestrator : MonoBehaviour {
 	}
 
 	public void TargetHit() {
-		//Handle timer stuff
-		//Handle level stuff
 		targetHitTime = Time.time;
 		targetHitParticleSystem.Emit (1000);
 		sfxController.PlayTargetHit ();
@@ -92,6 +90,14 @@ public class Orchestrator : MonoBehaviour {
 		if (targetHitTime > 0) {
 			return;
 		}
-		LevelController.HandleLevelLoss ();
+		ResetPlayer ();
+	}
+
+	private void ResetPlayer() {
+		playerRb.MovePosition (Vector3.zero);
+		playerRb.velocity = Vector3.zero;
+		playerRb.angularVelocity = Vector3.zero;
+		playerRb.useGravity = false;
+		grappler.BreakLink ();
 	}
 }

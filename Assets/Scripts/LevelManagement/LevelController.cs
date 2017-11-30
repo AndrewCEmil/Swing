@@ -10,11 +10,6 @@ public class LevelController : MonoBehaviour {
 		ReturnToAntechamber ();
 	}
 
-	public static void HandleLevelLoss() {
-		string sceneName = SceneManager.GetActiveScene ().name;
-		LoadScene (sceneName);
-	}
-
 	public static void HandleGameWin() {
 		ReturnToAntechamber();
 	}
