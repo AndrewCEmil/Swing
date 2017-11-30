@@ -162,7 +162,11 @@ public class Grappler : MonoBehaviour {
 
 		anchorPosition = anchor.transform.position;
 		mode = GrapplerMode.Attached;
-		sfxController.PlayAttach ();
+		if (anchor.name == "StartCube") {
+			sfxController.PlayShot ();
+		} else {
+			sfxController.PlayAttach ();
+		}
 		//sfxController.StartAttached ();
 	}
 
