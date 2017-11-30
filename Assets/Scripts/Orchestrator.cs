@@ -15,6 +15,7 @@ public class Orchestrator : MonoBehaviour {
 	private GameObject introCanvas;
 	private GameObject tutorialCanvas;
 	private IntroFlowController introFlowController;
+	private SpeedPanelController speedPanelController;
 
 	float targetHitTime;
 	float targetHitDelay;
@@ -25,6 +26,7 @@ public class Orchestrator : MonoBehaviour {
 		grappler = player.GetComponent<Grappler> ();
 		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
 		introCanvas = GameObject.Find ("IntroCanvas");
+		speedPanelController = Utils.GetSpeedPanelController ();
 		if (introCanvas != null) {
 			introFlowController = introCanvas.GetComponent<IntroFlowController> ();
 		}
@@ -99,5 +101,8 @@ public class Orchestrator : MonoBehaviour {
 		playerRb.angularVelocity = Vector3.zero;
 		playerRb.useGravity = false;
 		grappler.BreakLink ();
+		if (speedPanelController != null) {
+			speedPanelController.Reset ();
+		}
 	}
 }

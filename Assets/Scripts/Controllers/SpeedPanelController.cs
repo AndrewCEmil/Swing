@@ -38,6 +38,12 @@ public class SpeedPanelController : MonoBehaviour {
 		}
 	}
 
+	public void Reset() {
+		lossText.text = "";
+		totalLoss = 0;
+		totalLossText = "";
+	}
+
 	// Update is called once per frame
 	void Update () {
 		UpdateSpeed ();
