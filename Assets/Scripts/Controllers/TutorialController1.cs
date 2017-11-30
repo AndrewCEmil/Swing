@@ -47,7 +47,7 @@ public class TutorialController1 : MonoBehaviour {
 		targetHitTime = Time.time;
 	}
 
-	public void HandleNextClicked() {
+	public void NextButtonClicked() {
 		tutorialPosition += 1;
 		if (tutorialPosition < 3) {
 			FillPanelText ();
