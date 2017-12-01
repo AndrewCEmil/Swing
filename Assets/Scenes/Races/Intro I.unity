@@ -147,40 +147,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 64326742572177252, guid: 9852d1c61ecde450ab40b6fb0c6c1a24,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 0ec371937a5904d878298f1e8b104629,
-        type: 2}
     - target: {fileID: 1292646052685114, guid: 9852d1c61ecde450ab40b6fb0c6c1a24, type: 2}
       propertyPath: m_Name
       value: Anchor0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198597054383326362, guid: 9852d1c61ecde450ab40b6fb0c6c1a24,
-        type: 2}
-      propertyPath: prewarm
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198597054383326362, guid: 9852d1c61ecde450ab40b6fb0c6c1a24,
-        type: 2}
-      propertyPath: randomSeed
-      value: 1313348035
-      objectReference: {fileID: 0}
-    - target: {fileID: 198597054383326362, guid: 9852d1c61ecde450ab40b6fb0c6c1a24,
-        type: 2}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 198597054383326362, guid: 9852d1c61ecde450ab40b6fb0c6c1a24,
-        type: 2}
-      propertyPath: lengthInSec
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198597054383326362, guid: 9852d1c61ecde450ab40b6fb0c6c1a24,
-        type: 2}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9852d1c61ecde450ab40b6fb0c6c1a24, type: 2}
