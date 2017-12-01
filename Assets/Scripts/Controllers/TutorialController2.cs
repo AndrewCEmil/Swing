@@ -17,6 +17,8 @@ public class TutorialController2 : MonoBehaviour {
 	private GameObject anchor;
 	private float targetHitDelay;
 	private float targetHitTime;
+	private SoundEffectController sfxController;
+	private ParticleSystem targetHitParticleSystem;
 	// Use this for initialization
 	void Start () {
 		InitVariables ();
@@ -32,7 +34,9 @@ public class TutorialController2 : MonoBehaviour {
 		player = GameObject.Find ("Player");
 		grappler = player.GetComponent<Grappler> ();
 		playerRB = player.GetComponent<Rigidbody> ();
+		targetHitParticleSystem = GameObject.Find ("TargetHitParticleSystem").GetComponent<ParticleSystem> ();
 		anchor = GameObject.Find ("Anchor0");
+		sfxController = Utils.GetSFXController ();
 		tutorialPosition = 0;
 		FillPanelText ();
 	}
@@ -42,13 +46,16 @@ public class TutorialController2 : MonoBehaviour {
 			Detach ();
 		}
 		if (targetHitTime > 0 && Time.time - targetHitTime > targetHitDelay) {
-			ResetPanel ();
+			player.SetActive (false);
 			targetHitTime = -1f;
 		}
 	}
 
 	public void TargetHit() {
 		targetHitTime = Time.time;
+		sfxController.PlayTargetHit();
+		targetHitParticleSystem.Emit (1000);
+		ResetPanel ();
 	}
 
 	public void NextButtonClicked() {
