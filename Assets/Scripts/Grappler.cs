@@ -25,6 +25,7 @@ public class Grappler : MonoBehaviour {
 	private float pointedAtCooldown;
 	private SoundEffectController sfxController;
 	private GameObject shotAtTarget;
+	private Vector3 lineOffset;
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +39,7 @@ public class Grappler : MonoBehaviour {
 		anchorPosition = new Vector3 (0, 0, 0);
 		mode = GrapplerMode.Off;
 		currentAttachedController = null;
+		lineOffset = lineParticleSystem.transform.position - player.transform.position;
 		InitializeLine ();
 		InitializeStartCube ();
 	}
@@ -172,7 +174,7 @@ public class Grappler : MonoBehaviour {
 
 	private void CreateLine(GameObject anchor) {
 		lineRenderer.positionCount = 2;
-		lineRenderer.SetPosition (0, player.transform.position);
+		lineRenderer.SetPosition (0, player.transform.position + lineOffset);
 		lineRenderer.SetPosition (1, anchor.transform.position);
 	}
 
@@ -187,7 +189,7 @@ public class Grappler : MonoBehaviour {
 
 	private void DoLine() {
 		if (lineRenderer.positionCount > 0) {
-			lineRenderer.SetPosition (0, player.transform.position);
+			lineRenderer.SetPosition (0, player.transform.position + lineOffset);
 			lineRenderer.SetPosition (1, anchorPosition);
 		}
 	}
