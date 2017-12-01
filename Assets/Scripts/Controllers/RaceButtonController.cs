@@ -16,7 +16,7 @@ public class RaceButtonController : MonoBehaviour {
 	private SoundEffectController sfxController;
 	// Use this for initialization
 	void Start () {
-		timeDelay = .1f;
+		timeDelay = .03f;
 		button = GetComponentInChildren<Button> ();
 		buttonText = GetComponentInChildren<Text> ();
 		level = LevelManager.GetLevel (raceId);
