@@ -8,7 +8,6 @@ public class Orchestrator : MonoBehaviour {
 
 	private GameObject player;
 	private ParticleSystem targetHitParticleSystem;
-	private ParticleSystem deathParticleSystem;
 	private Rigidbody playerRb;
 	private Grappler grappler;
 	private SoundEffectController sfxController;
@@ -24,7 +23,6 @@ public class Orchestrator : MonoBehaviour {
 		player = GameObject.Find ("Player");
 		playerRb = player.GetComponent<Rigidbody> ();
 		targetHitParticleSystem = GameObject.Find ("TargetHitParticleSystem").GetComponent<ParticleSystem> ();
-		deathParticleSystem = GameObject.Find ("DeathParticleSystem").GetComponent<ParticleSystem> ();
 		grappler = player.GetComponent<Grappler> ();
 		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
 		introCanvas = GameObject.Find ("IntroCanvas");
@@ -98,7 +96,6 @@ public class Orchestrator : MonoBehaviour {
 	}
 
 	private void ResetPlayer() {
-		deathParticleSystem.Emit (1000);
 		playerRb.MovePosition (Vector3.zero);
 		playerRb.velocity = Vector3.zero;
 		playerRb.angularVelocity = Vector3.zero;
