@@ -34,12 +34,14 @@ public class Grappler : MonoBehaviour {
 		bullet = GameObject.Find ("Bullet");
 		startCube = GameObject.Find ("StartCube");
 		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
-		lineParticleSystem = GameObject.Find ("LineParticleSystem").GetComponent<ParticleSystem> ();
+		lineParticleSystem = Utils.GetLineParticleSystem ();
+		if (lineParticleSystem != null) {
+			lineOffset = lineParticleSystem.transform.position - player.transform.position;
+		}
 		speedPanelController = Utils.GetSpeedPanelController ();
 		anchorPosition = new Vector3 (0, 0, 0);
 		mode = GrapplerMode.Off;
 		currentAttachedController = null;
-		lineOffset = lineParticleSystem.transform.position - player.transform.position;
 		InitializeLine ();
 		InitializeStartCube ();
 	}

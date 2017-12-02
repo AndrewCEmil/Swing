@@ -35,4 +35,12 @@ public class Utils {
 		}
 		return null;
 	}
+
+	public static ParticleSystem GetLineParticleSystem() {
+		GameObject obj = GameObject.Find ("LineParticleSystem");
+		if (obj != null) {
+			return obj.GetComponent<ParticleSystem> ();
+		}
+		return null;
+	}
 }

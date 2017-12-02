@@ -95,7 +95,7 @@ public class MenuController : MonoBehaviour {
 		musicSlider.value = musicController.GetMusicVolume ();
 		sfxSlider.value = sfxController.GetVolume ();
 		speedPanelToggle.isOn = isSpeedPanelEnabled ();
-		tipsPanelToggle.isOn = isSpeedPanelEnabled ();
+		tipsPanelToggle.isOn = isTipsPanelEnabled ();
 	}
 
 	private bool isSpeedPanelEnabled() {
