@@ -662,13 +662,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb7f9c728fda40a28940f1977909522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deformType: 4
+  deformType: 2
   xSize: 50
   ySize: 50
   scale: 300
   maxHeight: 2200
-  hillDistance: 8200
-  seed: 0
+  hillDistance: 0
+  seed: 1.11
 --- !u!4 &1425599836
 Transform:
   m_ObjectHideFlags: 0

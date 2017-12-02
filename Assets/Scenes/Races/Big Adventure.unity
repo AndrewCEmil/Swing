@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
   m_Fog: 1
-  m_FogColor: {r: 0.872, g: 1, b: 1, a: 1}
+  m_FogColor: {r: 0.97794116, g: 0.6975021, b: 0.7613264, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.0001
   m_LinearFogStart: 0
@@ -802,12 +802,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb7f9c728fda40a28940f1977909522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deformType: 4
+  deformType: 2
   xSize: 50
   ySize: 50
   scale: 300
-  maxHeight: 2200
-  hillDistance: 2000
+  maxHeight: 4000
+  hillDistance: 5000
   seed: 3.14
 --- !u!4 &1425599836
 Transform:
@@ -914,7 +914,7 @@ Prefab:
     - target: {fileID: 224355596786342028, guid: 41f0168b404ad4e39a0bd455b57cc37a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -19.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224355596786342028, guid: 41f0168b404ad4e39a0bd455b57cc37a,
         type: 2}
