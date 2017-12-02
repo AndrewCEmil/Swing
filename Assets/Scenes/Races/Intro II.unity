@@ -382,16 +382,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114327703799267844, guid: f3101b50aa06f412b80542f9a999916b,
-        type: 2}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1881457937}
-    - target: {fileID: 114707815777435182, guid: f3101b50aa06f412b80542f9a999916b,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1646902297}
     - target: {fileID: 224889725294314734, guid: f3101b50aa06f412b80542f9a999916b,
         type: 2}
       propertyPath: m_AnchorMin.y
@@ -415,12 +405,12 @@ Prefab:
     - target: {fileID: 224889725294314734, guid: f3101b50aa06f412b80542f9a999916b,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 224889725294314734, guid: f3101b50aa06f412b80542f9a999916b,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 224335087552998108, guid: f3101b50aa06f412b80542f9a999916b,
         type: 2}
@@ -434,23 +424,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 224335087552998108, guid: f3101b50aa06f412b80542f9a999916b,
         type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -19.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224335087552998108, guid: f3101b50aa06f412b80542f9a999916b,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 224335087552998108, guid: f3101b50aa06f412b80542f9a999916b,
-        type: 2}
       propertyPath: m_AnchoredPosition.x
       value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 224335087552998108, guid: f3101b50aa06f412b80542f9a999916b,
         type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -19.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224335087552998108, guid: f3101b50aa06f412b80542f9a999916b,
+        type: 2}
       propertyPath: m_SizeDelta.x
       value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 224335087552998108, guid: f3101b50aa06f412b80542f9a999916b,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 224946493540673460, guid: f3101b50aa06f412b80542f9a999916b,
         type: 2}
@@ -487,30 +477,9 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: -244
       objectReference: {fileID: 0}
-    - target: {fileID: 114632665878604974, guid: f3101b50aa06f412b80542f9a999916b,
-        type: 2}
-      propertyPath: button
-      value: 
-      objectReference: {fileID: 1059626688}
-    - target: {fileID: 114183717958177566, guid: f3101b50aa06f412b80542f9a999916b,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1646902297}
-    - target: {fileID: 114183717958177566, guid: f3101b50aa06f412b80542f9a999916b,
-        type: 2}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayButtonHighlight
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f3101b50aa06f412b80542f9a999916b, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1059626688 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114707815777435182, guid: f3101b50aa06f412b80542f9a999916b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1059626687}
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1063712840
 Prefab:
   m_ObjectHideFlags: 0
@@ -772,14 +741,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41f0168b404ad4e39a0bd455b57cc37a, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1646902297 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114222891972466844, guid: 41f0168b404ad4e39a0bd455b57cc37a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1646902296}
-  m_Script: {fileID: 11500000, guid: f5a428f7181734317a0bf83dc4268c09, type: 3}
---- !u!1 &1881457937 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1566272348756284, guid: 584ab9c47523249f0bfaed5d26e42970,
-    type: 2}
-  m_PrefabInternal: {fileID: 1063712840}
