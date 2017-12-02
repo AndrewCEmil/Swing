@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.494, g: 0.771, b: 0.772, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.0001
+  m_FogDensity: 0.0002
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.032085564, g: 0.032067414, b: 0.032067414, a: 1}
+  m_IndirectSpecularColor: {r: 0.030769529, g: 0.030769529, b: 0.030769529, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -318,6 +318,41 @@ Prefab:
         type: 2}
       propertyPath: OnPointerClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224355596786342028, guid: 41f0168b404ad4e39a0bd455b57cc37a,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224355596786342028, guid: 41f0168b404ad4e39a0bd455b57cc37a,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224355596786342028, guid: 41f0168b404ad4e39a0bd455b57cc37a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 224355596786342028, guid: 41f0168b404ad4e39a0bd455b57cc37a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224355596786342028, guid: 41f0168b404ad4e39a0bd455b57cc37a,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 224355596786342028, guid: 41f0168b404ad4e39a0bd455b57cc37a,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224064231917648732, guid: 41f0168b404ad4e39a0bd455b57cc37a,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114332560623244194, guid: 41f0168b404ad4e39a0bd455b57cc37a, type: 2}
