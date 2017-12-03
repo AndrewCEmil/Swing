@@ -13,8 +13,10 @@ public class Orchestrator : MonoBehaviour {
 	private SoundEffectController sfxController;
 	private GameObject platform;
 	private GameObject introCanvas;
+	private GameObject finalCanvas;
 	private GameObject tutorialCanvas;
 	private IntroFlowController introFlowController;
+	private FinalCanvasController finalCanvasController;
 	private SpeedPanelController speedPanelController;
 
 	float targetHitTime;
@@ -29,6 +31,10 @@ public class Orchestrator : MonoBehaviour {
 		speedPanelController = Utils.GetSpeedPanelController ();
 		if (introCanvas != null) {
 			introFlowController = introCanvas.GetComponent<IntroFlowController> ();
+		}
+		finalCanvas = GameObject.Find ("FinalCanvas");
+		if (finalCanvas != null) {
+			finalCanvasController = finalCanvas.GetComponent<FinalCanvasController> ();
 		}
 		targetHitDelay = 2.2f;
 		targetHitTime = -1f;
@@ -55,6 +61,12 @@ public class Orchestrator : MonoBehaviour {
 	private void PointerClicked() {
 		if (introCanvas != null) {
 			if (introFlowController.IsHighlighted() || introFlowController.RecentlyClicked ()) {
+				return;
+			}
+		}
+
+		if (finalCanvas != null) {
+			if (finalCanvasController.IsHighlighted() || finalCanvasController.RecentlyClicked ()) {
 				return;
 			}
 		}
