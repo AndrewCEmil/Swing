@@ -78,7 +78,8 @@ public class Grappler : MonoBehaviour {
 	}
 
 	private void DoShooting() {
-		if (Vector3.Distance (player.transform.position, shotAtTarget.transform.position) < Vector3.Distance (player.transform.position, bullet.transform.position)) {
+		if (Vector3.Distance (player.transform.position, shotAtTarget.transform.position) < Vector3.Distance (player.transform.position, bullet.transform.position) || 
+			Vector3.Distance(bullet.transform.position, shotAtTarget.transform.position < 5)) {
 			Attach (shotAtTarget);
 		}
 	}
