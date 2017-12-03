@@ -16,6 +16,7 @@ public class Grappler : MonoBehaviour {
 	private GameObject startCube;
 	private SpeedPanelController speedPanelController;
 	private AnchorController currentAttachedController;
+	private GameObject currentAttachedAnchor;
 	private Vector3 anchorPosition;
 	private GrapplerMode mode;
 	private LineRenderer lineRenderer;
@@ -42,6 +43,7 @@ public class Grappler : MonoBehaviour {
 		anchorPosition = new Vector3 (0, 0, 0);
 		mode = GrapplerMode.Off;
 		currentAttachedController = null;
+		currentAttachedAnchor = null;
 		InitializeLine ();
 		InitializeStartCube ();
 	}
@@ -109,7 +111,7 @@ public class Grappler : MonoBehaviour {
 	}
 
 	public void PointerClicked() {
-		if (currentPointedAt != null) {
+		if (currentPointedAt != null && (currentAttachedAnchor == null || currentPointedAt.name != currentAttachedAnchor.name)) {
 			shotAtTarget = currentPointedAt;
 			Shoot ();
 		} else {
@@ -157,6 +159,7 @@ public class Grappler : MonoBehaviour {
 		}
 		BuildJoint (player, anchor);
 		CreateLine (anchor);
+		currentAttachedAnchor = anchor;
 		currentAttachedController = anchor.GetComponent<AnchorController> ();
 		currentAttachedController.Link ();
 
