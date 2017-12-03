@@ -32,6 +32,8 @@ public class RaceButtonController : MonoBehaviour {
 		} else {
 			SetColor (level.completed);
 		}
+
+		SetPosition ();
 	}
 
 	void Update() {
@@ -75,5 +77,10 @@ public class RaceButtonController : MonoBehaviour {
 		if (button.IsInteractable()) {
 			sfxController.PlayButtonHighlight ();
 		}
+	}
+
+	private void SetPosition() {
+		Vector3 unitVector = transform.position.normalized;
+		transform.position = unitVector * 42.5f;
 	}
 }
