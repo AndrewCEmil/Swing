@@ -44,8 +44,22 @@ public class FinalHolderController : MonoBehaviour {
 		}
 		sfxController.PlayUnlock ();
 		canvas.SetActive (true);
+		SetColor ();
 	}
 
+	private void SetColor() {
+		Level level = LevelManager.GetLevel (20);
+		Button button = GetComponentInChildren<Button> ();
+		ColorBlock colorBlock = button.colors;
+		if (level.completed) {
+			colorBlock.normalColor = new Color (0f/255f, 116f/255f, 39f/255f, 0.66f);
+			colorBlock.highlightedColor = new Color (0f / 255f, 116f / 255f, 39f / 255f, 1f);
+		} else {
+			colorBlock.normalColor = new Color (234f/255f, 141f/255f, 219f/255f, .66f);
+			colorBlock.highlightedColor = new Color (234f / 255f, 141f / 255f, 219f / 255f, 1f);
+		}
+		button.colors = colorBlock;
+	}
 	private void SetPosition() {
 		Vector3 unitVector = transform.position.normalized;
 		transform.position = unitVector * 36.66f;
