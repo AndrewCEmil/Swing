@@ -8,8 +8,10 @@ public class FinalHolderController : MonoBehaviour {
 
 
 	private GameObject canvas;
+	private SoundEffectController sfxController;
 	// Use this for initialization
 	void Start () {
+		sfxController = Utils.GetSFXController ();
 		canvas = GameObject.Find ("FinalCanvas");
 		canvas.SetActive (false);
 
@@ -18,9 +20,9 @@ public class FinalHolderController : MonoBehaviour {
 		if (locked) {
 			locked = LevelController.MaybeUnlockLevel (20);
 		}
-		//if(!locked) {
+		if(!locked) {
 			Unlock();
-		//}
+		}
 	}
 
 	public void HandleClick() {
@@ -35,7 +37,11 @@ public class FinalHolderController : MonoBehaviour {
 		for (int i = 10; i >= 0; i--) {
 			yield return new WaitForSeconds (.3f);
 			GameObject.Find ("Cube" + i).SetActive (false);
+			if(i != 0) {
+				sfxController.PlayDetach ();
+			}
 		}
+		sfxController.PlayUnlock ();
 		canvas.SetActive (true);
 	}
 	
