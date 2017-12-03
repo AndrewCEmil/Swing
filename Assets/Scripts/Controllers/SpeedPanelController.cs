@@ -28,7 +28,7 @@ public class SpeedPanelController : MonoBehaviour {
 		totalLossText = totalLossTextObj.GetComponent<Text> ();
 		player = GameObject.Find ("Player");
 		playerRB = player.GetComponent<Rigidbody> ();
-		offset = new Vector3 (20f, 6.5f, 20f);
+		offset = new Vector3 (10f, 6.5f, 20f);
 		attachedTriggeredFrameNum = -10;
 		beforeAttachSpeed = 0;
 		totalLoss = 0;
