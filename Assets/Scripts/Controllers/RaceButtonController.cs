@@ -81,6 +81,6 @@ public class RaceButtonController : MonoBehaviour {
 
 	private void SetPosition() {
 		Vector3 unitVector = transform.position.normalized;
-		transform.position = unitVector * 42.5f;
+		transform.position = unitVector * 36.66f;
 	}
 }
