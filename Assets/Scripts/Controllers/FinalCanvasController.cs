@@ -40,12 +40,21 @@ public class FinalCanvasController : MonoBehaviour {
 	StringPair GetNextText() {
 		switch (currentPosition) {
 		case 0:
-			return new StringPair ("text", "button");
+			return new StringPair ("This is it, the final level", "I know");
+		case 1:
+			return new StringPair ("You think you are almost done with the game, but the truth is you are only halfway", "What?");
+		case 2:
+			return new StringPair ("This level is a combination of most of the other levels", "Snap");
+		case 3:
+			return new StringPair ("Instead of targets, there will be the big start cubes at the end of each level", "Word");
+		case 4:
+			return new StringPair ("Once you attach to a start cube, look up at the bottom to see what level you are about to go through", "Alright");
+		case 5:
+			return new StringPair ("I give you respect for making this far - its not easy.  Don't give up, I know you can do this!", "LETS GO");
 		default:
 			return new StringPair ("", "");
 		}
 	}
-
 
 	public void PointerEnter() {
 		isHighlighted = true;
