@@ -71,7 +71,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 0;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 19 };
+		level.preReqs = new int[] { Tutorial().level };
 		return level;
 	}
 
@@ -81,7 +81,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 1;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 0 };
+		level.preReqs = new int[] { IntroI().level };
 		return level;
 	}
 
@@ -91,7 +91,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 2;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 1 };
+		level.preReqs = new int[] { IntroII().level };
 		return level;
 	}
 
@@ -101,7 +101,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 6;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 9 };
+		level.preReqs = new int[] { FieldTrip().level, Spiral().level };
 		return level;
 	}
 
@@ -111,7 +111,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 7;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 2 };
+		level.preReqs = new int[] { BigDrop ().level, BigAdventure ().level };
 		return level;
 	}
 
@@ -122,7 +122,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 8;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 9, 12 };
+		level.preReqs = new int[] { Playground ().level };
 		return level;
 	}
 
@@ -133,7 +133,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 14;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 2 };
+		level.preReqs = new int[] { Runway().level };
 		return level;
 	}
 
@@ -143,7 +143,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 4;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 9 };
+		level.preReqs = new int[] { Drop().level };
 		return level;
 	}
 
@@ -163,7 +163,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 9;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 17 };
+		level.preReqs = new int[] { Playground().level };
 		return level;
 	}
 
@@ -173,7 +173,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 10;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 3 };
+		level.preReqs = new int[] { IntroIV().level };
 		return level;
 	}
 
@@ -183,7 +183,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 11;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 3 };
+		level.preReqs = new int[] { IntroIV().level };
 		return level;
 	}
 
@@ -193,7 +193,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 12;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 17 };
+		level.preReqs = new int[] { Playground().level };
 		return level;
 	}
 
@@ -203,7 +203,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 13;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 10, 11 };
+		level.preReqs = new int[] { Distance().level, LeftRight().level };
 		return level;
 	}
 
@@ -213,7 +213,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 3;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 2 };
+		level.preReqs = new int[] { IntroIII().level };
 		return level;
 	}
 
@@ -223,7 +223,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 15;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 13 };
+		level.preReqs = new int[] { LittleAdventure().level };
 		return level;
 	}
 
@@ -233,7 +233,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 16;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 13 };
+		level.preReqs = new int[] { LittleAdventure().level };
 		return level;
 	}
 
@@ -243,7 +243,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 17;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 15, 16 };
+		level.preReqs = new int[] { MoreDistance ().level, Walkway ().level };
 		return level;
 	}
 
@@ -253,7 +253,7 @@ public class LevelProvider : MonoBehaviour {
 		level.level = 18;
 		level.locked = true;
 		level.completed = false;
-		level.preReqs = new int[] { 15, 16 };
+		level.preReqs = new int[] { Adventure ().level };
 		return level;
 	}
 
