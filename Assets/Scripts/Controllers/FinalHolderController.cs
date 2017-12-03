@@ -23,6 +23,7 @@ public class FinalHolderController : MonoBehaviour {
 		if(!locked) {
 			Unlock();
 		}
+		SetPosition ();
 	}
 
 	public void HandleClick() {
@@ -43,6 +44,11 @@ public class FinalHolderController : MonoBehaviour {
 		}
 		sfxController.PlayUnlock ();
 		canvas.SetActive (true);
+	}
+
+	private void SetPosition() {
+		Vector3 unitVector = transform.position.normalized;
+		transform.position = unitVector * 36.66f;
 	}
 	
 	// Update is called once per frame
