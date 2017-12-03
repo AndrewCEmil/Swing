@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour {
 
 	public static void HandleLevelWin() {
-		MarkLevelCompleted ();
-		ReturnToAntechamber ();
+		if (SceneManager.GetActiveScene ().name == "FINAL") {
+			HandleGameWin ();
+		} else {
+			MarkLevelCompleted ();
+			ReturnToAntechamber ();
+		}
 	}
 
 	public static void HandleGameWin() {
-		ReturnToAntechamber();
+		MarkLevelCompleted ();
+		LoadScene ("WinScene");
 	}
 
 	public static bool IsRaceLevel() {
@@ -24,8 +29,6 @@ public class LevelController : MonoBehaviour {
 		}
 		return false;
 	}
-
-
 
 	public static int GetCurrentLevelId() {
 		string sceneName = SceneManager.GetActiveScene ().name;

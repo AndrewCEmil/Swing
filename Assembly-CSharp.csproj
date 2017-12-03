@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Controllers\FloorController.cs" />
      <Compile Include="Assets\Scripts\Controllers\IntroFlowController.cs" />
      <Compile Include="Assets\Scripts\Controllers\Landscape.cs" />
+     <Compile Include="Assets\Scripts\Controllers\LegendPanelController.cs" />
      <Compile Include="Assets\Scripts\Controllers\LineParticleSystemController.cs" />
      <Compile Include="Assets\Scripts\Controllers\LookAtter.cs" />
      <Compile Include="Assets\Scripts\Controllers\MenuController.cs" />

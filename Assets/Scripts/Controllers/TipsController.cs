@@ -19,7 +19,7 @@ public class TipsController : MonoBehaviour {
 				"You can always restart a level simply by pressing the \"-\" button on your Daydream controller",
 				"Recallibrate your Daydream setup by holding down the bottom button - it drifts quite easily!",
 				"Try using the speed panel (described in the about area) to help improve your play",
-				"Have you noticed the mystery at the bottom of the level selection?",
+				"Have you noticed the mysterious object to the right of the level selection menu???",
 				"You can turn off these tips in the settings panel",
 				"DON'T. GIVE. UP."
 			};

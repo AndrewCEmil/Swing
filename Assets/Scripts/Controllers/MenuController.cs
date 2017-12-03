@@ -43,6 +43,10 @@ public class MenuController : MonoBehaviour {
 		SceneManager.LoadScene ("AboutScene");
 	}
 
+	public void LoadWinScene() {
+		SceneManager.LoadScene ("WinScene");
+	}
+
 	public void Quit() {
 		PlayerPrefs.Save ();
 		Application.Quit ();
