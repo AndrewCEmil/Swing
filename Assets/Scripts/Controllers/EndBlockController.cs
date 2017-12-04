@@ -14,14 +14,10 @@ public class EndBlockController : MonoBehaviour {
 		grappler = player.GetComponent<Grappler> ();
 	}
 
-	public void ResetPlayerClicked() {
+	public void ResetPlayer() {
 		player.transform.position = transform.position - new Vector3 (0, 20, 0);
 		playerRb.velocity = Vector3.zero;
 		playerRb.angularVelocity = Vector3.zero;
 		grappler.Attach (gameObject);
-	}
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }

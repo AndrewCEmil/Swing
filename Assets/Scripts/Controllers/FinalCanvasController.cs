@@ -48,8 +48,10 @@ public class FinalCanvasController : MonoBehaviour {
 		case 3:
 			return new StringPair ("Instead of targets, there will be the big start cubes at the end of each level", "Word");
 		case 4:
-			return new StringPair ("Once you attach to a start cube, look up at the bottom to see what level you are about to go through", "Alright");
+			return new StringPair ("When you shoot the start cube, you will be teleported to the start position for the next level", "Okay");
 		case 5:
+			return new StringPair ("Under a start cube, look up at the bottom to see what level you are about to go through", "Alright");
+		case 6:
 			return new StringPair ("I give you respect for making this far - its not easy.  Don't give up, I know you can do this!", "LETS GO");
 		default:
 			return new StringPair ("", "");

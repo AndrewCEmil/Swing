@@ -153,11 +153,22 @@ public class Grappler : MonoBehaviour {
 		mode = GrapplerMode.Shooting;
 	}
 
+	private void HandleEndBlockAttach (GameObject endBlock) {
+		EndBlockController endBlockController = endBlock.GetComponent<EndBlockController> ();
+		endBlockController.ResetPlayer ();
+	}
+
 	public void Attach (GameObject anchor) {
 		bullet.SetActive (false);
 		if (currentAttachedController != null) {
 			currentAttachedController.UnLink ();
 		}
+
+		if (anchor.name == "EndAnchor") {
+			HandleEndBlockAttach (anchor);
+			return;
+		}
+
 		BuildJoint (player, anchor);
 		CreateLine (anchor);
 		currentAttachedAnchor = anchor;
