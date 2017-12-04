@@ -65,6 +65,9 @@ public class LevelManager : MonoBehaviour {
 				return level.level;
 			}
 		}
+		if (levelName == "FINAL") {
+			return 20;
+		}
 		return -1;
 	}
 
