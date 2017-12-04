@@ -53,7 +53,6 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Controllers\AnchorController.cs" />
      <Compile Include="Assets\Scripts\Controllers\CameraController.cs" />
-     <Compile Include="Assets\Scripts\Controllers\EndBlockController.cs" />
      <Compile Include="Assets\Scripts\Controllers\FinalCanvasController.cs" />
      <Compile Include="Assets\Scripts\Controllers\FinalHolderController.cs" />
      <Compile Include="Assets\Scripts\Controllers\FloorColliderController.cs" />

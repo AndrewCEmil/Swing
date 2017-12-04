@@ -76,7 +76,6 @@ GameObject:
   - component: {fileID: 23040954940520464}
   - component: {fileID: 54543629016765294}
   - component: {fileID: 114352375459405452}
-  - component: {fileID: 114957836247556452}
   - component: {fileID: 114726607972977576}
   m_Layer: 0
   m_Name: EndAnchor
@@ -321,17 +320,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114957836247556452
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1936112553097184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de7350c8b4dbf45ae803aca7c22da794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &222221622525783148
 CanvasRenderer:
   m_ObjectHideFlags: 1

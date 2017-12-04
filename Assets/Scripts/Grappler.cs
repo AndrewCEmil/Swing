@@ -12,6 +12,7 @@ public enum GrapplerMode
 public class Grappler : MonoBehaviour {
 
 	private GameObject player;
+	private Rigidbody playerRb;
 	private GameObject bullet;
 	private GameObject startCube;
 	private SpeedPanelController speedPanelController;
@@ -32,6 +33,7 @@ public class Grappler : MonoBehaviour {
 	void Start () {
 		pointedAtCooldown = .5f;
 		player = GameObject.Find ("Player");
+		playerRb = player.GetComponent<Rigidbody> ();
 		bullet = GameObject.Find ("Bullet");
 		startCube = GameObject.Find ("StartCube");
 		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
@@ -153,11 +155,6 @@ public class Grappler : MonoBehaviour {
 		mode = GrapplerMode.Shooting;
 	}
 
-	private void HandleEndBlockAttach (GameObject endBlock) {
-		EndBlockController endBlockController = endBlock.GetComponent<EndBlockController> ();
-		endBlockController.ResetPlayer ();
-	}
-
 	public void Attach (GameObject anchor) {
 		bullet.SetActive (false);
 		if (currentAttachedController != null) {
@@ -165,8 +162,9 @@ public class Grappler : MonoBehaviour {
 		}
 
 		if (anchor.name == "EndAnchor") {
-			HandleEndBlockAttach (anchor);
-			return;
+			player.transform.position = transform.position - new Vector3 (0, 20, 0);
+			playerRb.velocity = Vector3.zero;
+			playerRb.angularVelocity = Vector3.zero;
 		}
 
 		BuildJoint (player, anchor);
