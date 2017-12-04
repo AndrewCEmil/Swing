@@ -20,9 +20,9 @@ public class FinalHolderController : MonoBehaviour {
 		if (locked) {
 			locked = LevelController.MaybeUnlockLevel (20);
 		}
-		if(!locked) {
+		//if(!locked) {
 			Unlock();
-		}
+		//}
 		SetPosition ();
 	}
 
