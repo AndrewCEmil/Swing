@@ -162,7 +162,7 @@ public class Grappler : MonoBehaviour {
 		}
 
 		if (anchor.name == "EndAnchor") {
-			player.transform.position = transform.position - new Vector3 (0, 20, 0);
+			player.transform.position = anchor.transform.position - new Vector3 (0, 20, 0);
 			playerRb.velocity = Vector3.zero;
 			playerRb.angularVelocity = Vector3.zero;
 		}

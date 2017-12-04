@@ -1307,7 +1307,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 268987491}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResetPlayerClicked
@@ -1325,12 +1325,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4557947294384290, guid: 826024f898dea46b3a4606b4101ad3cb,
     type: 2}
   m_PrefabInternal: {fileID: 268987489}
---- !u!114 &268987491 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114957836247556452, guid: 826024f898dea46b3a4606b4101ad3cb,
-    type: 2}
-  m_PrefabInternal: {fileID: 268987489}
-  m_Script: {fileID: 11500000, guid: de7350c8b4dbf45ae803aca7c22da794, type: 3}
 --- !u!1001 &271472567
 Prefab:
   m_ObjectHideFlags: 0
@@ -1940,7 +1934,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 404426793}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResetPlayerClicked
@@ -1958,12 +1952,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4557947294384290, guid: 826024f898dea46b3a4606b4101ad3cb,
     type: 2}
   m_PrefabInternal: {fileID: 404426791}
---- !u!114 &404426793 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114957836247556452, guid: 826024f898dea46b3a4606b4101ad3cb,
-    type: 2}
-  m_PrefabInternal: {fileID: 404426791}
-  m_Script: {fileID: 11500000, guid: de7350c8b4dbf45ae803aca7c22da794, type: 3}
 --- !u!1001 &405886903
 Prefab:
   m_ObjectHideFlags: 0
@@ -3341,7 +3329,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 807490044}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResetPlayerClicked
@@ -3359,12 +3347,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4557947294384290, guid: 826024f898dea46b3a4606b4101ad3cb,
     type: 2}
   m_PrefabInternal: {fileID: 807490042}
---- !u!114 &807490044 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114957836247556452, guid: 826024f898dea46b3a4606b4101ad3cb,
-    type: 2}
-  m_PrefabInternal: {fileID: 807490042}
-  m_Script: {fileID: 11500000, guid: de7350c8b4dbf45ae803aca7c22da794, type: 3}
 --- !u!1001 &820380366
 Prefab:
   m_ObjectHideFlags: 0
@@ -4034,7 +4016,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1004536046}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResetPlayerClicked
@@ -4052,12 +4034,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4557947294384290, guid: 826024f898dea46b3a4606b4101ad3cb,
     type: 2}
   m_PrefabInternal: {fileID: 1004536044}
---- !u!114 &1004536046 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114957836247556452, guid: 826024f898dea46b3a4606b4101ad3cb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1004536044}
-  m_Script: {fileID: 11500000, guid: de7350c8b4dbf45ae803aca7c22da794, type: 3}
 --- !u!1 &1033096980
 GameObject:
   m_ObjectHideFlags: 0
@@ -4846,7 +4822,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1175590478}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResetPlayerClicked
@@ -4864,12 +4840,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4557947294384290, guid: 826024f898dea46b3a4606b4101ad3cb,
     type: 2}
   m_PrefabInternal: {fileID: 1175590476}
---- !u!114 &1175590478 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114957836247556452, guid: 826024f898dea46b3a4606b4101ad3cb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1175590476}
-  m_Script: {fileID: 11500000, guid: de7350c8b4dbf45ae803aca7c22da794, type: 3}
 --- !u!1001 &1199417976
 Prefab:
   m_ObjectHideFlags: 0
@@ -4979,7 +4949,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1215214003}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResetPlayerClicked
@@ -4997,12 +4967,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4557947294384290, guid: 826024f898dea46b3a4606b4101ad3cb,
     type: 2}
   m_PrefabInternal: {fileID: 1215214001}
---- !u!114 &1215214003 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114957836247556452, guid: 826024f898dea46b3a4606b4101ad3cb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1215214001}
-  m_Script: {fileID: 11500000, guid: de7350c8b4dbf45ae803aca7c22da794, type: 3}
 --- !u!1001 &1225017166
 Prefab:
   m_ObjectHideFlags: 0
@@ -5756,7 +5720,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1473608398}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResetPlayerClicked
@@ -5774,12 +5738,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4557947294384290, guid: 826024f898dea46b3a4606b4101ad3cb,
     type: 2}
   m_PrefabInternal: {fileID: 1473608396}
---- !u!114 &1473608398 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114957836247556452, guid: 826024f898dea46b3a4606b4101ad3cb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1473608396}
-  m_Script: {fileID: 11500000, guid: de7350c8b4dbf45ae803aca7c22da794, type: 3}
 --- !u!1 &1496968502
 GameObject:
   m_ObjectHideFlags: 0
