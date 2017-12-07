@@ -18,11 +18,11 @@ public class FinalHolderController : MonoBehaviour {
 		Level level = LevelManager.GetLevel (20);
 		bool locked = level.locked;
 		if (locked) {
-			locked = LevelController.MaybeUnlockLevel (20);
+			locked = !LevelController.MaybeUnlockLevel (20);
 		}
-		//if(!locked) {
+		if(!locked) {
 			Unlock();
-		//}
+		}
 		SetPosition ();
 	}
 
