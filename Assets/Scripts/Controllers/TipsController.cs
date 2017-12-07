@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TipsController : MonoBehaviour {
 
@@ -9,7 +10,7 @@ public class TipsController : MonoBehaviour {
 	private List<string> texts;
 	// Use this for initialization
 	void Start () {
-		if (PlayerPrefs.GetInt ("TipsPanelDisabled") == 1) {
+		if (PlayerPrefs.GetInt ("TipsPanelDisabled") == 1 || SceneManager.GetActiveScene().name.StartsWith("Intro")) {
 			gameObject.SetActive (false);
 		} else {
 			text = GetComponentInChildren<Text> ();
