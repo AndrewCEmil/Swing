@@ -148,6 +148,50 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4684603187533406, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684603187533406, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684603187533406, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684603187533406, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684603187533406, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684603187533406, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150530058254214, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150530058254214, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150530058254214, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150530058254214, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150530058254214, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 584ab9c47523249f0bfaed5d26e42970, type: 2}
   m_IsPrefabParent: 0
@@ -399,7 +443,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 280, y: 0}
-  m_SizeDelta: {x: 479, y: 0}
+  m_SizeDelta: {x: 474, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177150208
 MonoBehaviour:
@@ -448,10 +492,21 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "TIPS:\n\n\u2022Don't forget that the exit button is above you at the start
-    of each level\n\u2022To reset a level press the \"-\" button on your controller\n\u2022Try
-    enabling the \"Speedometer\" in the settings menu\n\u2022Re-calibrate your Daydream
-    controller early and often\n"
+  m_Text: 'TIPS:
+
+
+    Don''t forget that the exit button is above you at the start of each level
+
+
+    Reset a level by pressing the "-" button on your controller
+
+
+    Try enabling the "Speedometer" in the settings menu
+
+
+    Re-calibrate your Daydream controller early and often
+
+'
 --- !u!222 &177150210
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -639,11 +694,20 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "THANKS:\n\n\u2022Thanks to my Girlfriend for promising to install this
-    game if nobody else does\n\u2022Thanks to NASA for letting me use these dope skyboxes\n\u2022Thanks
-    to the NYU Game Center for hosting play testing events\n\u2022Thanks to Jan at
-    Craftsmanspace for letting me use some cool 3d models, even though I didn't use
-    them it was nice of you to give me permission\n"
+  m_Text: 'THANKS:
+
+
+    Thanks to my girlfriend for promising to install this game if nobody else does
+
+
+    Thanks to NASA for letting me use these dope skyboxes
+
+
+    Thanks to the NYU Game Center for hosting play testing events
+
+
+    Thanks to Jan at Craftsmanspace for letting me use some cool 3d models; even though
+    I didn''t use them, it was nice of you to give me permission'
 --- !u!222 &278619656
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1521,44 +1585,38 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "ABOUT:\n\nOk so you want to know about this game and how it came to be?
-    \ Here's the story.\n\nIn April 2016, I decided I wanted to try to make some video
-    games.  I always like to have a side project going, usually something artsy, and
-    video games seemed like a good idea.\n\nOne night, playing pool, I mentioned this
-    to a friend of a friend and he said something like \"you should make it unity
-    so that we can just drop in the cardboard sdk and make a VR game\".  I was like,
-    oh thats dope, alright.\n\nFor the next year or so I would spend time on the nights
-    and weekends making little vr games and experiences for cardboard.  They are all
-    terrible.  I didn't release all of them - honestly I released the worst ones,
-    because at least with those it didnt appear that I even cared about them.  \n\nI
+  m_Text: "ABOUT:\n\nOkay, so you want to know about this game and how it came to
+    be?  Here's the story.\n\nIn April 2016, I decided I wanted to try to make some
+    video games.  I always like to have an artsy side project going, and video games
+    seemed like a good idea.\n\nOne night, playing pool, I mentioned this to a friend
+    of a friend and he said something like, \"You should make it in Unity so that
+    you can just drop in the Cardboard SDK and make a VR game.\"  I was like, \"Oh,
+    that's dope, alright.\"\n\nFor the next year or so I would spend time on nights
+    and weekends making little VR games and experiences for Cardboard.  They are all
+    terrible.  I didn't release all of them - honestly, I released the worst ones,
+    because at least with those it didn't appear that I even cared about them.  \n\nI
     did, however, enjoy making them.\n\nMy amazing girlfriend, who I met at the start
-    of 2017, encouraged me to keep working on them.  She also encouraged me to stop
-    working and pursue some creative goals.  I stopped working in the summer of 2017
-    and had a great time.  I worked on some projects I had (that have not, and will
-    not, see the light of day), hung out with her all the time, and chilled.\n\nIn
-    the late summer, I started working on this game.  However, I didn't take it that
-    seriously - I didnt even have a daydream or vr-enabled phone!  When fall came
-    around I had an existential crisis: what am I doing? Why have I not produced at
-    the speed and quality that I think I should?\n\nOn October 10, 2017, I got a phone
-    and a daydream headset and really started cranking.  I originally wanted to make
-    this a racing game, but that was tough for a few reasons.  Racing + VR is tough
-    due to motion sickness.  Speed + Daydream is tough because its not that high-def
-    or accurate.  Competition + Daydream is tough because google won't support google
-    play leaderboards. Racing games are tough to make fun in general.  Long story
-    short, the racing aspect wasnt working out.\n\nSo I switched to making a swinging
-    puzzle game.  From what I have seen, its somewhat similar to both Swing Star and
-    Windlands.\n\nI spent a lot of the last month making everything look better and
-    making the game more accessible for new players.  As a former backend engineer,
-    these aren't my strongpoints, but its clear to me that its what the game really
-    required.\n\nLooking back, its amazing how long everything took.  I feel like
-    my comfort with unity is so much greater that I could have made all of this in
-    a week or two at this point.\n\nWhat's next for me?  I don't know.  I see a few
-    choices: \n\n\u2022Get a job in video game industry\n\u2022Use this experience
-    to keep making more games while my money holds out\n\u2022Go back to backend engineering\n\nAt
-    this point I have no idea what I will do.\n\nThanks so much for playing my game,
-    it means a lot to me.  I would love to talk to you about this game, about my life,
-    about your life, about other games, or anything else.  Reach out to andrewcemil
-    at gmail, I am here to talk to you.\n\nOne Love,\n0xACE"
+    of 2017, encouraged me to keep working on them.  She also encouraged me to leave
+    my day job and pursue some creative goals. I left my job that summer and had a
+    great time.  I worked on some projects I had going (that have not, and will not,
+    see the light of day), hung out with her all the time, and chilled.\n\nIn the
+    late summer, I started working on this game.  However, I didn't take it that seriously
+    - I didn't even have a Daydream or VR-enabled phone! So on October 10, 2017, I
+    got a phone and a Daydream headset and really started cranking.\n\nI originally
+    wanted to make this a racing game, but that was tough for a few reasons.  Racing
+    + VR is tough due to motion sickness.  Speed + Daydream is tough because it's
+    not that high-def or accurate.  Competition + Daydream is tough because Google
+    won't support Google Play leaderboards. Racing games are tough to make fun in
+    general.  Long story short, the racing aspect wasn't working out.\n\nSo I switched
+    to making a swinging puzzle game.  From what I have seen, it's somewhat similar
+    to both Swing Star and Windlands.\n\nI spent a lot of the last month making everything
+    look better and making the game more accessible for new players.  As a former
+    backend engineer, these aren't my strongpoints, but it's what the game really
+    required.\n\nLooking back, it amazes me how long everything took.  At this point,
+    I could have made all of this in a week or two.\n\nWhat's next for me?  I don't
+    know.\n\nThanks so much for playing my game, it means a lot to me.  I would love
+    to talk to you about this game, about my life, about your life, about other games,
+    or anything else.  Reach out to me at andrewcemil at gmail.\n\nOne Love,\n0xACE"
 --- !u!222 &1089499623
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1651,11 +1709,24 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "STRUCTURE:\n\n\u2022This game is layed out as a series of of levels devided
-    into sets\n\u2022Each set has a different landscape and color\n\u2022Some levels,
-    such as \"Distance\" or \"Drop\" are very similar, but progressively more difficult\n\u2022Once
-    all other levels are completed the Final level is unlocked\n\u2022The final level
-    is by far the hardest - if you can complete it, you truely are a master"
+  m_Text: 'STRUCTURE:
+
+
+    This game is layed out as a series of of levels divided into sets
+
+
+    Each set has a different landscape and color
+
+
+    Some levels, such as "Distance" or "Drop" are very similar, but progressively
+    more difficult
+
+
+    Once all other levels are completed, the Final Level is unlocked
+
+
+    The Final Level is by far the hardest - if you can complete it, you are truly
+    a master'
 --- !u!222 &1222123530
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1811,7 +1882,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 280, y: 0}
-  m_SizeDelta: {x: 509, y: 0}
+  m_SizeDelta: {x: 540, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1476166354
 MonoBehaviour:
@@ -1860,10 +1931,18 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "SPEED:\n\n\u2022The connection to an anchor is actually a solid bar\n\u2022Imagine
-    that you are holding a pole connected to a ball-joint at the anchor\n\u2022Thus,
-    if you fly into the anchor and connect, you may lose a lot of speed\n\u2022Try
-    to only connect to anchors when moving at a right angle to them\n"
+  m_Text: 'SPEED:
+
+
+    The connection to an anchor is actually a solid bar; imagine that you are holding
+    a pole connected to a ball-joint at the anchor
+
+
+    Thus, if you fly directly into the anchor and connect, you may lose a lot of speed
+
+
+    Try to only connect to anchors when moving at a right angle to them in order to
+    minimize speed loss'
 --- !u!222 &1476166356
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2504,9 +2583,22 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "TOOLS:\n\n\u2022Unity (C#)\n\u2022Google VR SDK\n\u2022Paint 2\n\u2022Tested
-    on a Pixel and Pixel XL\n\u2022This whole project is open source, see my github:
-    github.com/AndrewCEmil/Swing\n"
+  m_Text: 'TOOLS:
+
+
+    Unity (C#)
+
+
+    Google VR SDK
+
+
+    Paint 2
+
+
+    Tested on a Pixel and Pixel XL
+
+
+    This whole project is open source; see my github: github.com/AndrewCEmil/Swing'
 --- !u!222 &2053063923
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2599,11 +2691,26 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "SPEEDOMETER:\n\n\u2022You can enable the Speedometer in the settings menu\n\u2022The
-    speedometer will show your current speed and the last \"lost\" speed\n\u2022The
-    \"lost\" speed is the difference between your speed before and after your last
-    attachment\n\u2022The \"Total Lost\" speed is the sum of all your lost speeds\n\u2022Use
-    this tool to help understand when you are making slow connections\n"
+  m_Text: 'SPEEDOMETER:
+
+
+    You can enable the Speedometer in the settings menu
+
+
+    The Speedometer will show your current speed, the last "Lost" speed, and the "Total
+    Lost" speed
+
+
+    The "Lost" speed is the difference between your speed before and after your last
+    attachment
+
+
+    The "Total Lost" speed is the sum of all your lost speeds
+
+
+    Use this tool to help understand when you are making slow connections
+
+'
 --- !u!222 &2088662242
 CanvasRenderer:
   m_ObjectHideFlags: 0
