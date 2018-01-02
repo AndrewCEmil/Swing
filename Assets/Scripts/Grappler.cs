@@ -21,7 +21,6 @@ public class Grappler : MonoBehaviour {
 	private Vector3 anchorPosition;
 	private GrapplerMode mode;
 	private LineRenderer lineRenderer;
-	private ParticleSystem lineParticleSystem;
 	private GameObject currentPointedAt;
 	private float pointedAtSetTime;
 	private float pointedAtCooldown;
@@ -37,12 +36,9 @@ public class Grappler : MonoBehaviour {
 		bullet = GameObject.Find ("Bullet");
 		startCube = GameObject.Find ("StartCube");
 		sfxController = GameObject.Find ("SoundEffectController").GetComponent<SoundEffectController> ();
-		lineParticleSystem = Utils.GetLineParticleSystem ();
-		if (lineParticleSystem != null) {
-			lineOffset = lineParticleSystem.transform.position - player.transform.position;
-		}
 		speedPanelController = Utils.GetSpeedPanelController ();
 		anchorPosition = new Vector3 (0, 0, 0);
+		lineOffset = new Vector3 (0f, .5f, 0f);
 		mode = GrapplerMode.Off;
 		currentAttachedController = null;
 		currentAttachedAnchor = null;
@@ -74,7 +70,6 @@ public class Grappler : MonoBehaviour {
 			break;
 		case GrapplerMode.Attached:
 			DoLine ();
-			DoParticleLine ();
 			break;
 		}
 	}
@@ -131,7 +126,6 @@ public class Grappler : MonoBehaviour {
 		}
 		mode = GrapplerMode.Off;
 		lineRenderer.positionCount = 0;
-		lineParticleSystem.Stop ();
 	}
 
 	private void DestroyJoint() {
@@ -191,15 +185,6 @@ public class Grappler : MonoBehaviour {
 		lineRenderer.positionCount = 2;
 		lineRenderer.SetPosition (0, player.transform.position + lineOffset);
 		lineRenderer.SetPosition (1, anchor.transform.position);
-	}
-
-	private void DoParticleLine() {
-		if (lineParticleSystem.isStopped) {
-			lineParticleSystem.Play ();
-		}
-		float distance = Vector3.Distance (transform.position, anchorPosition) - 1f;
-		lineParticleSystem.startLifetime = distance / lineParticleSystem.startSpeed;
-		lineParticleSystem.transform.LookAt (anchorPosition);
 	}
 
 	private void DoLine() {

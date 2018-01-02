@@ -227,6 +227,7 @@
      <Compile Include="Assets\ThirdParty\GoogleVR\Scripts\Utilities\GvrMathHelpers.cs" />
      <Compile Include="Assets\ThirdParty\GoogleVR\Scripts\Utilities\GvrUIHelpers.cs" />
      <Compile Include="Assets\ThirdParty\GoogleVR\Scripts\Video\GvrVideoPlayerTexture.cs" />
+     <Compile Include="Assets\ThirdParty\ODSCamera\RenderTextureReader.cs" />
      <None Include="Assets\ThirdParty\DaydreamRenderer\Shaders\daydreamStandardInclude.cginc" />
      <None Include="Assets\ThirdParty\DaydreamRenderer\Shaders\daydreamGizmo.shader" />
      <None Include="Assets\ThirdParty\GoogleVR\Shaders\GvrUIOverlayFont.shader" />

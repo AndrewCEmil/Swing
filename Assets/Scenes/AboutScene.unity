@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.031155603, g: 0.031155603, b: 0.031155603, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -1585,38 +1585,71 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "ABOUT:\n\nOkay, so you want to know about this game and how it came to
-    be?  Here's the story.\n\nIn April 2016, I decided I wanted to try to make some
-    video games.  I always like to have an artsy side project going, and video games
-    seemed like a good idea.\n\nOne night, playing pool, I mentioned this to a friend
-    of a friend and he said something like, \"You should make it in Unity so that
-    you can just drop in the Cardboard SDK and make a VR game.\"  I was like, \"Oh,
-    that's dope, alright.\"\n\nFor the next year or so I would spend time on nights
-    and weekends making little VR games and experiences for Cardboard.  They are all
-    terrible.  I didn't release all of them - honestly, I released the worst ones,
-    because at least with those it didn't appear that I even cared about them.  \n\nI
-    did, however, enjoy making them.\n\nMy amazing girlfriend, who I met at the start
-    of 2017, encouraged me to keep working on them.  She also encouraged me to leave
-    my day job and pursue some creative goals. I left my job that summer and had a
-    great time.  I worked on some projects I had going (that have not, and will not,
-    see the light of day), hung out with her all the time, and chilled.\n\nIn the
-    late summer, I started working on this game.  However, I didn't take it that seriously
-    - I didn't even have a Daydream or VR-enabled phone! So on October 10, 2017, I
-    got a phone and a Daydream headset and really started cranking.\n\nI originally
-    wanted to make this a racing game, but that was tough for a few reasons.  Racing
-    + VR is tough due to motion sickness.  Speed + Daydream is tough because it's
+  m_Text: 'ABOUT:
+
+
+    Okay, so you want to know about how this game came to be?  Here''s the story.
+
+
+    In April 2016, I decided I wanted to try to make some video games.  I always like
+    to have an artsy side project going, and video games seemed like a good idea.
+
+
+    One night, playing pool, I mentioned this to a friend of a friend and he said
+    something like, "You should make it in Unity so that you can just drop in the
+    Cardboard SDK and make a VR game."  I was like, "Oh, that''s dope, alright."
+
+
+    For the next year or so I would spend time on nights and weekends making little
+    VR games and experiences for Cardboard.  They are all terrible.  I didn''t release
+    all of them - honestly, I released the worst ones, because at least with those
+    it didn''t appear that I even cared about them.
+
+
+    I did, however, enjoy making them.
+
+
+    My amazing girlfriend, who I met at the start of 2017, encouraged me to keep working
+    on them.  She also encouraged me to leave my day job and pursue some creative
+    goals. I left my job that summer and had a great time.  I worked on some projects
+    I had going (that have not, and will not, see the light of day), hung out with
+    her all the time, and chilled.
+
+
+    In the late summer, I started working on this game.  However, I didn''t take it
+    that seriously - I didn''t even have a Daydream or VR-enabled phone! So in October,
+    I got a phone and a Daydream headset and really started cranking.
+
+
+    I originally wanted to make this a racing game, but that was tough for a few reasons.  Racing
+    + VR is tough due to motion sickness.  Speed + Daydream is tough because it''s
     not that high-def or accurate.  Competition + Daydream is tough because Google
-    won't support Google Play leaderboards. Racing games are tough to make fun in
-    general.  Long story short, the racing aspect wasn't working out.\n\nSo I switched
-    to making a swinging puzzle game.  From what I have seen, it's somewhat similar
-    to both Swing Star and Windlands.\n\nI spent a lot of the last month making everything
-    look better and making the game more accessible for new players.  As a former
-    backend engineer, these aren't my strongpoints, but it's what the game really
-    required.\n\nLooking back, it amazes me how long everything took.  At this point,
-    I could have made all of this in a week or two.\n\nWhat's next for me?  I don't
-    know.\n\nThanks so much for playing my game, it means a lot to me.  I would love
-    to talk to you about this game, about my life, about your life, about other games,
-    or anything else.  Reach out to me at andrewcemil at gmail.\n\nOne Love,\n0xACE"
+    won''t support Google Play leaderboards. Racing games are tough to make fun in
+    general.  Long story short, the racing aspect wasn''t working out.
+
+
+    So I switched to making a swinging puzzle game.  From what I have seen, it''s
+    somewhat similar to both Swing Star and Windlands.
+
+
+    I spent a lot of the last month making everything look better and making the game
+    more accessible for new players.  As a former backend engineer, these aren''t
+    my strongpoints, but it''s what the game required. Looking back, it amazes me
+    how long everything took.  At this point, I could have made all of this in a week
+    or two.
+
+
+    What''s next for me?  I don''t know.
+
+
+    Thanks so much for playing my game, it means a lot to me.  I would love to talk
+    to you about this game, about my life, about your life, about other games, or
+    anything else.  Reach out to me at andrewcemil at gmail.
+
+
+    One Love,
+
+    0xACE'
 --- !u!222 &1089499623
 CanvasRenderer:
   m_ObjectHideFlags: 0
